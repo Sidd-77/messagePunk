@@ -1,78 +1,185 @@
-import { useState } from "react"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { ScrollArea } from "@/components/ui/scroll-area"
-import { PaperclipIcon, Smile, Send } from "lucide-react"
-
-interface Chat {
-  id: string
-  name: string
-  lastMessage: string
-}
+import { useState, useEffect } from 'react';
+import { useSocket } from '@/context/SocketProvider';
+import { MessageType, ChatType, User } from '@/types';
+import { Button } from './ui/button';
+import { Input } from './ui/input';
 
 interface ChatInterfaceProps {
-  chatId: string
-  chats: Chat[]
+  chat: ChatType;
+  currentUser: User;
 }
 
-export default function ChatInterface({ chatId, chats }: ChatInterfaceProps) {
-  const [message, setMessage] = useState("")
-  const activeChat = chats.find((chat) => chat.id === chatId)
+const ChatInterface = ({ chat, currentUser }: ChatInterfaceProps) => {
+  const [messages, setMessages] = useState<MessageType[]>([]);
+  const [newMessage, setNewMessage] = useState('');
+  const [typingUsers, setTypingUsers] = useState<Set<string>>(new Set());
+  const { socket, sendMessage, markMessagesAsRead } = useSocket();
+
+  useEffect(() => {
+    if (socket && chat) {
+      // Join chat room
+      socket.emit('join_chat', { chatId: chat.id, userId: currentUser.id });
+
+      // Listen for new messages
+      socket.on('receive_message', (message: MessageType) => {
+        setMessages(prev => [...prev, message]);
+        // Mark message as read if chat is active
+        markMessagesAsRead(chat.id, currentUser.id, [message.id]);
+      });
+
+      // Handle typing indicators
+      socket.on('user_typing', ({ chatId, user }) => {
+        if (chatId === chat.id && user.id !== currentUser.id) {
+          setTypingUsers(prev => new Set(prev).add(user.id));
+          // Clear typing indicator after delay
+          setTimeout(() => {
+            setTypingUsers(prev => {
+              const newSet = new Set(prev);
+              newSet.delete(user.id);
+              return newSet;
+            });
+          }, 3000);
+        }
+      });
+
+      // Group chat specific listeners
+      if (chat.type === 'group') {
+        socket.on('user_joined_chat', ({ userId }) => {
+          // Update UI to show new user joined
+        });
+
+        socket.on('user_left_group', ({ userId }) => {
+          // Update UI to show user left
+        });
+      }
+
+      return () => {
+        socket.emit('leave_chat', { chatId: chat.id, userId: currentUser.id });
+        socket.off('receive_message');
+        socket.off('user_typing');
+        socket.off('user_joined_chat');
+        socket.off('user_left_group');
+      };
+    }
+  }, [socket, chat.id]);
 
   const handleSendMessage = () => {
-    if (message.trim()) {
-      // Here you would typically send the message to your backend
-      console.log("Sending message:", message)
-      setMessage("")
+    if (newMessage.trim()) {
+      const messageData: MessageType = {
+        id: `msg_${Date.now()}`,
+        message: newMessage,
+        user: currentUser.id,
+        chatId: chat.id,
+        timestamp: new Date().toISOString(),
+        type: 'text',
+        status: 'sent'
+      };
+      
+      sendMessage(messageData);
+      setNewMessage('');
+      setMessages(prev => [...prev, messageData]);
     }
-  }
+  };
 
   return (
     <div className="flex flex-col h-full">
       {/* Chat Header */}
-      <div className="p-4 border-b flex items-center justify-between bg-background">
-        <div className="font-semibold">{activeChat?.name}</div>
-        <div className="flex items-center space-x-2">
-          <Button variant="ghost" size="icon">
-            <PaperclipIcon className="h-5 w-5" />
-          </Button>
-          {/* <Button variant="ghost" size="icon">
-            <Smile className="h-5 w-5" />
-          </Button> */}
+      <div className="p-4 border-b">
+        <div className="flex items-center gap-3">
+          {chat.type === 'group' ? (
+            <div className="flex items-center">
+              {/* Group avatar and name */}
+              <div className="font-semibold">{chat.name}</div>
+              <div className="text-sm text-muted-foreground">
+                {chat.members.length} members
+              </div>
+            </div>
+          ) : (
+            <div className="flex items-center">
+              {/* Individual chat header */}
+              <div className="font-semibold">{chat.name}</div>
+            </div>
+          )}
         </div>
       </div>
 
       {/* Messages Area */}
-      <ScrollArea className="flex-1 p-4">
-        <div className="space-y-4">
-          <div className="bg-accent p-2 rounded-lg max-w-[70%] ml-auto">
-            Hello! How are you?
+      <div className="flex-1 overflow-y-auto p-4">
+        {messages.map((msg) => (
+          <MessageBubble
+            key={msg.id}
+            message={msg}
+            isOwn={msg.user === currentUser.id}
+            chat={chat}
+          />
+        ))}
+        
+        {typingUsers.size > 0 && (
+          <div className="text-sm text-muted-foreground italic">
+            {Array.from(typingUsers).map(userId => {
+              const user = chat.members.find(m => m === userId);
+              return user;
+            }).join(', ')} is typing...
           </div>
-          <div className="bg-muted p-2 rounded-lg max-w-[70%]">
-            Hi! I'm doing great, thanks for asking. How about you?
-          </div>
-        </div>
-      </ScrollArea>
+        )}
+      </div>
 
-      {/* Input Area */}
-      <div className="p-4 border-t flex items-center space-x-2 bg-background">
-        <Button variant="ghost" size="icon" className="hidden sm:inline-flex">
-          <Smile className="h-5 w-5" />
-        </Button>
-        <Input
-          placeholder="Type a message"
-          value={message}
-          onChange={(e) => setMessage(e.target.value)}
-          onKeyPress={(e) => e.key === "Enter" && handleSendMessage()}
-          className="flex-1"
-        />
-        <Button variant="ghost" size="icon">
-            <PaperclipIcon className="h-5 w-5" />
-          </Button>
-        <Button variant="ghost" size="icon" onClick={handleSendMessage}>
-          <Send className="h-5 w-5" />
-        </Button>
+      {/* Message Input */}
+      <div className="p-4 border-t">
+        <div className="flex gap-2">
+          <Input
+            value={newMessage}
+            onChange={(e) => {
+              setNewMessage(e.target.value);
+              socket?.emit('typing', { 
+                chatId: chat.id, 
+                user: currentUser 
+              });
+            }}
+            onKeyPress={(e) => {
+              if (e.key === 'Enter') handleSendMessage();
+            }}
+            placeholder="Type a message..."
+          />
+          <Button onClick={handleSendMessage}>Send</Button>
+        </div>
       </div>
     </div>
-  )
-}
+  );
+};
+
+const MessageBubble = ({ message, isOwn, chat }: { 
+  message: MessageType, 
+  isOwn: boolean,
+  chat: ChatType
+}) => {
+  return (
+    <div className={`mb-4 ${isOwn ? 'text-right' : 'text-left'}`}>
+      <div className={`inline-block max-w-[70%] p-2 rounded-lg ${
+        isOwn ? 'bg-primary text-primary-foreground' : 'bg-muted'
+      }`}>
+        {/* Show sender name in group chats */}
+        {chat.type === 'group' && !isOwn && (
+          <div className="text-xs font-semibold mb-1">
+            {message.user}
+          </div>
+        )}
+        <div>{message.message}</div>
+        <div className="text-xs mt-1 opacity-70">
+          {new Date(message.timestamp).toLocaleTimeString()}
+          {/* Message status indicators */}
+          {isOwn && (
+            <span className="ml-2">
+              {message.status === 'sent' && '✓'}
+              {message.status === 'delivered' && '✓✓'}
+              {message.status === 'read' && '✓✓'}
+            </span>
+          )}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default ChatInterface;
+

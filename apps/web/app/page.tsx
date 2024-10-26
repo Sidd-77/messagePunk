@@ -2,6 +2,7 @@
 import { Button } from '@/components/ui/button';
 import { FiShield, FiMessageCircle, FiUsers } from 'react-icons/fi';
 import { useRouter } from 'next/navigation';
+import "./globals.css";
 
 export default function Home() {
   const router = useRouter();
@@ -13,7 +14,7 @@ export default function Home() {
           <h1 className="text-2xl font-bold">ChatSecure</h1>
           <div className="space-x-4">
             <Button variant="outline" onClick={()=>router.push("/sign-in")}>Login</Button>
-            <Button  onClick={()=>router.push("/sign-in")}>Get Started</Button>
+            <Button variant={"default"} onClick={()=>router.push("/sign-in")}>Get Started</Button>
           </div>
         </div>
       </nav>
@@ -24,7 +25,7 @@ export default function Home() {
           <h1 className="text-5xl font-extrabold">Chat with Confidence</h1>
           <p className="mt-4 text-lg">End-to-end encryption, real-time messaging, and group chat—everything you need in a secure chat app.</p>
           <div className="mt-8">
-            <Button className="px-6 py-3 text-lg font-semibold" variant="solid" onClick={()=>router.push("/sign-in")} >
+            <Button className="px-6 py-3 text-lg font-semibold" variant={"default"} onClick={()=>router.push("/sign-in")} >
               Get Started
             </Button>
           </div>
@@ -66,7 +67,7 @@ export default function Home() {
           <h2 className="text-4xl font-bold">Ready to Get Started?</h2>
           <p className="mt-4">Experience secure, real-time communication with ChatSecure.</p>
           <div className="mt-8">
-            <Button className="px-6 py-3 text-lg font-semibold bg-white text-blue-600" variant="solid">
+            <Button className="px-6 py-3 text-lg font-semibold bg-white text-blue-600" variant={"default"}>
               Join Now
             </Button>
           </div>

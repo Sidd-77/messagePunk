@@ -8,19 +8,76 @@ import { Separator } from "@/components/ui/separator";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { ModeToggle } from "@/components/mode-toggle";
 import ChatInterface from "@/components/chat-interface";
-import { Search, UserCircle, Menu, X, User } from "lucide-react";
-import { UserInfo } from "@/components/user-info-modal";
+import { Search, UserCircle, Menu, X } from "lucide-react";
 import { UserButton } from "@clerk/nextjs";
-
+import { useSocket } from "@/context/SocketProvider";
+import { ChatType, User } from "@/types";
+import { useUser } from "@clerk/nextjs";
 export default function Home() {
-  const [activeChat, setActiveChat] = useState<string | null>(null);
+  const [activeChat, setActiveChat] = useState<ChatType | null>(null);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const { socket, isConnected } = useSocket();
+  const { user } = useUser();
 
+  const currentUser:User = {
+    id: user?.id || "",
+    name: user?.fullName || "",
+    avatar: "",
+    email: user?.primaryEmailAddress?.emailAddress || "",
+  }
 
-  const chats = [
-    { id: "1", name: "Alice", lastMessage: "Hey, how are you?" },
-    { id: "2", name: "Bob", lastMessage: "Did you see the game last night?" },
-    { id: "3", name: "Group: Family", lastMessage: "Mom: Dinner at 7!" },
+  useEffect(() => {
+  }, [socket]);
+
+  const chats:ChatType[] = [
+    {
+      id: "1",
+      type: "personal",
+      name: "John Doe",
+      members: ["1", "2"],
+      createdAt: "2021-08-01T12:00:00Z",
+      lastMessage: {
+        id: "1",
+        message: "Hey there",
+        user: "1",
+        chatId: "1",
+        timestamp: "2021-08-01T12:01:00Z",
+        type: "text",
+        status: "sent",
+      },
+    },
+    {
+      id: "2",
+      type: "personal",
+      name: "Jane Doe",
+      members: ["1", "3"],
+      createdAt: "2021-08-01T12:00:00Z",
+      lastMessage: {
+        id: "2",
+        message: "Hello",
+        user: "3",
+        chatId: "2",
+        timestamp: "2021-08-01T12:01:00Z",
+        type: "text",
+        status: "sent",
+      },
+    },
+    {
+      id: "3",
+      type: "group",
+      name: "Group Chat",
+      members: ["1", "2", "3"],
+      createdAt: "2021-08-01T12:00:00Z",
+      lastMessage: {
+        id: "3",
+        message: "Welcome to the group",
+        user: "1",
+        chatId: "3",
+        timestamp: "2021-08-01T12:01:00Z",
+        type: "text",
+        status: "sent",
+      },
+    },
   ];
 
   const toggleSidebar = () => setIsSidebarOpen(!isSidebarOpen);
@@ -79,13 +136,13 @@ export default function Home() {
                   key={chat.id}
                   className="p-4 cursor-pointer hover:bg-accent"
                   onClick={() => {
-                    setActiveChat(chat.id);
+                    setActiveChat(chat);
                     setIsSidebarOpen(false);
                   }}
                 >
                   <div className="font-semibold">{chat.name}</div>
                   <div className="text-sm text-muted-foreground">
-                    {chat.lastMessage}
+                    {/* {chat?.lastMessage} */}
                   </div>
                   <Separator className="mt-2" />
                 </div>
@@ -103,7 +160,7 @@ export default function Home() {
       {/* Main Chat Area */}
       <div className="flex-1 md:ml-0">
         {activeChat ? (
-          <ChatInterface chatId={activeChat} chats={chats} />
+          <ChatInterface chat={activeChat} currentUser={currentUser} />
         ) : (
           <div className="flex-1 flex items-center justify-center text-muted-foreground">
             Select a chat to start messaging
