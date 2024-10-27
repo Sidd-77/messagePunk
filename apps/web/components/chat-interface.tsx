@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react';
 import { useSocket } from '@/context/SocketProvider';
-import { MessageType, ChatType, User } from '@/types';
+import { MessageType, ChatType, UserType } from '@/types';
 import { Button } from './ui/button';
 import { Input } from './ui/input';
 
 interface ChatInterfaceProps {
   chat: ChatType;
-  currentUser: User;
+  currentUser: UserType;
 }
 
 const ChatInterface = ({ chat, currentUser }: ChatInterfaceProps) => {

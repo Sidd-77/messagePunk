@@ -11,7 +11,7 @@ import ChatInterface from "@/components/chat-interface";
 import { Search, UserCircle, Menu, X } from "lucide-react";
 import { UserButton } from "@clerk/nextjs";
 import { useSocket } from "@/context/SocketProvider";
-import { ChatType, User } from "@/types";
+import { ChatType, UserType } from "@/types";
 import { useUser } from "@clerk/nextjs";
 export default function Home() {
   const [activeChat, setActiveChat] = useState<ChatType | null>(null);
@@ -19,7 +19,7 @@ export default function Home() {
   const { socket, isConnected } = useSocket();
   const { user } = useUser();
 
-  const currentUser:User = {
+  const currentUser:UserType = {
     id: user?.id || "",
     name: user?.fullName || "",
     avatar: "",
