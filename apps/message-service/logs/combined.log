@@ -1,0 +1,476 @@
+2024-10-26T21:24:42.395Z [[32minfo[39m]: Socket service initialiazing
+2024-10-26T21:27:32.608Z [[32minfo[39m]: Socket service initialiazing
+2024-10-26T21:27:55.325Z [[32minfo[39m]: Socket service initialiazing
+2024-10-26T21:28:01.256Z [[32minfo[39m]: Socket service initialiazing
+2024-10-26T21:31:50.931Z [[32minfo[39m]: Socket service initialiazing
+2024-10-26T21:32:09.792Z [[32minfo[39m]: Socket service initialiazing
+2024-10-26T21:32:09.799Z [[32minfo[39m]: Socket service listening
+2024-10-26T21:34:57.766Z [[32minfo[39m]: user connected
+2024-10-27T14:20:00Z [[32minfo[39m]: Message received:  Hello, how are you?
+2024-10-27T14:20:00Z [[32minfo[39m]: Message published:  Hello, how are you?
+2024-10-26T21:37:21.034Z [[32minfo[39m]: Message received from Redis: 
+2024-10-26T21:38:34.135Z [[32minfo[39m]: Socket service initialiazing
+2024-10-26T21:38:34.142Z [[32minfo[39m]: Socket service listening
+2024-10-26T21:38:43.821Z [[32minfo[39m]: user connected
+2024-10-27T14:20:00Z [[32minfo[39m]: Message received:  Hello, how are you?
+2024-10-26T21:38:46.555Z [[32minfo[39m]: Message stringified: 
+2024-10-27T14:20:00Z [[32minfo[39m]: Message published:  Hello, how are you?
+2024-10-26T21:38:46.702Z [[32minfo[39m]: Message received from Redis: 
+2024-10-26T21:39:52.614Z [[32minfo[39m]: Socket service initialiazing
+2024-10-26T21:39:52.621Z [[32minfo[39m]: Socket service listening
+2024-10-26T21:39:56.350Z [[32minfo[39m]: user connected
+2024-10-27T14:20:00Z [[32minfo[39m]: Message received:  Hello, how are you?
+2024-10-26T21:39:58.732Z [[32minfo[39m]: Message stringified: 
+2024-10-26T21:39:58.819Z [[32minfo[39m]: Message received from Redis: 
+2024-10-27T14:20:00Z [[32minfo[39m]: Message published:  Hello, how are you?
+2024-10-26T21:40:25.824Z [[32minfo[39m]: user connected
+2024-10-26T21:40:29.735Z [[32minfo[39m]: user connected
+2024-10-27T14:20:00Z [[32minfo[39m]: Message received:  Hello, how are you?
+2024-10-26T21:40:32.771Z [[32minfo[39m]: Message stringified: 
+2024-10-26T21:40:32.870Z [[32minfo[39m]: Message received from Redis: 
+2024-10-27T14:20:00Z [[32minfo[39m]: Message published:  Hello, how are you?
+2024-10-27T14:20:00Z [[32minfo[39m]: Message received:  Hello, how are you?
+2024-10-26T21:41:00.461Z [[32minfo[39m]: Message stringified: 
+2024-10-26T21:41:00.543Z [[32minfo[39m]: Message received from Redis: 
+2024-10-27T14:20:00Z [[32minfo[39m]: Message published:  Hello, how are you?
+2024-10-26T21:55:12.349Z [[32minfo[39m]: Socket service initialiazing
+2024-10-26T21:55:12.356Z [[32minfo[39m]: Socket service listening
+2024-10-26T21:55:43.522Z [[32minfo[39m]: user connected
+2024-10-26T21:56:19.917Z [[32minfo[39m]: user connected
+2024-10-26T21:56:23.421Z [[32minfo[39m]: user connected
+2024-10-26T21:56:26.944Z [[32minfo[39m]: user connected
+2024-10-26T21:56:28.177Z [[32minfo[39m]: user connected
+2024-10-26T21:56:29.281Z [[32minfo[39m]: user connected
+2024-10-26T21:56:31.255Z [[32minfo[39m]: user connected
+2024-10-26T21:56:34.862Z [[32minfo[39m]: user connected
+2024-10-26T21:56:39.819Z [[32minfo[39m]: user connected
+2024-10-26T21:56:42.856Z [[32minfo[39m]: user connected
+2024-10-26T21:56:55.583Z [[32minfo[39m]: user connected
+2024-10-26T22:00:21.944Z [[32minfo[39m]: user connected
+2024-10-26T22:00:48.261Z [[32minfo[39m]: Message received:  [object Object]
+2024-10-26T22:00:48.264Z [[32minfo[39m]: Message stringified: 
+2024-10-26T22:00:48.357Z [[32minfo[39m]: Message received from Redis: 
+2024-10-26T22:00:48.358Z [[32minfo[39m]: Message published:  [object Object]
+2024-10-26T22:00:48.376Z [[32minfo[39m]: Message received:  [object Object]
+2024-10-26T22:00:48.377Z [[32minfo[39m]: Message stringified: 
+2024-10-26T22:00:48.466Z [[32minfo[39m]: Message received from Redis: 
+2024-10-26T22:00:48.466Z [[32minfo[39m]: Message published:  [object Object]
+2024-10-26T22:00:48.482Z [[32minfo[39m]: Message received:  [object Object]
+2024-10-26T22:00:48.482Z [[32minfo[39m]: Message stringified: 
+2024-10-26T22:00:48.568Z [[32minfo[39m]: Message received from Redis: 
+2024-10-26T22:00:48.568Z [[32minfo[39m]: Message published:  [object Object]
+2024-10-26T22:00:48.582Z [[32minfo[39m]: Message received:  [object Object]
+2024-10-26T22:00:48.583Z [[32minfo[39m]: Message stringified: 
+2024-10-26T22:00:48.668Z [[32minfo[39m]: Message received from Redis: 
+2024-10-26T22:00:48.668Z [[32minfo[39m]: Message published:  [object Object]
+2024-10-26T22:00:48.682Z [[32minfo[39m]: Message received:  [object Object]
+2024-10-26T22:00:48.683Z [[32minfo[39m]: Message stringified: 
+2024-10-26T22:00:48.768Z [[32minfo[39m]: Message received from Redis: 
+2024-10-26T22:00:48.769Z [[32minfo[39m]: Message published:  [object Object]
+2024-10-26T22:00:48.785Z [[32minfo[39m]: Message received:  [object Object]
+2024-10-26T22:00:48.785Z [[32minfo[39m]: Message stringified: 
+2024-10-26T22:00:48.868Z [[32minfo[39m]: Message received from Redis: 
+2024-10-26T22:00:48.868Z [[32minfo[39m]: Message published:  [object Object]
+2024-10-26T22:00:48.882Z [[32minfo[39m]: Message received:  [object Object]
+2024-10-26T22:00:48.883Z [[32minfo[39m]: Message stringified: 
+2024-10-26T22:00:48.968Z [[32minfo[39m]: Message received from Redis: 
+2024-10-26T22:00:48.968Z [[32minfo[39m]: Message published:  [object Object]
+2024-10-26T22:00:48.983Z [[32minfo[39m]: Message received:  [object Object]
+2024-10-26T22:00:48.983Z [[32minfo[39m]: Message stringified: 
+2024-10-26T22:00:49.068Z [[32minfo[39m]: Message received from Redis: 
+2024-10-26T22:00:49.068Z [[32minfo[39m]: Message published:  [object Object]
+2024-10-26T22:00:49.080Z [[32minfo[39m]: Message received:  [object Object]
+2024-10-26T22:00:49.081Z [[32minfo[39m]: Message stringified: 
+2024-10-26T22:00:49.158Z [[32minfo[39m]: Message received from Redis: 
+2024-10-26T22:00:49.160Z [[32minfo[39m]: Message published:  [object Object]
+2024-10-26T22:00:49.177Z [[32minfo[39m]: Message received:  [object Object]
+2024-10-26T22:00:49.178Z [[32minfo[39m]: Message stringified: 
+2024-10-26T22:00:49.258Z [[32minfo[39m]: Message received from Redis: 
+2024-10-26T22:00:49.258Z [[32minfo[39m]: Message published:  [object Object]
+2024-10-26T22:00:49.268Z [[32minfo[39m]: Message received:  [object Object]
+2024-10-26T22:00:49.269Z [[32minfo[39m]: Message stringified: 
+2024-10-26T22:00:49.348Z [[32minfo[39m]: Message received from Redis: 
+2024-10-26T22:00:49.348Z [[32minfo[39m]: Message published:  [object Object]
+2024-10-26T22:00:49.369Z [[32minfo[39m]: Message received:  [object Object]
+2024-10-26T22:00:49.369Z [[32minfo[39m]: Message stringified: 
+2024-10-26T22:00:49.448Z [[32minfo[39m]: Message received from Redis: 
+2024-10-26T22:00:49.450Z [[32minfo[39m]: Message published:  [object Object]
+2024-10-26T22:00:49.467Z [[32minfo[39m]: Message received:  [object Object]
+2024-10-26T22:00:49.468Z [[32minfo[39m]: Message stringified: 
+2024-10-26T22:00:49.548Z [[32minfo[39m]: Message received from Redis: 
+2024-10-26T22:00:49.548Z [[32minfo[39m]: Message published:  [object Object]
+2024-10-26T22:00:49.562Z [[32minfo[39m]: Message received:  [object Object]
+2024-10-26T22:00:49.562Z [[32minfo[39m]: Message stringified: 
+2024-10-26T22:00:49.648Z [[32minfo[39m]: Message received from Redis: 
+2024-10-26T22:00:49.649Z [[32minfo[39m]: Message published:  [object Object]
+2024-10-26T22:00:49.683Z [[32minfo[39m]: Message received:  [object Object]
+2024-10-26T22:00:49.684Z [[32minfo[39m]: Message stringified: 
+2024-10-26T22:00:49.768Z [[32minfo[39m]: Message received from Redis: 
+2024-10-26T22:00:49.770Z [[32minfo[39m]: Message published:  [object Object]
+2024-10-26T22:00:49.789Z [[32minfo[39m]: Message received:  [object Object]
+2024-10-26T22:00:49.790Z [[32minfo[39m]: Message stringified: 
+2024-10-26T22:00:49.868Z [[32minfo[39m]: Message received from Redis: 
+2024-10-26T22:00:49.869Z [[32minfo[39m]: Message published:  [object Object]
+2024-10-26T22:00:49.881Z [[32minfo[39m]: Message received:  [object Object]
+2024-10-26T22:00:49.882Z [[32minfo[39m]: Message stringified: 
+2024-10-26T22:00:49.958Z [[32minfo[39m]: Message received from Redis: 
+2024-10-26T22:00:49.958Z [[32minfo[39m]: Message published:  [object Object]
+2024-10-26T22:00:49.969Z [[32minfo[39m]: Message received:  [object Object]
+2024-10-26T22:00:49.970Z [[32minfo[39m]: Message stringified: 
+2024-10-26T22:00:50.048Z [[32minfo[39m]: Message received from Redis: 
+2024-10-26T22:00:50.049Z [[32minfo[39m]: Message published:  [object Object]
+2024-10-26T22:00:50.071Z [[32minfo[39m]: Message received:  [object Object]
+2024-10-26T22:00:50.071Z [[32minfo[39m]: Message stringified: 
+2024-10-26T22:00:50.148Z [[32minfo[39m]: Message received from Redis: 
+2024-10-26T22:00:50.150Z [[32minfo[39m]: Message published:  [object Object]
+2024-10-26T22:00:50.162Z [[32minfo[39m]: Message received:  [object Object]
+2024-10-26T22:00:50.163Z [[32minfo[39m]: Message stringified: 
+2024-10-26T22:00:50.248Z [[32minfo[39m]: Message received from Redis: 
+2024-10-26T22:00:50.250Z [[32minfo[39m]: Message published:  [object Object]
+2024-10-26T22:00:50.270Z [[32minfo[39m]: Message received:  [object Object]
+2024-10-26T22:00:50.270Z [[32minfo[39m]: Message stringified: 
+2024-10-26T22:00:50.343Z [[32minfo[39m]: Message published:  [object Object]
+2024-10-26T22:00:50.343Z [[32minfo[39m]: Message received from Redis: 
+2024-10-26T22:00:50.355Z [[32minfo[39m]: Message received:  [object Object]
+2024-10-26T22:00:50.355Z [[32minfo[39m]: Message stringified: 
+2024-10-26T22:00:50.428Z [[32minfo[39m]: Message received from Redis: 
+2024-10-26T22:00:50.428Z [[32minfo[39m]: Message published:  [object Object]
+2024-10-26T22:00:50.439Z [[32minfo[39m]: Message received:  [object Object]
+2024-10-26T22:00:50.440Z [[32minfo[39m]: Message stringified: 
+2024-10-26T22:00:50.526Z [[32minfo[39m]: Message received from Redis: 
+2024-10-26T22:00:50.527Z [[32minfo[39m]: Message published:  [object Object]
+2024-10-26T22:00:50.541Z [[32minfo[39m]: Message received:  [object Object]
+2024-10-26T22:00:50.541Z [[32minfo[39m]: Message stringified: 
+2024-10-26T22:00:50.626Z [[32minfo[39m]: Message received from Redis: 
+2024-10-26T22:00:50.627Z [[32minfo[39m]: Message published:  [object Object]
+2024-10-26T22:00:50.647Z [[32minfo[39m]: Message received:  [object Object]
+2024-10-26T22:00:50.648Z [[32minfo[39m]: Message stringified: 
+2024-10-26T22:00:50.728Z [[32minfo[39m]: Message received from Redis: 
+2024-10-26T22:00:50.729Z [[32minfo[39m]: Message published:  [object Object]
+2024-10-26T22:00:50.743Z [[32minfo[39m]: Message received:  [object Object]
+2024-10-26T22:00:50.743Z [[32minfo[39m]: Message stringified: 
+2024-10-26T22:00:50.828Z [[32minfo[39m]: Message received from Redis: 
+2024-10-26T22:00:50.828Z [[32minfo[39m]: Message published:  [object Object]
+2024-10-26T22:00:50.843Z [[32minfo[39m]: Message received:  [object Object]
+2024-10-26T22:00:50.843Z [[32minfo[39m]: Message stringified: 
+2024-10-26T22:00:50.928Z [[32minfo[39m]: Message received from Redis: 
+2024-10-26T22:00:50.929Z [[32minfo[39m]: Message published:  [object Object]
+2024-10-26T22:00:50.953Z [[32minfo[39m]: Message received:  [object Object]
+2024-10-26T22:00:50.953Z [[32minfo[39m]: Message stringified: 
+2024-10-26T22:00:51.038Z [[32minfo[39m]: Message received from Redis: 
+2024-10-26T22:00:51.038Z [[32minfo[39m]: Message published:  [object Object]
+2024-10-26T22:00:51.050Z [[32minfo[39m]: Message received:  [object Object]
+2024-10-26T22:00:51.051Z [[32minfo[39m]: Message stringified: 
+2024-10-26T22:00:51.128Z [[32minfo[39m]: Message received from Redis: 
+2024-10-26T22:00:51.128Z [[32minfo[39m]: Message published:  [object Object]
+2024-10-26T22:00:51.138Z [[32minfo[39m]: Message received:  [object Object]
+2024-10-26T22:00:51.139Z [[32minfo[39m]: Message stringified: 
+2024-10-26T22:00:51.218Z [[32minfo[39m]: Message received from Redis: 
+2024-10-26T22:00:51.218Z [[32minfo[39m]: Message published:  [object Object]
+2024-10-26T22:00:51.230Z [[32minfo[39m]: Message received:  [object Object]
+2024-10-26T22:00:51.230Z [[32minfo[39m]: Message stringified: 
+2024-10-26T22:00:51.308Z [[32minfo[39m]: Message received from Redis: 
+2024-10-26T22:00:51.308Z [[32minfo[39m]: Message published:  [object Object]
+2024-10-26T22:00:51.320Z [[32minfo[39m]: Message received:  [object Object]
+2024-10-26T22:00:51.320Z [[32minfo[39m]: Message stringified: 
+2024-10-26T22:00:51.398Z [[32minfo[39m]: Message received from Redis: 
+2024-10-26T22:00:51.398Z [[32minfo[39m]: Message published:  [object Object]
+2024-10-26T22:00:51.411Z [[32minfo[39m]: Message received:  [object Object]
+2024-10-26T22:00:51.411Z [[32minfo[39m]: Message stringified: 
+2024-10-26T22:00:51.496Z [[32minfo[39m]: Message received from Redis: 
+2024-10-26T22:00:51.497Z [[32minfo[39m]: Message published:  [object Object]
+2024-10-26T22:00:51.514Z [[32minfo[39m]: Message received:  [object Object]
+2024-10-26T22:00:51.515Z [[32minfo[39m]: Message stringified: 
+2024-10-26T22:00:51.598Z [[32minfo[39m]: Message received from Redis: 
+2024-10-26T22:00:51.599Z [[32minfo[39m]: Message published:  [object Object]
+2024-10-26T22:00:51.613Z [[32minfo[39m]: Message received:  [object Object]
+2024-10-26T22:00:51.614Z [[32minfo[39m]: Message stringified: 
+2024-10-26T22:00:51.699Z [[32minfo[39m]: Message received from Redis: 
+2024-10-26T22:00:51.699Z [[32minfo[39m]: Message published:  [object Object]
+2024-10-26T22:00:51.711Z [[32minfo[39m]: Message received:  [object Object]
+2024-10-26T22:00:51.711Z [[32minfo[39m]: Message stringified: 
+2024-10-26T22:00:51.789Z [[32minfo[39m]: Message received from Redis: 
+2024-10-26T22:00:51.789Z [[32minfo[39m]: Message published:  [object Object]
+2024-10-26T22:00:51.800Z [[32minfo[39m]: Message received:  [object Object]
+2024-10-26T22:00:51.800Z [[32minfo[39m]: Message stringified: 
+2024-10-26T22:00:51.878Z [[32minfo[39m]: Message received from Redis: 
+2024-10-26T22:00:51.878Z [[32minfo[39m]: Message published:  [object Object]
+2024-10-26T22:00:51.890Z [[32minfo[39m]: Message received:  [object Object]
+2024-10-26T22:00:51.891Z [[32minfo[39m]: Message stringified: 
+2024-10-26T22:00:51.968Z [[32minfo[39m]: Message received from Redis: 
+2024-10-26T22:00:51.969Z [[32minfo[39m]: Message published:  [object Object]
+2024-10-26T22:00:52.000Z [[32minfo[39m]: Message received:  [object Object]
+2024-10-26T22:00:52.001Z [[32minfo[39m]: Message stringified: 
+2024-10-26T22:00:52.090Z [[32minfo[39m]: Message received from Redis: 
+2024-10-26T22:00:52.092Z [[32minfo[39m]: Message published:  [object Object]
+2024-10-26T22:00:52.178Z [[32minfo[39m]: Message received:  [object Object]
+2024-10-26T22:00:52.181Z [[32minfo[39m]: Message stringified: 
+2024-10-26T22:00:52.258Z [[32minfo[39m]: Message received from Redis: 
+2024-10-26T22:00:52.259Z [[32minfo[39m]: Message published:  [object Object]
+2024-10-26T22:00:52.275Z [[32minfo[39m]: Message received:  [object Object]
+2024-10-26T22:00:52.276Z [[32minfo[39m]: Message stringified: 
+2024-10-26T22:00:52.359Z [[32minfo[39m]: Message received from Redis: 
+2024-10-26T22:00:52.360Z [[32minfo[39m]: Message published:  [object Object]
+2024-10-26T22:00:52.386Z [[32minfo[39m]: Message received:  [object Object]
+2024-10-26T22:00:52.387Z [[32minfo[39m]: Message stringified: 
+2024-10-26T22:00:52.468Z [[32minfo[39m]: Message received from Redis: 
+2024-10-26T22:00:52.469Z [[32minfo[39m]: Message published:  [object Object]
+2024-10-26T22:00:52.488Z [[32minfo[39m]: Message received:  [object Object]
+2024-10-26T22:00:52.488Z [[32minfo[39m]: Message stringified: 
+2024-10-26T22:00:52.568Z [[32minfo[39m]: Message received from Redis: 
+2024-10-26T22:00:52.569Z [[32minfo[39m]: Message published:  [object Object]
+2024-10-26T22:00:52.587Z [[32minfo[39m]: Message received:  [object Object]
+2024-10-26T22:00:52.588Z [[32minfo[39m]: Message stringified: 
+2024-10-26T22:00:52.668Z [[32minfo[39m]: Message received from Redis: 
+2024-10-26T22:00:52.669Z [[32minfo[39m]: Message published:  [object Object]
+2024-10-26T22:00:52.683Z [[32minfo[39m]: Message received:  [object Object]
+2024-10-26T22:00:52.684Z [[32minfo[39m]: Message stringified: 
+2024-10-26T22:00:52.768Z [[32minfo[39m]: Message published:  [object Object]
+2024-10-26T22:00:52.776Z [[32minfo[39m]: Message received from Redis: 
+2024-10-26T22:00:52.798Z [[32minfo[39m]: Message received:  [object Object]
+2024-10-26T22:00:52.799Z [[32minfo[39m]: Message stringified: 
+2024-10-26T22:00:52.882Z [[32minfo[39m]: Message received from Redis: 
+2024-10-26T22:00:52.883Z [[32minfo[39m]: Message published:  [object Object]
+2024-10-26T22:00:52.902Z [[32minfo[39m]: Message received:  [object Object]
+2024-10-26T22:00:52.902Z [[32minfo[39m]: Message stringified: 
+2024-10-26T22:00:52.988Z [[32minfo[39m]: Message received from Redis: 
+2024-10-26T22:00:52.989Z [[32minfo[39m]: Message published:  [object Object]
+2024-10-26T22:00:53.015Z [[32minfo[39m]: Message received:  [object Object]
+2024-10-26T22:00:53.015Z [[32minfo[39m]: Message stringified: 
+2024-10-26T22:00:53.098Z [[32minfo[39m]: Message received from Redis: 
+2024-10-26T22:00:53.099Z [[32minfo[39m]: Message published:  [object Object]
+2024-10-26T22:00:53.117Z [[32minfo[39m]: Message received:  [object Object]
+2024-10-26T22:00:53.118Z [[32minfo[39m]: Message stringified: 
+2024-10-26T22:00:53.198Z [[32minfo[39m]: Message received from Redis: 
+2024-10-26T22:00:53.199Z [[32minfo[39m]: Message published:  [object Object]
+2024-10-26T22:00:53.226Z [[32minfo[39m]: Message received:  [object Object]
+2024-10-26T22:00:53.227Z [[32minfo[39m]: Message stringified: 
+2024-10-26T22:00:53.308Z [[32minfo[39m]: Message received from Redis: 
+2024-10-26T22:00:53.309Z [[32minfo[39m]: Message published:  [object Object]
+2024-10-26T22:00:53.329Z [[32minfo[39m]: Message received:  [object Object]
+2024-10-26T22:00:53.330Z [[32minfo[39m]: Message stringified: 
+2024-10-26T22:00:53.416Z [[32minfo[39m]: Message received from Redis: 
+2024-10-26T22:00:53.417Z [[32minfo[39m]: Message published:  [object Object]
+2024-10-26T22:00:53.431Z [[32minfo[39m]: Message received:  [object Object]
+2024-10-26T22:00:53.431Z [[32minfo[39m]: Message stringified: 
+2024-10-26T22:00:53.508Z [[32minfo[39m]: Message received from Redis: 
+2024-10-26T22:00:53.510Z [[32minfo[39m]: Message published:  [object Object]
+2024-10-26T22:00:53.529Z [[32minfo[39m]: Message received:  [object Object]
+2024-10-26T22:00:53.529Z [[32minfo[39m]: Message stringified: 
+2024-10-26T22:00:53.608Z [[32minfo[39m]: Message received from Redis: 
+2024-10-26T22:00:53.609Z [[32minfo[39m]: Message published:  [object Object]
+2024-10-26T22:00:53.639Z [[32minfo[39m]: Message received:  [object Object]
+2024-10-26T22:00:53.640Z [[32minfo[39m]: Message stringified: 
+2024-10-26T22:00:53.718Z [[32minfo[39m]: Message received from Redis: 
+2024-10-26T22:00:53.719Z [[32minfo[39m]: Message published:  [object Object]
+2024-10-26T22:00:53.737Z [[32minfo[39m]: Message received:  [object Object]
+2024-10-26T22:00:53.737Z [[32minfo[39m]: Message stringified: 
+2024-10-26T22:00:53.818Z [[32minfo[39m]: Message received from Redis: 
+2024-10-26T22:00:53.819Z [[32minfo[39m]: Message published:  [object Object]
+2024-10-26T22:00:53.835Z [[32minfo[39m]: Message received:  [object Object]
+2024-10-26T22:00:53.835Z [[32minfo[39m]: Message stringified: 
+2024-10-26T22:00:53.918Z [[32minfo[39m]: Message received from Redis: 
+2024-10-26T22:00:53.919Z [[32minfo[39m]: Message published:  [object Object]
+2024-10-26T22:00:53.934Z [[32minfo[39m]: Message received:  [object Object]
+2024-10-26T22:00:53.934Z [[32minfo[39m]: Message stringified: 
+2024-10-26T22:00:54.018Z [[32minfo[39m]: Message received from Redis: 
+2024-10-26T22:00:54.019Z [[32minfo[39m]: Message published:  [object Object]
+2024-10-26T22:00:54.046Z [[32minfo[39m]: Message received:  [object Object]
+2024-10-26T22:00:54.046Z [[32minfo[39m]: Message stringified: 
+2024-10-26T22:00:54.128Z [[32minfo[39m]: Message received from Redis: 
+2024-10-26T22:00:54.129Z [[32minfo[39m]: Message published:  [object Object]
+2024-10-26T22:00:54.156Z [[32minfo[39m]: Message received:  [object Object]
+2024-10-26T22:00:54.157Z [[32minfo[39m]: Message stringified: 
+2024-10-26T22:00:54.238Z [[32minfo[39m]: Message received from Redis: 
+2024-10-26T22:00:54.239Z [[32minfo[39m]: Message published:  [object Object]
+2024-10-26T22:00:54.261Z [[32minfo[39m]: Message received:  [object Object]
+2024-10-26T22:00:54.261Z [[32minfo[39m]: Message stringified: 
+2024-10-26T22:00:54.338Z [[32minfo[39m]: Message received from Redis: 
+2024-10-26T22:00:54.339Z [[32minfo[39m]: Message published:  [object Object]
+2024-10-26T22:00:54.371Z [[32minfo[39m]: Message received:  [object Object]
+2024-10-26T22:00:54.372Z [[32minfo[39m]: Message stringified: 
+2024-10-26T22:00:54.448Z [[32minfo[39m]: Message received from Redis: 
+2024-10-26T22:00:54.449Z [[32minfo[39m]: Message published:  [object Object]
+2024-10-26T22:00:54.467Z [[32minfo[39m]: Message received:  [object Object]
+2024-10-26T22:00:54.468Z [[32minfo[39m]: Message stringified: 
+2024-10-26T22:00:54.548Z [[32minfo[39m]: Message received from Redis: 
+2024-10-26T22:00:54.549Z [[32minfo[39m]: Message published:  [object Object]
+2024-10-26T22:00:54.577Z [[32minfo[39m]: Message received:  [object Object]
+2024-10-26T22:00:54.578Z [[32minfo[39m]: Message stringified: 
+2024-10-26T22:00:54.658Z [[32minfo[39m]: Message received from Redis: 
+2024-10-26T22:00:54.659Z [[32minfo[39m]: Message published:  [object Object]
+2024-10-26T22:00:54.675Z [[32minfo[39m]: Message received:  [object Object]
+2024-10-26T22:00:54.676Z [[32minfo[39m]: Message stringified: 
+2024-10-26T22:23:51.662Z [[32minfo[39m]: Socket service initializing
+2024-10-26T22:23:51.670Z [[32minfo[39m]: Socket service listening
+2024-10-26T22:23:56.493Z [[32minfo[39m]: User connected:
+2024-10-26T22:24:00.001Z [[32minfo[39m]: User connected:
+2024-10-26T22:24:02.001Z [[32minfo[39m]: User connected:
+2024-10-26T22:26:32.354Z [[32minfo[39m]: User undefined authenticated
+2024-10-26T22:27:32.845Z [[32minfo[39m]: User undefined authenticated
+2024-10-26T22:28:54.472Z [[32minfo[39m]: User 213432 authenticated
+2024-10-26T22:38:56.408Z [[32minfo[39m]: Socket service initializing
+2024-10-26T22:38:56.415Z [[32minfo[39m]: Socket service listening
+2024-10-26T23:12:41.748Z [[32minfo[39m]: Socket service initializing
+2024-10-26T23:12:41.756Z [[32minfo[39m]: Socket service listening
+2024-10-26T23:15:52.028Z [[32minfo[39m]: User connected:
+2024-10-26T23:18:35.633Z [[32minfo[39m]: Socket service initializing
+2024-10-26T23:18:35.641Z [[32minfo[39m]: Socket service listening
+2024-10-26T23:18:36.671Z [[32minfo[39m]: User connected:
+2024-10-26T23:18:45.471Z [[32minfo[39m]: User connected:
+2024-10-26T23:19:07.717Z [[32minfo[39m]: User connected:
+2024-10-26T23:20:40.742Z [[32minfo[39m]: User disconnected:
+2024-10-26T23:20:41.317Z [[32minfo[39m]: User connected:
+2024-10-26T23:20:47.352Z [[32minfo[39m]: Message Received: hello
+2024-10-26T23:22:21.617Z [[32minfo[39m]: User disconnected:
+2024-10-26T23:22:22.218Z [[32minfo[39m]: User connected:
+2024-10-26T23:22:27.624Z [[32minfo[39m]: Message Received: ehasdfa
+2024-10-26T23:22:45.555Z [[32minfo[39m]: Socket service initializing
+2024-10-26T23:22:45.563Z [[32minfo[39m]: Socket service listening
+2024-10-26T23:22:45.651Z [[32minfo[39m]: User connected:
+2024-10-26T23:23:02.379Z [[32minfo[39m]: User connected:
+2024-10-26T23:28:07.792Z [[32minfo[39m]: User 213432 authenticated
+2024-10-26T23:34:07.343Z [[32minfo[39m]: User connected:
+2024-10-26T23:34:09.234Z [[32minfo[39m]: User connected:
+2024-10-26T23:36:22.348Z [[32minfo[39m]: Socket service initializing
+2024-10-26T23:36:22.353Z [[32minfo[39m]: Socket service listening
+2024-10-26T23:36:31.312Z [[32minfo[39m]: User connected:
+2024-10-26T23:36:36.288Z [[32minfo[39m]: User 67890 joined chat 1
+2024-10-26T23:36:45.550Z [[32minfo[39m]: User connected:
+2024-10-26T23:36:48.285Z [[32minfo[39m]: User user_2nt6Jy9ClKMFUcbbxU4CVcHgTx9 joined chat 1
+2024-10-26T23:36:48.286Z [[32minfo[39m]: User user_2nt6Jy9ClKMFUcbbxU4CVcHgTx9 joined chat 1
+2024-10-26T23:36:58.102Z [[32minfo[39m]: Emitting message to chat:1 - [object Object]
+2024-10-26T23:37:27.635Z [[32minfo[39m]: User connected:
+2024-10-26T23:37:30.011Z [[32minfo[39m]: User connected:
+2024-10-26T23:37:37.252Z [[32minfo[39m]: Emitting message to chat:1 - [object Object]
+2024-10-26T23:37:51.212Z [[32minfo[39m]: Emitting message to chat:1 - [object Object]
+2024-10-26T23:38:01.721Z [[32minfo[39m]: Emitting message to chat:1 - [object Object]
+2024-10-26T23:38:36.383Z [[32minfo[39m]: User undefined joined chat undefined
+2024-10-26T23:38:41.411Z [[32minfo[39m]: Emitting message to chat:1 - [object Object]
+2024-10-26T23:38:58.209Z [[32minfo[39m]: User undefined joined chat undefined
+2024-10-26T23:39:40.061Z [[32minfo[39m]: User undefined joined chat undefined
+2024-10-26T23:40:20.541Z [[32minfo[39m]: User ser joined chat 1
+2024-10-26T23:40:31.577Z [[32minfo[39m]: Emitting message to chat:1 - [object Object]
+2024-10-27T11:14:30.766Z [[32minfo[39m]: Socket service initializing
+2024-10-27T11:14:30.771Z [[32minfo[39m]: Socket service listening
+2024-10-27T11:15:06.972Z [[32minfo[39m]: User connected:
+2024-10-27T11:15:09.978Z [[32minfo[39m]: User user_2nt6Jy9ClKMFUcbbxU4CVcHgTx9 joined chat 1
+2024-10-27T11:15:09.979Z [[32minfo[39m]: User user_2nt6Jy9ClKMFUcbbxU4CVcHgTx9 joined chat 1
+2024-10-27T11:15:11.675Z [[32minfo[39m]: User user_2nt6Jy9ClKMFUcbbxU4CVcHgTx9 joined chat 2
+2024-10-27T11:15:12.641Z [[32minfo[39m]: User user_2nt6Jy9ClKMFUcbbxU4CVcHgTx9 joined chat 3
+2024-10-27T11:15:13.174Z [[32minfo[39m]: User user_2nt6Jy9ClKMFUcbbxU4CVcHgTx9 joined chat 1
+2024-10-27T11:16:07.828Z [[32minfo[39m]: Socket service initializing
+2024-10-27T11:16:07.836Z [[32minfo[39m]: Socket service listening
+2024-10-27T11:26:56.729Z [[32minfo[39m]: Socket service initializing
+2024-10-27T11:26:56.734Z [[32minfo[39m]: Socket service listening
+2024-10-27T11:30:37.052Z [[32minfo[39m]: Socket service initializing
+2024-10-27T11:30:37.061Z [[32minfo[39m]: Socket service listening
+2024-10-27T11:48:15.262Z [[32minfo[39m]: Socket service initializing
+2024-10-27T11:48:15.270Z [[32minfo[39m]: Socket service listening
+2024-10-27T12:12:02.371Z [[32minfo[39m]: Socket service initializing
+2024-10-27T12:12:02.376Z [[32minfo[39m]: Socket service listening
+2024-10-27T12:12:25.038Z [[32minfo[39m]: User connected:
+2024-10-27T12:12:26.884Z [[32minfo[39m]: User user_2nt6Jy9ClKMFUcbbxU4CVcHgTx9 joined chat 1
+2024-10-27T12:12:26.884Z [[32minfo[39m]: User user_2nt6Jy9ClKMFUcbbxU4CVcHgTx9 joined chat 1
+2024-10-27T12:12:30.005Z [[32minfo[39m]: Emitting message to chat:1 - [object Object]
+2024-10-27T12:12:49.815Z [[32minfo[39m]: User disconnected:
+2024-10-27T12:12:57.796Z [[32minfo[39m]: User connected:
+2024-10-27T12:13:04.052Z [[32minfo[39m]: User user_2nt6Jy9ClKMFUcbbxU4CVcHgTx9 joined chat 1
+2024-10-27T12:13:04.052Z [[32minfo[39m]: User user_2nt6Jy9ClKMFUcbbxU4CVcHgTx9 joined chat 1
+2024-10-27T12:13:13.312Z [[32minfo[39m]: User user_2nt6Jy9ClKMFUcbbxU4CVcHgTx9 joined chat 2
+2024-10-27T12:13:13.706Z [[32minfo[39m]: User user_2nt6Jy9ClKMFUcbbxU4CVcHgTx9 joined chat 3
+2024-10-27T14:03:01.442Z [[32minfo[39m]: Socket service initializing
+2024-10-27T14:03:01.447Z [[32minfo[39m]: Socket service listening
+2024-10-27T14:04:02.843Z [[32minfo[39m]: Socket service initializing
+2024-10-27T14:04:02.848Z [[32minfo[39m]: Socket service initialized
+2024-10-27T14:04:02.848Z [[32minfo[39m]: Socket service listening
+2024-10-27T14:55:35.936Z [[32minfo[39m]: Socket service initializing
+2024-10-27T14:55:35.947Z [[32minfo[39m]: Socket service initialized
+2024-10-27T14:55:35.947Z [[32minfo[39m]: Socket service listening
+2024-10-27T14:57:45.304Z [[32minfo[39m]: Socket service initializing
+2024-10-27T14:57:45.314Z [[32minfo[39m]: Socket service initialized
+2024-10-27T14:57:45.314Z [[32minfo[39m]: Socket service listening
+2024-10-27T14:57:58.285Z [[32minfo[39m]: Socket service initializing
+2024-10-27T14:57:58.303Z [[32minfo[39m]: Socket service initialized
+2024-10-27T14:57:58.303Z [[32minfo[39m]: Socket service listening
+2024-10-27T14:58:46.934Z [[32minfo[39m]: User connected:
+2024-10-27T14:58:48.960Z [[32minfo[39m]: User user_2nt6Jy9ClKMFUcbbxU4CVcHgTx9 joined chat 1
+2024-10-27T14:58:48.962Z [[32minfo[39m]: User user_2nt6Jy9ClKMFUcbbxU4CVcHgTx9 joined chat 1
+2024-10-27T14:58:52.273Z [[32minfo[39m]: Emitting message to chat:1 - [object Object]
+2024-10-27T14:58:53.267Z [[32minfo[39m]: Emitting message to chat:1 - [object Object]
+2024-10-27T14:58:56.365Z [[32minfo[39m]: Emitting message to chat:1 - [object Object]
+2024-10-27T15:11:38.015Z [[32minfo[39m]: Socket service initializing
+2024-10-27T15:11:38.025Z [[32minfo[39m]: Socket service initialized
+2024-10-27T15:11:38.025Z [[32minfo[39m]: Socket service listening
+2024-10-27T15:17:58.181Z [[32minfo[39m]: Socket service initializing
+2024-10-27T15:17:58.193Z [[32minfo[39m]: Socket service initialized
+2024-10-27T15:17:58.194Z [[32minfo[39m]: Socket service listening
+2024-10-27T15:19:51.485Z [[32minfo[39m]: Socket service initializing
+2024-10-27T15:19:51.502Z [[32minfo[39m]: Socket service initialized
+2024-10-27T15:19:51.503Z [[32minfo[39m]: Socket service listening
+2024-10-27T15:20:55.411Z [[32minfo[39m]: Socket service initializing
+2024-10-27T15:20:55.421Z [[32minfo[39m]: Socket service initialized
+2024-10-27T15:20:55.421Z [[32minfo[39m]: Socket service listening
+2024-10-27T15:22:46.638Z [[32minfo[39m]: Socket service initializing
+2024-10-27T15:22:46.655Z [[32minfo[39m]: Socket service initialized
+2024-10-27T15:22:46.655Z [[32minfo[39m]: Socket service listening
+2024-10-27T15:29:11.282Z [[32minfo[39m]: Socket service initializing
+2024-10-27T15:29:11.292Z [[32minfo[39m]: Socket service initialized
+2024-10-27T15:29:11.292Z [[32minfo[39m]: Socket service listening
+2024-10-27T15:29:32.777Z [[32minfo[39m]: User connected:
+2024-10-27T15:29:35.119Z [[32minfo[39m]: User user_2nt6Jy9ClKMFUcbbxU4CVcHgTx9 joined chat 1
+2024-10-27T15:29:35.120Z [[32minfo[39m]: User user_2nt6Jy9ClKMFUcbbxU4CVcHgTx9 joined chat 1
+2024-10-27T15:29:38.693Z [[32minfo[39m]: Emitting message to chat:1 - [object Object]
+2024-10-27T15:32:19.977Z [[32minfo[39m]: Socket service initializing
+2024-10-27T15:32:19.995Z [[32minfo[39m]: Socket service initialized
+2024-10-27T15:32:19.995Z [[32minfo[39m]: Socket service listening
+2024-10-27T15:32:25.974Z [[32minfo[39m]: User connected:
+2024-10-27T15:32:27.951Z [[32minfo[39m]: User user_2nt6Jy9ClKMFUcbbxU4CVcHgTx9 joined chat 1
+2024-10-27T15:32:27.952Z [[32minfo[39m]: User user_2nt6Jy9ClKMFUcbbxU4CVcHgTx9 joined chat 1
+2024-10-27T15:32:35.396Z [[32minfo[39m]: Emitting message to chat:1 - [object Object]
+2024-10-27T15:32:35.824Z [[32minfo[39m]: Emitting message to chat:1 - [object Object]
+2024-10-27T15:32:36.033Z [[32minfo[39m]: Emitting message to chat:1 - [object Object]
+2024-10-27T15:32:36.362Z [[32minfo[39m]: Emitting message to chat:1 - [object Object]
+2024-10-27T15:32:36.595Z [[32minfo[39m]: Emitting message to chat:1 - [object Object]
+2024-10-27T15:32:36.759Z [[32minfo[39m]: Emitting message to chat:1 - [object Object]
+2024-10-27T15:32:36.907Z [[32minfo[39m]: Emitting message to chat:1 - [object Object]
+2024-10-27T15:32:37.099Z [[32minfo[39m]: Emitting message to chat:1 - [object Object]
+2024-10-27T15:32:37.238Z [[32minfo[39m]: Emitting message to chat:1 - [object Object]
+2024-10-27T15:32:37.401Z [[32minfo[39m]: Emitting message to chat:1 - [object Object]
+2024-10-27T15:32:37.548Z [[32minfo[39m]: Emitting message to chat:1 - [object Object]
+2024-10-27T15:32:37.707Z [[32minfo[39m]: Emitting message to chat:1 - [object Object]
+2024-10-27T15:32:37.843Z [[32minfo[39m]: Emitting message to chat:1 - [object Object]
+2024-10-27T15:32:37.981Z [[32minfo[39m]: Emitting message to chat:1 - [object Object]
+2024-10-27T15:32:38.123Z [[32minfo[39m]: Emitting message to chat:1 - [object Object]
+2024-10-27T15:32:38.255Z [[32minfo[39m]: Emitting message to chat:1 - [object Object]
+2024-10-27T15:32:38.398Z [[32minfo[39m]: Emitting message to chat:1 - [object Object]
+2024-10-27T15:34:10.590Z [[32minfo[39m]: Socket service initializing
+2024-10-27T15:34:10.599Z [[32minfo[39m]: Socket service initialized
+2024-10-27T15:34:10.599Z [[32minfo[39m]: Socket service listening
+2024-10-27T15:34:10.636Z [[32minfo[39m]: User connected:
+2024-10-27T15:34:28.456Z [[32minfo[39m]: Emitting message to chat:1 - [object Object]
+2024-10-27T15:34:29.010Z [[32minfo[39m]: Emitting message to chat:1 - [object Object]
+2024-10-27T15:34:29.306Z [[32minfo[39m]: Emitting message to chat:1 - [object Object]
+2024-10-27T15:34:29.536Z [[32minfo[39m]: Emitting message to chat:1 - [object Object]
+2024-10-27T15:34:29.739Z [[32minfo[39m]: Emitting message to chat:1 - [object Object]
+2024-10-27T15:34:29.914Z [[32minfo[39m]: Emitting message to chat:1 - [object Object]
+2024-10-27T15:34:30.093Z [[32minfo[39m]: Emitting message to chat:1 - [object Object]
+2024-10-27T15:34:30.454Z [[32minfo[39m]: Emitting message to chat:1 - [object Object]
+2024-10-27T15:34:30.649Z [[32minfo[39m]: Emitting message to chat:1 - [object Object]
+2024-10-27T15:34:30.839Z [[32minfo[39m]: Emitting message to chat:1 - [object Object]
+2024-10-27T15:34:30.995Z [[32minfo[39m]: Emitting message to chat:1 - [object Object]
+2024-10-27T15:34:31.177Z [[32minfo[39m]: Emitting message to chat:1 - [object Object]
+2024-10-27T15:34:31.363Z [[32minfo[39m]: Emitting message to chat:1 - [object Object]
+2024-10-27T15:34:31.553Z [[32minfo[39m]: Emitting message to chat:1 - [object Object]
+2024-10-27T15:34:31.721Z [[32minfo[39m]: Emitting message to chat:1 - [object Object]
+2024-10-27T15:34:31.879Z [[32minfo[39m]: Emitting message to chat:1 - [object Object]
+2024-10-27T15:34:34.857Z [[32minfo[39m]: Emitting message to chat:1 - [object Object]
+2024-10-27T15:34:37.503Z [[32minfo[39m]: Emitting message to chat:1 - [object Object]
+2024-10-27T15:34:39.917Z [[32minfo[39m]: Emitting message to chat:1 - [object Object]
+2024-10-27T15:36:37.457Z [[32minfo[39m]: Socket service initializing
+2024-10-27T15:36:37.467Z [[32minfo[39m]: Socket service initialized
+2024-10-27T15:36:37.467Z [[32minfo[39m]: Socket service listening
+2024-10-27T15:38:49.485Z [[32minfo[39m]: User connected:
+2024-10-27T15:38:51.046Z [[32minfo[39m]: User user_2nt6Jy9ClKMFUcbbxU4CVcHgTx9 joined chat 1
+2024-10-27T15:38:51.047Z [[32minfo[39m]: User user_2nt6Jy9ClKMFUcbbxU4CVcHgTx9 joined chat 1
+2024-10-27T15:38:54.245Z [[32minfo[39m]: Emitting message to chat:1 - [object Object]
