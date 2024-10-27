@@ -1,0 +1,46 @@
+version: '3.8'
+
+services:
+  redis:
+    image: redis:latest
+    container_name: redis
+    ports:
+      - "6379:6379"  # Expose Redis on the default port
+    volumes:
+      - redis_data:/data  # Persist Redis data
+    networks:
+      - app-network
+
+  rabbitmq:
+    image: rabbitmq:management
+    container_name: rabbitmq
+    ports:
+      - "5672:5672"   # RabbitMQ default port for clients
+      - "15672:15672" # Management UI port
+    environment:
+      RABBITMQ_DEFAULT_USER: user  # Set default username
+      RABBITMQ_DEFAULT_PASS: password # Set default password
+      RABBIMQ_HOSTNAME: rabbitmq  # Set hostname
+    volumes:
+      - rabbitmq_data:/var/lib/rabbitmq  # Persist RabbitMQ data
+    networks:
+      - app-network
+
+  mongodb:
+    image: mongo:latest
+    container_name: mongodb
+    ports:
+      - "27017:27017"  # Expose MongoDB on the default port
+    volumes:
+      - mongodb_data:/data/db  # Persist MongoDB data
+    networks:
+      - app-network
+
+volumes:
+  redis_data:
+  rabbitmq_data:
+  mongodb_data:
+
+networks:
+  app-network:
+    driver: bridge  # Use a bridge network for inter-service communication
