@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-import { ChatType } from "../types";
+import { ChatType } from "../../types";
 
 const chatSchema = new mongoose.Schema({
   id: { type: String, required: true, unique: true },

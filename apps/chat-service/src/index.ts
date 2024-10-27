@@ -1,12 +1,18 @@
 import express from 'express';
 import connectDB from './utils/db';
 import MessageQueue from './utils/messageQueue';
-import { MessageType } from './types';
+import { MessageType } from '../types';
 import Message from './models/messageModel';
+import cors from "cors";
+import chatRoutes from './routes/chatRoutes';
+import userRoutes from './routes/userRoutes';
 
 const app = express();
 const port = process.env.PORT || 5000;
 app.use(express.json());
+app.use(cors({
+  origin: "*",
+}))
 
 const messageQueue = new MessageQueue();
 
@@ -39,6 +45,8 @@ async function initializeServices() {
   }
 }
 
+app.use("/users", userRoutes)
+app.use("/chats", chatRoutes)
 
 app.get('/', (req, res) => {
   res.send('Chat service is running');

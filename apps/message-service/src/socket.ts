@@ -2,7 +2,7 @@ import { Server } from "socket.io";
 import logger from "./utils/logger";
 import Redis from "ioredis";
 import { handleMessages } from "./controllers/messageHandlers";
-import { MessageType, ChatType, UserPresence } from "./types";
+import { MessageType, ChatType, UserPresence } from "../types";
 import * as dotenv from "dotenv";
 import MessageQueue from "./messageQueue";
 

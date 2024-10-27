@@ -1,4 +1,4 @@
-import { MessageType } from "../types";
+import { MessageType } from "../../types";
 import logger from "../utils/logger";
 
 export const handleMessages = async (msg: MessageType, socket: any, publisher: any) => {

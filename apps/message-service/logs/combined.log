@@ -474,3 +474,48 @@
 2024-10-27T15:38:51.046Z [[32minfo[39m]: User user_2nt6Jy9ClKMFUcbbxU4CVcHgTx9 joined chat 1
 2024-10-27T15:38:51.047Z [[32minfo[39m]: User user_2nt6Jy9ClKMFUcbbxU4CVcHgTx9 joined chat 1
 2024-10-27T15:38:54.245Z [[32minfo[39m]: Emitting message to chat:1 - [object Object]
+2024-10-27T16:59:15.819Z [[32minfo[39m]: Socket service initializing
+2024-10-27T18:03:12.805Z [[32minfo[39m]: Socket service initializing
+2024-10-27T18:03:12.821Z [[32minfo[39m]: Socket service initialized
+2024-10-27T18:03:12.822Z [[32minfo[39m]: Socket service listening
+2024-10-27T18:03:41.524Z [[32minfo[39m]: User connected:
+2024-10-27T18:04:04.366Z [[32minfo[39m]: User disconnected:
+2024-10-27T18:05:47.429Z [[32minfo[39m]: User connected:
+2024-10-27T18:07:11.132Z [[32minfo[39m]: User disconnected:
+2024-10-27T18:07:11.850Z [[32minfo[39m]: User connected:
+2024-10-27T18:07:38.404Z [[32minfo[39m]: User disconnected:
+2024-10-27T18:07:38.869Z [[32minfo[39m]: User connected:
+2024-10-27T18:08:17.992Z [[32minfo[39m]: User disconnected:
+2024-10-27T18:08:18.478Z [[32minfo[39m]: User connected:
+2024-10-27T18:14:42.327Z [[32minfo[39m]: User disconnected:
+2024-10-27T18:14:42.989Z [[32minfo[39m]: User connected:
+2024-10-27T18:14:46.756Z [[32minfo[39m]: User user_2o20MkNEG3920WGgDpzQpGibJTS joined chat 1
+2024-10-27T18:14:46.759Z [[32minfo[39m]: User user_2o20MkNEG3920WGgDpzQpGibJTS joined chat 1
+2024-10-27T18:14:47.234Z [[32minfo[39m]: User user_2o20MkNEG3920WGgDpzQpGibJTS joined chat 2
+2024-10-27T18:14:48.021Z [[32minfo[39m]: User user_2o20MkNEG3920WGgDpzQpGibJTS joined chat 3
+2024-10-27T18:14:48.540Z [[32minfo[39m]: User user_2o20MkNEG3920WGgDpzQpGibJTS joined chat 1
+2024-10-27T18:14:49.015Z [[32minfo[39m]: User user_2o20MkNEG3920WGgDpzQpGibJTS joined chat 2
+2024-10-27T18:14:49.776Z [[32minfo[39m]: User user_2o20MkNEG3920WGgDpzQpGibJTS joined chat 3
+2024-10-27T18:14:50.354Z [[32minfo[39m]: User user_2o20MkNEG3920WGgDpzQpGibJTS joined chat 1
+2024-10-27T18:14:53.246Z [[32minfo[39m]: User disconnected:
+2024-10-27T18:14:59.221Z [[32minfo[39m]: User connected:
+2024-10-27T18:15:09.379Z [[32minfo[39m]: User disconnected:
+2024-10-27T18:16:26.633Z [[32minfo[39m]: User connected:
+2024-10-27T18:17:29.364Z [[32minfo[39m]: Socket service initializing
+2024-10-27T18:17:29.382Z [[32minfo[39m]: Socket service initialized
+2024-10-27T18:17:29.382Z [[32minfo[39m]: Socket service listening
+2024-10-27T18:19:59.334Z [[32minfo[39m]: User connected:
+2024-10-27T18:24:33.461Z [[32minfo[39m]: User disconnected:
+2024-10-27T18:26:53.481Z [[32minfo[39m]: User connected:
+2024-10-27T18:30:59.181Z [[32minfo[39m]: User disconnected:
+2024-10-27T18:31:00.048Z [[32minfo[39m]: User connected:
+2024-10-27T18:31:52.347Z [[32minfo[39m]: Socket service initializing
+2024-10-27T18:31:52.365Z [[32minfo[39m]: Socket service initialized
+2024-10-27T18:31:52.365Z [[32minfo[39m]: Socket service listening
+2024-10-27T18:31:55.663Z [[32minfo[39m]: User connected:
+2024-10-27T18:32:02.638Z [[32minfo[39m]: User disconnected:
+2024-10-27T18:32:03.621Z [[32minfo[39m]: User connected:
+2024-10-27T18:33:00.841Z [[32minfo[39m]: User disconnected:
+2024-10-27T18:33:17.686Z [[32minfo[39m]: User connected:
+2024-10-27T18:33:33.409Z [[32minfo[39m]: User disconnected:
+2024-10-27T18:34:40.865Z [[32minfo[39m]: User connected:

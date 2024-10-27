@@ -1,5 +1,5 @@
 import mongoose, { Schema, Document } from "mongoose";
-import { MessageType } from "../types";
+import { MessageType } from "../../types";
 
 const MessageSchema: Schema = new Schema({
   id: { type: String, required: true, unique: true },

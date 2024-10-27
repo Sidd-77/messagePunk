@@ -1,5 +1,5 @@
 import amqp, { Connection, Channel, ConsumeMessage } from 'amqplib';
-import { MessageType } from '../types';
+import { MessageType } from '../../types';
 
 export class MessageQueue {
   private connection: Connection | null = null;

@@ -1,3 +1,9 @@
+export interface UserType {
+    id: string;
+    name: string;
+    email: string;
+    avatar?: string;
+}
 
 export interface MessageType {
     id: string;
@@ -17,9 +23,11 @@ export interface UserPresence {
 
 export interface ChatType {
     id: string;
-    type: 'personal' | 'group';
+    type: "personal" | "group";
     name: string;
-    members: string[];
+    members: string[]; // User IDs
     createdAt: string;
     lastMessage?: MessageType;
+    avatar?: string; // For groups
+    admin?: string; // For groups - User IDs of admins
 }

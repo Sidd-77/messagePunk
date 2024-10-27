@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { MessageType } from "../types";
+import { MessageType } from "../../types";
 import Message from "../models/messageModel";
 
 export const getMessages = async (req: Request, res: Response):Promise<any> => {
