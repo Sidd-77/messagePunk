@@ -3,6 +3,7 @@ import { useSocket } from '@/context/SocketProvider';
 import { MessageType, ChatType, UserType } from '@/types';
 import { Button } from './ui/button';
 import { Input } from './ui/input';
+import axios from 'axios';
 
 interface ChatInterfaceProps {
   chat: ChatType;
@@ -10,10 +11,20 @@ interface ChatInterfaceProps {
 }
 
 const ChatInterface = ({ chat, currentUser }: ChatInterfaceProps) => {
-  const [messages, setMessages] = useState<MessageType[]>([]);
+  const [messages, setMessages] = useState<any[]>([]);
   const [newMessage, setNewMessage] = useState('');
   const [typingUsers, setTypingUsers] = useState<Set<string>>(new Set());
   const { socket, sendMessage, markMessagesAsRead } = useSocket();
+
+  const fetchMessages = async() =>{
+    const response = await axios.post(`${process.env.NEXT_PUBLIC_CHAT_SERVICE_URL}/messages/getMessages`, { chatId: chat.id} );
+    console.log(response.data);
+    setMessages(response.data);
+  }
+
+  useEffect(() => {
+    fetchMessages();
+  }, [chat.id]);
 
   useEffect(() => {
     if (socket && chat) {
@@ -65,14 +76,15 @@ const ChatInterface = ({ chat, currentUser }: ChatInterfaceProps) => {
 
   const handleSendMessage = () => {
     if (newMessage.trim()) {
-      const messageData: MessageType = {
+      const messageData = {
         id: `msg_${Date.now()}`,
         message: newMessage,
         user: currentUser.id,
         chatId: chat.id,
         timestamp: new Date().toISOString(),
         type: 'text',
-        status: 'sent'
+        status: 'sent',
+        readBy: []
       };
       
       sendMessage(messageData);
@@ -109,7 +121,7 @@ const ChatInterface = ({ chat, currentUser }: ChatInterfaceProps) => {
           <MessageBubble
             key={msg.id}
             message={msg}
-            isOwn={msg.user === currentUser.id}
+            isOwn={msg.user_id === currentUser.id  || msg.user === currentUser.id}
             chat={chat}
           />
         ))}
@@ -161,7 +173,8 @@ const MessageBubble = ({ message, isOwn, chat }: {
         {/* Show sender name in group chats */}
         {chat.type === 'group' && !isOwn && (
           <div className="text-xs font-semibold mb-1">
-            {message.user}
+            {/* {message.user} */}
+            "some sender"
           </div>
         )}
         <div>{message.message}</div>

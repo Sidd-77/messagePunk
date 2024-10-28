@@ -3,7 +3,7 @@ version: '3.8'
 services:
   redis:
     image: redis:latest
-    container_name: redis
+    container_name: messagepunk-redis
     ports:
       - "6379:6379"  # Expose Redis on the default port
     volumes:
@@ -13,7 +13,7 @@ services:
 
   rabbitmq:
     image: rabbitmq:management
-    container_name: rabbitmq
+    container_name: messagepunk-rabbitmq
     ports:
       - "5672:5672"   # RabbitMQ default port for clients
       - "15672:15672" # Management UI port
@@ -26,20 +26,22 @@ services:
     networks:
       - app-network
 
-  mongodb:
-    image: mongo:latest
-    container_name: mongodb
+  postgres:
+    image: postgres:latest
+    container_name: messagepunk-postgres
     ports:
-      - "27017:27017"  # Expose MongoDB on the default port
+      - "5432:5432"  # Expose MongoDB on the default port
+    environment:
+      - POSTGRES_PASSWORD=password
     volumes:
-      - mongodb_data:/data/db  # Persist MongoDB data
+      - pg_data:/var/lib/postgresql/data  # Persist MongoDB data
     networks:
       - app-network
 
 volumes:
   redis_data:
   rabbitmq_data:
-  mongodb_data:
+  pg_data:
 
 networks:
   app-network:

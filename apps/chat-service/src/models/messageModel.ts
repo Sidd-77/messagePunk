@@ -1,10 +1,10 @@
-import mongoose, { Schema, Document } from "mongoose";
-import { MessageType } from "../../types";
+import mongoose from "mongoose";
+import { MessageType } from "../types";
 
-const MessageSchema: Schema = new Schema({
+const messageSchema = new mongoose.Schema({
   id: { type: String, required: true, unique: true },
   message: { type: String, required: true },
-  user: { type: String, required: true }, // userId of the sender
+  user: { type: String, required: true, ref: 'User', refPath: 'id' },
   chatId: { type: String, required: true },
   timestamp: { type: String, required: true },
   type: {
@@ -17,7 +17,10 @@ const MessageSchema: Schema = new Schema({
     enum: ["sent", "delivered", "read"],
     required: true,
   },
-  readBy: { type: [String], default: [] },
+  readBy: [{ type: String, ref: 'User', refPath: 'id' }]
 });
 
-export default mongoose.model<MessageType>("Message", MessageSchema);
+messageSchema.index({ id: 1 });
+messageSchema.index({ chatId: 1 });
+
+export default mongoose.model<MessageType>("Message", messageSchema);

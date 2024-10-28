@@ -14,7 +14,8 @@ const CreatingProfile = () => {
 
   const sendUser = async (userData: UserType) => {
     try {
-      const response = await axios.post(`http://localhost:5000/users/createUser`, userData);
+      console.log("Sending user to chat service", userData);
+      const response = await axios.post(`${process.env.NEXT_PUBLIC_CHAT_SERVICE_URL}/users/createUser`, userData);
       console.log("User stored in DB", response.data);
       router.push("/chat");
     } catch (err) {

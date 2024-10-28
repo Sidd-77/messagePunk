@@ -13,77 +13,134 @@ import { UserButton } from "@clerk/nextjs";
 import { useSocket } from "@/context/SocketProvider";
 import { ChatType, UserType } from "@/types";
 import { useUser } from "@clerk/nextjs";
+import SearchModal from "@/components/search-modal";
+import { Toaster } from "@/components/ui/toaster";
+import axios from "axios";
+
+
 export default function Home() {
   const [activeChat, setActiveChat] = useState<ChatType | null>(null);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [chats, setChats] = useState<ChatType[]>([]);
+  const [isLoading, setIsLoading] = useState(false);
   const { socket, isConnected } = useSocket();
   const { user } = useUser();
 
-  const currentUser:UserType = {
+  const currentUser: UserType = {
     id: user?.id || "",
     name: user?.fullName || "",
     avatar: "",
     email: user?.primaryEmailAddress?.emailAddress || "",
-  }
+  };
+
+  const fetchChats = async () => {
+    // Don't proceed if there's no user ID
+    if (!currentUser.id) {
+      console.log('Waiting for user ID to be available...');
+      return;
+    }
+
+    try {
+      setIsLoading(true);
+      const response = await axios.post(
+        `${process.env.NEXT_PUBLIC_CHAT_SERVICE_URL}/chats/getChats`,
+        { userId: currentUser.id }
+      );
+      setChats(response.data);
+    } catch (error) {
+      console.error("Failed to fetch chats", error);
+    } finally {
+      setIsLoading(false);
+    }
+  };
 
   useEffect(() => {
-  }, [socket]);
+    // Only fetch chats when we have a valid user ID and socket connection
+    if (currentUser.id && socket && isConnected) {
+      fetchChats();
+    }
+  }, [currentUser.id, socket, isConnected]);
 
-  const chats:ChatType[] = [
-    {
-      id: "1",
-      type: "personal",
-      name: "John Doe",
-      members: ["1", "2"],
-      createdAt: "2021-08-01T12:00:00Z",
-      lastMessage: {
-        id: "1",
-        message: "Hey there",
-        user: "1",
-        chatId: "1",
-        timestamp: "2021-08-01T12:01:00Z",
-        type: "text",
-        status: "sent",
-      },
-    },
-    {
-      id: "2",
-      type: "personal",
-      name: "Jane Doe",
-      members: ["1", "3"],
-      createdAt: "2021-08-01T12:00:00Z",
-      lastMessage: {
-        id: "2",
-        message: "Hello",
-        user: "3",
-        chatId: "2",
-        timestamp: "2021-08-01T12:01:00Z",
-        type: "text",
-        status: "sent",
-      },
-    },
-    {
-      id: "3",
-      type: "group",
-      name: "Group Chat",
-      members: ["1", "2", "3"],
-      createdAt: "2021-08-01T12:00:00Z",
-      lastMessage: {
-        id: "3",
-        message: "Welcome to the group",
-        user: "1",
-        chatId: "3",
-        timestamp: "2021-08-01T12:01:00Z",
-        type: "text",
-        status: "sent",
-      },
-    },
-  ];
+  // Add socket event listeners when connection is established
+  useEffect(() => {
+    if (socket && isConnected && currentUser.id) {
+      // Listen for new chat events
+      socket.on('newChat', (chat: ChatType) => {
+        setChats(prevChats => [...prevChats, chat]);
+      });
+
+      // Listen for chat updates
+      socket.on('chatUpdated', (updatedChat: ChatType) => {
+        setChats(prevChats =>
+          prevChats.map(chat => 
+            chat.id === updatedChat.id ? updatedChat : chat
+          )
+        );
+      });
+
+      return () => {
+        socket.off('newChat');
+        socket.off('chatUpdated');
+      };
+    }
+  }, [socket, isConnected, currentUser.id]);
+
+  // const chats:ChatType[] = [
+  //   {
+  //     id: "1",
+  //     type: "personal",
+  //     name: "John Doe",
+  //     members: ["1", "2"],
+  //     createdAt: "2021-08-01T12:00:00Z",
+  //     lastMessage: {
+  //       id: "1",
+  //       message: "Hey there",
+  //       user: "1",
+  //       chatId: "1",
+  //       timestamp: "2021-08-01T12:01:00Z",
+  //       type: "text",
+  //       status: "sent",
+  //     },
+  //   },
+  //   {
+  //     id: "2",
+  //     type: "personal",
+  //     name: "Jane Doe",
+  //     members: ["1", "3"],
+  //     createdAt: "2021-08-01T12:00:00Z",
+  //     lastMessage: {
+  //       id: "2",
+  //       message: "Hello",
+  //       user: "3",
+  //       chatId: "2",
+  //       timestamp: "2021-08-01T12:01:00Z",
+  //       type: "text",
+  //       status: "sent",
+  //     },
+  //   },
+  //   {
+  //     id: "3",
+  //     type: "group",
+  //     name: "Group Chat",
+  //     members: ["1", "2", "3"],
+  //     createdAt: "2021-08-01T12:00:00Z",
+  //     lastMessage: {
+  //       id: "3",
+  //       message: "Welcome to the group",
+  //       user: "1",
+  //       chatId: "3",
+  //       timestamp: "2021-08-01T12:01:00Z",
+  //       type: "text",
+  //       status: "sent",
+  //     },
+  //   },
+  // ];
 
   const toggleSidebar = () => setIsSidebarOpen(!isSidebarOpen);
 
   return (
     <main className="flex h-screen overflow-hidden">
+      <Toaster />
       {/* Burger Menu for Mobile */}
       <Button
         variant="ghost"
@@ -106,6 +163,7 @@ export default function Home() {
       >
         <div className="flex items-center justify-between p-4">
           <UserButton />
+          <SearchModal />
           <ModeToggle />
         </div>
         <Tabs

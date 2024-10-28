@@ -1,53 +1,132 @@
 import { Request, Response } from "express";
-import User from "../models/userModel";
+import sql from "../utils/db";
 
-export const createUser = async (req: Request, res: Response): Promise<any> => {
+export const searchUsers = async (
+  req: Request,
+  res: Response
+): Promise<void> => {
+  try {
+    const { query } = req.body;
+    let users;
+
+    if (query) {
+      users = await sql`
+        SELECT id, name, email, avatar
+        FROM users
+        WHERE 
+          name ILIKE ${`%${query}%`} OR
+          email ILIKE ${`%${query}%`}
+      `;
+    } else {
+      users = await sql`
+        SELECT id, name, email, avatar
+        FROM users
+      `;
+    }
+
+    res.status(200).json(users);
+  } catch (error) {
+    console.error("Search error:", error);
+    res.status(500).json({ message: "Error searching users" });
+  }
+};
+
+export const createUser = async (
+  req: Request,
+  res: Response
+): Promise<void> => {
   try {
     const { id, name, email, avatar } = req.body;
-    const alreadyExist = User.findOne({ id: id });
-    if (alreadyExist) res.status(201).send(alreadyExist);
-    const user = new User({ id, name, email, avatar });
-    await user.save();
-    res.status(201).send(user);
+
+    const [user] = await sql`
+      INSERT INTO users (id, name, email, avatar)
+      VALUES (${id}, ${name}, ${email}, ${avatar})
+      ON CONFLICT (id) DO UPDATE 
+      SET name = EXCLUDED.name,
+          email = EXCLUDED.email,
+          avatar = EXCLUDED.avatar
+      RETURNING *
+    `;
+
+    res.status(201).json(user);
   } catch (error) {
-    res.status(400).send(error);
+    console.error("Create error:", error);
+    res.status(400).json({ message: "Error creating user" });
   }
 };
 
-export const getUser = async (req: Request, res: Response): Promise<any> => {
+export const getUser = async (req: Request, res: Response): Promise<void> => {
   try {
-    const user = await User.findOne({ id: req.body.userId });
+    const { userId } = req.body;
+
+    const [user] = await sql`
+            SELECT id, name, email, avatar
+            FROM users
+            WHERE id = ${userId}
+        `;
+
     if (!user) {
-      return res.status(404).send({ message: "User not found" });
+      res.status(404).json({ message: "User not found" });
+      return;
     }
-    res.status(200).send(user);
+
+    res.status(200).json(user);
   } catch (error) {
-    res.send(500).send(error);
+    console.error("Get error:", error);
+    res.status(500).json({ message: "Error retrieving user" });
   }
 };
 
-export const updateUser = async (req: Request, res: Response): Promise<any> => {
+export const updateUser = async (
+  req: Request,
+  res: Response
+): Promise<void> => {
   try {
     const { id, name, email, avatar } = req.body;
-    const user = await User.findOne({ id });
+
+    const [user] = await sql`
+            UPDATE users
+            SET 
+                name = ${name},
+                email = ${email},
+                avatar = ${avatar},
+                updated_at = CURRENT_TIMESTAMP
+            WHERE id = ${id}
+            RETURNING *
+        `;
+
     if (!user) {
-      return res.status(404).send({ message: "User not found" });
+      res.status(404).json({ message: "User not found" });
+      return;
     }
-    user.name = name;
-    user.email = email;
-    user.avatar = avatar;
-    await user.save();
-    res.status(200).send(user);
+
+    res.status(200).json(user);
   } catch (error) {
-    res.status(500).send(error);
+    console.error("Update error:", error);
+    res.status(500).json({ message: "Error updating user" });
   }
 };
 
-export const deleteUser = async (req: Request, res: Response): Promise<any> => {
+export const deleteUser = async (
+  req: Request,
+  res: Response
+): Promise<void> => {
   try {
-    await User.deleteOne({ id: req.body.userId });
-    res.status(200).send({ message: "User deleted" });
+    const { userId } = req.body;
+
+    const result = await sql`
+            DELETE FROM users
+            WHERE id = ${userId}
+        `;
+
+    if (result.count === 0) {
+      res.status(404).json({ message: "User not found" });
+      return;
+    }
+
+    res.status(200).json({ message: "User deleted" });
   } catch (error) {
-    res.status(500).send(error);
+    console.error("Delete error:", error);
+    res.status(500).json({ message: "Error deleting user" });
   }
 };

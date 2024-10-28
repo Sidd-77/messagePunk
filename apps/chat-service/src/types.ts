@@ -9,7 +9,7 @@ export interface UserType {
 export interface MessageType {
     id: string;
     message: string;
-    user: string | UserType;  // String when creating/querying, User when populated
+    user: string ;  // String when creating/querying, User when populated
     chatId: string;
     timestamp: string;
     type: 'text' | 'image' | 'file' | 'system';

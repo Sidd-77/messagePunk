@@ -1,30 +1,17 @@
 import { clsx, type ClassValue } from "clsx"
 import { twMerge } from "tailwind-merge"
 
-import axios from 'axios';
+const characters ='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
 
-export const syncUserWithBackend = async (userData: {
-  clerkUserId: string;
-  email: string;
-  firstName?: string;
-  lastName?: string;
-}) => {
-  try {
-    const response = await axios.post(
-      `${process.env.NEXT_PUBLIC_BACKEND_URL}/api/users`,
-      userData,
-      {
-        headers: {
-          'Authorization': `Bearer ${process.env.NEXT_PUBLIC_API_KEY}`
-        }
-      }
-    );
-    return response.data;
-  } catch (error) {
-    console.error('Error syncing user:', error);
-    throw error;
+export function generateString(length:number) {
+  let result = ' ';
+  const charactersLength = characters.length;
+  for ( let i = 0; i < length; i++ ) {
+      result += characters.charAt(Math.floor(Math.random() * charactersLength));
   }
-};
+
+  return result;
+}
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))

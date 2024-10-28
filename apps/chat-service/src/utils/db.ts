@@ -1,19 +1,28 @@
-import mongoose from "mongoose";
-import * as dotenv from "dotenv";
-import logger from "./logger";
+import postgres from "postgres";
+import dotenv from "dotenv";
+import path from "path";
 
-dotenv.config();
+// Load .env file from project root
+dotenv.config({ path: path.resolve(__dirname, '../../.env') });
 
-const mongoURL = process.env.MONGO_URL || "mongodb://localhost:27017/chat-service";
+const username = process.env.DB_USERNAME;
+const password = process.env.DB_PASSWORD;
+const host = process.env.DB_HOST;
+const port = process.env.DB_PORT;
+const database = process.env.DB_DATABASE;``
 
-const connectDB = async () => {
-  try {
-    const conn = await mongoose.connect(mongoURL);
-    logger.info(`MongoDB connected: ${conn.connection.host}`);
-  } catch (error: any) {
-    console.error(`Error: ${error.message}`);
-    process.exit(1);
-  }
+// Add validation to ensure all required env variables are present
+const validateEnvVariables = () => {
+    const required = ['DB_USERNAME', 'DB_PASSWORD', 'DB_HOST', 'DB_PORT', 'DB_DATABASE'];
+    const missing = required.filter(name => !process.env[name]);
+    
+    if (missing.length > 0) {
+        throw new Error(`Missing required environment variables: ${missing.join(', ')}`);
+    }
 };
 
-export default connectDB;
+validateEnvVariables();
+
+const sql = postgres(`postgres://${username}:${password}@${host}:${port}/${database}`);
+
+export default sql;

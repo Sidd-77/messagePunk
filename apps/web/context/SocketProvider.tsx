@@ -7,7 +7,7 @@ import { MessageType, ChatType, UserType } from '@/types';
 interface SocketContextType {
   socket: Socket | null;
   isConnected: boolean;
-  sendMessage: (message: MessageType) => void;
+  sendMessage: (message: any) => void;
   joinChat: (chatId: string, userId: string) => void;
   leaveChat: (chatId: string, userId: string) => void;
   sendTypingIndicator: (chatId: string, user: UserType) => void;
@@ -33,7 +33,7 @@ export const SocketProvider = ({ children }: { children: React.ReactNode }) => {
   const [isConnected, setIsConnected] = useState(false);
 
   useEffect(() => {
-    const socketInstance = io(process.env.NEXT_PUBLIC_MESSAGE_SERVICE_URL || 'http://localhost:4000', {
+    const socketInstance = io(process.env.NEXT_PUBLIC_MESSAGE_SERVICE_URL, {
       reconnection: true,
       reconnectionAttempts: 5,
       reconnectionDelay: 1000

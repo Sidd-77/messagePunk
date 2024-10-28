@@ -1,5 +1,5 @@
 import amqp from "amqplib/callback_api";
-import { MessageType } from "../types";
+import { MessageType } from "./types";
 
 const messageQueue = "message_queue";
 

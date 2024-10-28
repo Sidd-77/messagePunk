@@ -1,11 +1,13 @@
 import express from 'express';
-import connectDB from './utils/db';
 import MessageQueue from './utils/messageQueue';
-import { MessageType } from '../types';
-import Message from './models/messageModel';
+import { MessageType } from './types';
 import cors from "cors";
 import chatRoutes from './routes/chatRoutes';
 import userRoutes from './routes/userRoutes';
+import messageRoutes from './routes/messageRoutes';
+import * as dotenv from 'dotenv'
+import sql from './utils/db';
+dotenv.config();
 
 const app = express();
 const port = process.env.PORT || 5000;
@@ -14,13 +16,20 @@ app.use(cors({
   origin: "*",
 }))
 
+app.use((req, res, next) => {
+  console.log(`${req.method} ${req.path}`);
+  next();
+});
+
 const messageQueue = new MessageQueue();
 
-async function processMessage(message: MessageType): Promise<void> {
+async function processMessage(message: MessageType){
   try {
-    const msg = new Message(message);
-    await msg.save();
-    console.log('Message saved successfully:', msg);
+    await sql`
+      INSERT INTO messages (id, chat_id, type, user_id, status, message, timestamp)
+      VALUES (${message.id}, ${message.chatId}, ${message.type}, ${message.user}, ${message.status}, ${message.message}, ${message.timestamp})
+    `
+    console.log('Message saved successfully:');
   } catch (error) {
     console.error('Error in message processing:', error);
     throw error; // Rethrow to trigger message nack
@@ -30,9 +39,7 @@ async function processMessage(message: MessageType): Promise<void> {
 
 async function initializeServices() {
   try {
-    await connectDB();
     await messageQueue.initialize();
-    
     // Set up message consumer
     await messageQueue.consumeMessage(async (message: MessageType) => {
       await processMessage(message);
@@ -47,6 +54,7 @@ async function initializeServices() {
 
 app.use("/users", userRoutes)
 app.use("/chats", chatRoutes)
+app.use("/messages", messageRoutes)
 
 app.get('/', (req, res) => {
   res.send('Chat service is running');
@@ -57,6 +65,9 @@ process.on('SIGTERM', async () => {
   await messageQueue.close();
   process.exit(0);
 });
+
+//log every request received
+
 
 app.listen(port, () => {
   console.log(`Express server is running at http://localhost:${port}`);

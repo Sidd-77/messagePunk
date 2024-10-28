@@ -20,6 +20,7 @@
     "express": "^4.21.1",
     "mongoose": "^8.7.3",
     "nodemon": "^3.1.7",
+    "postgres": "^3.4.5",
     "winston": "^3.15.0"
   }
 }

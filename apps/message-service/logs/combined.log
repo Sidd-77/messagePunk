@@ -519,3 +519,264 @@
 2024-10-27T18:33:17.686Z [[32minfo[39m]: User connected:
 2024-10-27T18:33:33.409Z [[32minfo[39m]: User disconnected:
 2024-10-27T18:34:40.865Z [[32minfo[39m]: User connected:
+2024-10-27T19:24:57.553Z [[32minfo[39m]: Socket service initializing
+2024-10-27T19:24:57.565Z [[32minfo[39m]: Socket service initialized
+2024-10-27T19:24:57.566Z [[32minfo[39m]: Socket service listening
+2024-10-27T19:25:23.732Z [[32minfo[39m]: User connected:
+2024-10-27T19:27:21.808Z [[32minfo[39m]: User user_2o23w5YSMkxiXlwEZXyCbn8bMjc joined chat 1
+2024-10-27T19:27:21.810Z [[32minfo[39m]: User user_2o23w5YSMkxiXlwEZXyCbn8bMjc joined chat 1
+2024-10-27T19:27:22.214Z [[32minfo[39m]: User user_2o23w5YSMkxiXlwEZXyCbn8bMjc joined chat 2
+2024-10-27T19:27:22.622Z [[32minfo[39m]: User user_2o23w5YSMkxiXlwEZXyCbn8bMjc joined chat 3
+2024-10-27T19:27:23.165Z [[32minfo[39m]: User user_2o23w5YSMkxiXlwEZXyCbn8bMjc joined chat 2
+2024-10-27T19:27:23.525Z [[32minfo[39m]: User user_2o23w5YSMkxiXlwEZXyCbn8bMjc joined chat 1
+2024-10-27T19:27:33.886Z [[32minfo[39m]: User user_2o23w5YSMkxiXlwEZXyCbn8bMjc joined chat 2
+2024-10-27T19:27:34.241Z [[32minfo[39m]: User user_2o23w5YSMkxiXlwEZXyCbn8bMjc joined chat 3
+2024-10-27T19:58:00.577Z [[32minfo[39m]: Socket service initializing
+2024-10-27T19:58:00.587Z [[32minfo[39m]: Socket service initialized
+2024-10-27T19:58:00.587Z [[32minfo[39m]: Socket service listening
+2024-10-27T19:58:16.684Z [[32minfo[39m]: User connected:
+2024-10-27T19:58:25.934Z [[32minfo[39m]: User disconnected:
+2024-10-27T19:58:49.319Z [[32minfo[39m]: User connected:
+2024-10-27T19:59:02.361Z [[32minfo[39m]: User disconnected:
+2024-10-27T19:59:25.214Z [[32minfo[39m]: User connected:
+2024-10-27T19:59:46.704Z [[32minfo[39m]: User disconnected:
+2024-10-27T20:01:36.847Z [[32minfo[39m]: User connected:
+2024-10-27T20:01:50.862Z [[32minfo[39m]: User disconnected:
+2024-10-27T20:02:55.485Z [[32minfo[39m]: User connected:
+2024-10-27T20:03:02.600Z [[32minfo[39m]: User disconnected:
+2024-10-27T20:03:36.034Z [[32minfo[39m]: User connected:
+2024-10-27T20:03:39.345Z [[32minfo[39m]: User disconnected:
+2024-10-27T20:03:51.820Z [[32minfo[39m]: User connected:
+2024-10-27T20:04:16.553Z [[32minfo[39m]: User disconnected:
+2024-10-27T20:11:00.422Z [[32minfo[39m]: User connected:
+2024-10-27T20:11:17.603Z [[32minfo[39m]: User disconnected:
+2024-10-27T20:11:41.122Z [[32minfo[39m]: User connected:
+2024-10-27T20:12:04.264Z [[32minfo[39m]: User disconnected:
+2024-10-27T20:13:35.503Z [[32minfo[39m]: User connected:
+2024-10-27T20:13:38.713Z [[32minfo[39m]: User disconnected:
+2024-10-27T20:13:43.190Z [[32minfo[39m]: User connected:
+2024-10-27T20:13:49.337Z [[32minfo[39m]: User disconnected:
+2024-10-27T20:14:17.354Z [[32minfo[39m]: User connected:
+2024-10-27T20:14:23.450Z [[32minfo[39m]: User disconnected:
+2024-10-27T20:14:53.154Z [[32minfo[39m]: User connected:
+2024-10-27T20:14:57.497Z [[32minfo[39m]: User disconnected:
+2024-10-27T20:14:58.320Z [[32minfo[39m]: User connected:
+2024-10-27T20:15:51.512Z [[32minfo[39m]: User disconnected:
+2024-10-27T20:15:52.086Z [[32minfo[39m]: User connected:
+2024-10-27T20:17:18.081Z [[32minfo[39m]: User disconnected:
+2024-10-27T20:17:18.842Z [[32minfo[39m]: User connected:
+2024-10-27T20:22:47.045Z [[32minfo[39m]: User disconnected:
+2024-10-27T20:22:47.990Z [[32minfo[39m]: User connected:
+2024-10-27T20:28:22.167Z [[32minfo[39m]: User disconnected:
+2024-10-27T20:28:22.717Z [[32minfo[39m]: User connected:
+2024-10-27T20:28:44.364Z [[32minfo[39m]: User disconnected:
+2024-10-27T20:28:50.525Z [[32minfo[39m]: User connected:
+2024-10-27T20:37:43.380Z [[32minfo[39m]: User disconnected:
+2024-10-27T20:37:44.408Z [[32minfo[39m]: User connected:
+2024-10-27T20:41:08.566Z [[32minfo[39m]: User disconnected:
+2024-10-27T20:41:09.160Z [[32minfo[39m]: User connected:
+2024-10-27T20:42:55.652Z [[32minfo[39m]: User disconnected:
+2024-10-27T20:42:56.202Z [[32minfo[39m]: User connected:
+2024-10-27T20:48:26.842Z [[32minfo[39m]: Socket service initializing
+2024-10-27T20:48:26.853Z [[32minfo[39m]: Socket service initialized
+2024-10-27T20:48:26.853Z [[32minfo[39m]: Socket service listening
+2024-10-27T20:48:37.925Z [[32minfo[39m]: User connected:
+2024-10-27T20:50:50.279Z [[32minfo[39m]: User disconnected:
+2024-10-27T20:50:51.081Z [[32minfo[39m]: User connected:
+2024-10-27T20:51:12.115Z [[32minfo[39m]: User disconnected:
+2024-10-27T20:51:12.724Z [[32minfo[39m]: User connected:
+2024-10-27T20:53:27.745Z [[32minfo[39m]: User disconnected:
+2024-10-27T20:53:28.598Z [[32minfo[39m]: User connected:
+2024-10-27T20:54:04.710Z [[32minfo[39m]: User disconnected:
+2024-10-27T20:54:05.329Z [[32minfo[39m]: User connected:
+2024-10-27T20:56:09.852Z [[32minfo[39m]: User user_2o23w5YSMkxiXlwEZXyCbn8bMjc joined chat chat_ IMcAmxnBCS
+2024-10-27T20:56:09.854Z [[32minfo[39m]: User user_2o23w5YSMkxiXlwEZXyCbn8bMjc joined chat chat_ IMcAmxnBCS
+2024-10-27T20:56:16.502Z [[32minfo[39m]: Emitting message to chat:chat_ IMcAmxnBCS - [object Object]
+2024-10-27T20:56:25.038Z [[32minfo[39m]: Emitting message to chat:chat_ IMcAmxnBCS - [object Object]
+2024-10-27T20:59:44.948Z [[31merror[39m]: Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16)
+2024-10-27T20:59:44.949Z [[31merror[39m]: Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16)
+2024-10-27T20:59:44.950Z [[31merror[39m]: Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16)
+2024-10-27T20:59:45.099Z [[31merror[39m]: Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16)
+2024-10-27T20:59:45.101Z [[31merror[39m]: Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16)
+2024-10-27T20:59:45.102Z [[31merror[39m]: Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16)
+2024-10-27T20:59:45.301Z [[31merror[39m]: Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16)
+2024-10-27T20:59:45.304Z [[31merror[39m]: Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16)
+2024-10-27T20:59:45.305Z [[31merror[39m]: Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16)
+2024-10-27T20:59:45.551Z [[31merror[39m]: Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16)
+2024-10-27T20:59:45.556Z [[31merror[39m]: Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16)
+2024-10-27T20:59:45.557Z [[31merror[39m]: Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16)
+2024-10-27T20:59:45.853Z [[31merror[39m]: Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16)
+2024-10-27T20:59:45.858Z [[31merror[39m]: Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16)
+2024-10-27T20:59:45.858Z [[31merror[39m]: Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16)
+2024-10-27T20:59:46.205Z [[31merror[39m]: Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16)
+2024-10-27T20:59:46.209Z [[31merror[39m]: Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16)
+2024-10-27T20:59:46.209Z [[31merror[39m]: Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16)
+2024-10-27T20:59:46.606Z [[31merror[39m]: Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16)
+2024-10-27T20:59:46.611Z [[31merror[39m]: Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16)
+2024-10-27T20:59:46.611Z [[31merror[39m]: Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16)
+2024-10-27T20:59:47.057Z [[31merror[39m]: Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16)
+2024-10-27T20:59:47.062Z [[31merror[39m]: Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16)
+2024-10-27T20:59:47.062Z [[31merror[39m]: Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16)
+2024-10-27T20:59:47.558Z [[31merror[39m]: Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16)
+2024-10-27T20:59:47.563Z [[31merror[39m]: Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16)
+2024-10-27T20:59:47.563Z [[31merror[39m]: Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16)
+2024-10-27T20:59:48.109Z [[31merror[39m]: Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16)
+2024-10-27T20:59:48.114Z [[31merror[39m]: Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16)
+2024-10-27T20:59:48.114Z [[31merror[39m]: Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16)
+2024-10-27T20:59:48.710Z [[31merror[39m]: Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16)
+2024-10-27T20:59:48.715Z [[31merror[39m]: Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16)
+2024-10-27T20:59:48.715Z [[31merror[39m]: Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16)
+2024-10-27T20:59:49.362Z [[31merror[39m]: Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16)
+2024-10-27T20:59:49.365Z [[31merror[39m]: Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16)
+2024-10-27T20:59:49.366Z [[31merror[39m]: Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16)
+2024-10-27T20:59:50.064Z [[31merror[39m]: Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16)
+2024-10-27T20:59:50.067Z [[31merror[39m]: Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16)
+2024-10-27T20:59:50.067Z [[31merror[39m]: Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16)
+2024-10-28T06:24:03.319Z [[32minfo[39m]: Socket service initializing
+2024-10-28T06:24:03.328Z [[32minfo[39m]: Socket service initialized
+2024-10-28T06:24:03.328Z [[32minfo[39m]: Socket service listening
+2024-10-28T06:24:43.778Z [[32minfo[39m]: User connected:
+2024-10-28T06:25:01.720Z [[32minfo[39m]: User disconnected:
+2024-10-28T06:25:02.174Z [[32minfo[39m]: User connected:
+2024-10-28T06:49:53.873Z [[32minfo[39m]: Socket service initialized
+2024-10-28T06:51:34.210Z [[32minfo[39m]: Socket service initialized
+2024-10-28T06:52:18.537Z [[32minfo[39m]: Socket service initialized
+2024-10-28T06:52:33.869Z [[32minfo[39m]: Socket service initialized
+2024-10-28T06:53:56.871Z [[32minfo[39m]: Socket service initialized
+2024-10-28T06:54:14.509Z [[32minfo[39m]: User connected:
+2024-10-28T06:54:49.504Z [[32minfo[39m]: User disconnected:
+2024-10-28T06:56:15.824Z [[32minfo[39m]: User connected:
+2024-10-28T06:56:41.239Z [[32minfo[39m]: User disconnected:
+2024-10-28T06:57:22.075Z [[32minfo[39m]: User connected:
+2024-10-28T06:57:40.076Z [[32minfo[39m]: User disconnected:
+2024-10-28T06:57:40.564Z [[32minfo[39m]: User connected:
+2024-10-28T07:04:46.055Z [[32minfo[39m]: User disconnected:
+2024-10-28T07:04:46.402Z [[32minfo[39m]: User connected:
+2024-10-28T07:06:22.455Z [[32minfo[39m]: User disconnected:
+2024-10-28T07:06:22.925Z [[32minfo[39m]: User connected:
+2024-10-28T07:06:31.562Z [[32minfo[39m]: User disconnected:
+2024-10-28T07:06:32.007Z [[32minfo[39m]: User connected:
+2024-10-28T13:44:32.273Z [[32minfo[39m]: Socket service initialized
+2024-10-28T14:41:35.037Z [[32minfo[39m]: Socket service initialized
+2024-10-28T14:42:08.868Z [[32minfo[39m]: User connected:
+2024-10-28T14:43:23.698Z [[32minfo[39m]: User disconnected:
+2024-10-28T14:44:28.081Z [[32minfo[39m]: User connected:
+2024-10-28T14:45:08.347Z [[32minfo[39m]: User disconnected:
+2024-10-28T14:45:47.143Z [[32minfo[39m]: User connected:
+2024-10-28T14:46:00.792Z [[32minfo[39m]: User disconnected:
+2024-10-28T14:46:01.269Z [[32minfo[39m]: User connected:
+2024-10-28T14:46:03.534Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T14:46:03.536Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T14:50:56.077Z [[32minfo[39m]: User disconnected:
+2024-10-28T14:51:06.845Z [[32minfo[39m]: User connected:
+2024-10-28T14:51:08.184Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T14:51:08.186Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T14:51:10.995Z [[32minfo[39m]: User disconnected:
+2024-10-28T14:51:11.360Z [[32minfo[39m]: User connected:
+2024-10-28T14:51:12.374Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T14:51:12.375Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T14:52:51.313Z [[32minfo[39m]: User disconnected:
+2024-10-28T14:52:51.834Z [[32minfo[39m]: User connected:
+2024-10-28T14:52:53.553Z [[32minfo[39m]: User disconnected:
+2024-10-28T14:52:53.910Z [[32minfo[39m]: User connected:
+2024-10-28T14:53:19.520Z [[32minfo[39m]: User disconnected:
+2024-10-28T14:53:46.305Z [[32minfo[39m]: User connected:
+2024-10-28T14:53:52.465Z [[32minfo[39m]: User disconnected:
+2024-10-28T14:53:52.779Z [[32minfo[39m]: User connected:
+2024-10-28T14:54:16.210Z [[32minfo[39m]: User disconnected:
+2024-10-28T14:54:16.726Z [[32minfo[39m]: User connected:
+2024-10-28T14:54:23.190Z [[32minfo[39m]: User disconnected:
+2024-10-28T14:54:23.709Z [[32minfo[39m]: User connected:
+2024-10-28T14:59:30.380Z [[32minfo[39m]: Socket service initialized
+2024-10-28T14:59:50.113Z [[32minfo[39m]: User connected:
+2024-10-28T14:59:52.161Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T14:59:52.164Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T15:00:12.163Z [[32minfo[39m]: User disconnected:
+2024-10-28T15:00:12.592Z [[32minfo[39m]: User connected:
+2024-10-28T15:00:14.205Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T15:00:14.208Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T15:08:56.962Z [[32minfo[39m]: Socket service initialized
+2024-10-28T15:09:03.564Z [[32minfo[39m]: User connected:
+2024-10-28T15:09:04.938Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T15:09:04.940Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T15:09:28.550Z [[32minfo[39m]: User disconnected:
+2024-10-28T15:09:29.106Z [[32minfo[39m]: User connected:
+2024-10-28T15:09:52.738Z [[32minfo[39m]: User disconnected:
+2024-10-28T15:09:53.630Z [[32minfo[39m]: User connected:
+2024-10-28T15:09:54.491Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T15:09:54.494Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T15:10:16.038Z [[32minfo[39m]: User disconnected:
+2024-10-28T15:10:16.735Z [[32minfo[39m]: User connected:
+2024-10-28T15:10:17.297Z [[32minfo[39m]: User disconnected:
+2024-10-28T15:10:17.974Z [[32minfo[39m]: User connected:
+2024-10-28T15:10:20.163Z [[32minfo[39m]: User disconnected:
+2024-10-28T15:10:21.041Z [[32minfo[39m]: User connected:
+2024-10-28T15:10:33.892Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T15:10:33.897Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T15:13:48.845Z [[32minfo[39m]: User disconnected:
+2024-10-28T15:13:49.776Z [[32minfo[39m]: User connected:
+2024-10-28T15:13:51.258Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T15:13:51.262Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T15:14:01.568Z [[32minfo[39m]: User disconnected:
+2024-10-28T15:14:02.244Z [[32minfo[39m]: User connected:
+2024-10-28T15:14:03.134Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T15:14:03.136Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T15:15:32.369Z [[32minfo[39m]: User disconnected:
+2024-10-28T15:15:33.249Z [[32minfo[39m]: User connected:
+2024-10-28T15:15:34.261Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T15:15:34.264Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T15:16:17.229Z [[32minfo[39m]: User disconnected:
+2024-10-28T15:16:17.727Z [[32minfo[39m]: User connected:
+2024-10-28T15:16:20.968Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T15:16:20.971Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T15:17:24.326Z [[32minfo[39m]: User disconnected:
+2024-10-28T15:17:25.232Z [[32minfo[39m]: User connected:
+2024-10-28T15:17:28.210Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T15:17:28.213Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T15:18:45.595Z [[32minfo[39m]: User disconnected:
+2024-10-28T15:18:46.209Z [[32minfo[39m]: User connected:
+2024-10-28T15:18:47.039Z [[32minfo[39m]: User disconnected:
+2024-10-28T15:18:47.612Z [[32minfo[39m]: User connected:
+2024-10-28T15:18:51.119Z [[32minfo[39m]: User disconnected:
+2024-10-28T15:18:51.996Z [[32minfo[39m]: User connected:
+2024-10-28T15:18:52.814Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T15:18:52.816Z [[32minfo[39m]: User undefined joined chat [object Object]
