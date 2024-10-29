@@ -1,13 +1,21 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { useSocket } from '@/context/SocketProvider';
 import { MessageType, ChatType, UserType } from '@/types';
 import { Button } from './ui/button';
 import { Input } from './ui/input';
+import EditGroupModal from './edit-group-modal';
 import axios from 'axios';
 
 interface ChatInterfaceProps {
-  chat: ChatType;
+  chat: any;
   currentUser: UserType;
+}
+
+interface TypingEvent {
+  chatId: string;
+  userId: string;
+  userName: string;
+  isTyping: boolean;
 }
 
 const ChatInterface = ({ chat, currentUser }: ChatInterfaceProps) => {
@@ -15,16 +23,32 @@ const ChatInterface = ({ chat, currentUser }: ChatInterfaceProps) => {
   const [newMessage, setNewMessage] = useState('');
   const [typingUsers, setTypingUsers] = useState<Set<string>>(new Set());
   const { socket, sendMessage, markMessagesAsRead } = useSocket();
-
-  const fetchMessages = async() =>{
-    const response = await axios.post(`${process.env.NEXT_PUBLIC_CHAT_SERVICE_URL}/messages/getMessages`, { chatId: chat.id} );
-    console.log(response.data);
-    setMessages(response.data);
-  }
-
   useEffect(() => {
     fetchMessages();
   }, [chat.id]);
+
+  const fetchMessages = useCallback(async () => {
+    try {
+      const response = await axios.post(`${process.env.NEXT_PUBLIC_CHAT_SERVICE_URL}/messages/getMessages`, { chatId: chat.id });
+      setMessages(response.data);
+    } catch (error) {
+      console.error('Error fetching messages:', error);
+    }
+  }, [chat.id]);
+
+  const handleTyping = useCallback((status: boolean) => {
+    console.log('Typing:', currentUser);
+    socket?.emit("typing", {
+      chatId: chat.id,
+      userId: currentUser.id,
+      userName: currentUser.name,
+      isTyping: status,
+    });
+  }, [socket, chat.id, currentUser.id, currentUser.name, newMessage]);
+
+  useEffect(() => {
+    fetchMessages();
+  }, [fetchMessages]);
 
   useEffect(() => {
     if (socket && chat) {
@@ -32,76 +56,95 @@ const ChatInterface = ({ chat, currentUser }: ChatInterfaceProps) => {
       socket.emit('join_chat', { chatId: chat.id, userId: currentUser.id });
 
       // Listen for new messages
-      socket.on('receive_message', (message: MessageType) => {
+      const handleReceiveMessage = (message: any) => {
+        if(message.user_id === currentUser.id || message.user === currentUser.id) { return; }
+        console.log('Received message:', message);
         setMessages(prev => [...prev, message]);
         // Mark message as read if chat is active
         markMessagesAsRead(chat.id, currentUser.id, [message.id]);
-      });
+      };
 
       // Handle typing indicators
-      socket.on('user_typing', ({ chatId, user }) => {
-        if (chatId === chat.id && user.id !== currentUser.id) {
-          setTypingUsers(prev => new Set(prev).add(user.id));
-          // Clear typing indicator after delay
-          setTimeout(() => {
-            setTypingUsers(prev => {
-              const newSet = new Set(prev);
-              newSet.delete(user.id);
-              return newSet;
-            });
-          }, 3000);
+      const handleTyping = (event: TypingEvent) => {
+        console.log('Typing event:', event);
+        if (event.chatId === chat.id) {
+          setTypingUsers(prev => {
+            const newSet = new Set(prev);
+            if (event.isTyping) {
+              newSet.add(event.userName);
+            } else {
+              newSet.delete(event.userName);
+            }
+            return newSet;
+          });
         }
-      });
+      };
+
+      socket.on('receive_message', handleReceiveMessage);
+      socket.on('typing', handleTyping);
 
       // Group chat specific listeners
       if (chat.type === 'group') {
-        socket.on('user_joined_chat', ({ userId }) => {
+        const handleUserJoined = ({ userId }: { userId: string }) => {
           // Update UI to show new user joined
-        });
+          console.log(`User ${userId} joined the chat`);
+        };
 
-        socket.on('user_left_group', ({ userId }) => {
+        const handleUserLeft = ({ userId }: { userId: string }) => {
           // Update UI to show user left
-        });
+          console.log(`User ${userId} left the chat`);
+        };
+
+        socket.on('user_joined_chat', handleUserJoined);
+        socket.on('user_left_group', handleUserLeft);
+
+        return () => {
+          socket.emit('leave_chat', { chatId: chat.id, userId: currentUser.id });
+          socket.off('receive_message', handleReceiveMessage);
+          socket.off('typing', handleTyping);
+          socket.off('user_joined_chat', handleUserJoined);
+          socket.off('user_left_group', handleUserLeft);
+        };
       }
 
       return () => {
         socket.emit('leave_chat', { chatId: chat.id, userId: currentUser.id });
-        socket.off('receive_message');
-        socket.off('user_typing');
-        socket.off('user_joined_chat');
-        socket.off('user_left_group');
+        socket.off('receive_message', handleReceiveMessage);
+        socket.off('typing', handleTyping);
       };
     }
-  }, [socket, chat.id]);
+  }, [socket, chat, currentUser.id, markMessagesAsRead]);
 
-  const handleSendMessage = () => {
+  const handleSendMessage = useCallback(() => {
     if (newMessage.trim()) {
-      const messageData = {
+      const messageData: any = {
         id: `msg_${Date.now()}`,
         message: newMessage,
         user: currentUser.id,
         chatId: chat.id,
+        userName: currentUser.name,
         timestamp: new Date().toISOString(),
         type: 'text',
         status: 'sent',
         readBy: []
       };
-      
+
+      handleTyping(false);
       sendMessage(messageData);
       setNewMessage('');
       setMessages(prev => [...prev, messageData]);
     }
-  };
+  }, [newMessage, currentUser.id, chat.id, sendMessage]);
 
   return (
     <div className="flex flex-col h-full">
       {/* Chat Header */}
-      <div className="p-4 border-b">
+      <div className="p-4 border-b flex justify-between">
         <div className="flex items-center gap-3">
           {chat.type === 'group' ? (
             <div className="flex items-center">
               {/* Group avatar and name */}
-              <div className="font-semibold">{chat.name}</div>
+              <div className="font-semibold pr-2">{chat.name}</div>
               <div className="text-sm text-muted-foreground">
                 {chat.members.length} members
               </div>
@@ -109,10 +152,13 @@ const ChatInterface = ({ chat, currentUser }: ChatInterfaceProps) => {
           ) : (
             <div className="flex items-center">
               {/* Individual chat header */}
-              <div className="font-semibold">{chat.name}</div>
+              <div className="font-semibold">{chat.other_members[0].name}</div>
             </div>
           )}
         </div>
+        {chat.type === 'group' && (<div className=' '>
+          <EditGroupModal groupId={chat.id} groupName={chat.name} currentMembers={chat.other_members} />
+        </div>)}
       </div>
 
       {/* Messages Area */}
@@ -128,8 +174,7 @@ const ChatInterface = ({ chat, currentUser }: ChatInterfaceProps) => {
         
         {typingUsers.size > 0 && (
           <div className="text-sm text-muted-foreground italic">
-            {Array.from(typingUsers).map(userId => {
-              const user = chat.members.find(m => m === userId);
+            {Array.from(typingUsers).map(user => {
               return user;
             }).join(', ')} is typing...
           </div>
@@ -143,11 +188,9 @@ const ChatInterface = ({ chat, currentUser }: ChatInterfaceProps) => {
             value={newMessage}
             onChange={(e) => {
               setNewMessage(e.target.value);
-              socket?.emit('typing', { 
-                chatId: chat.id, 
-                user: currentUser 
-              });
+              handleTyping(true);
             }}
+          
             onKeyPress={(e) => {
               if (e.key === 'Enter') handleSendMessage();
             }}
@@ -161,9 +204,9 @@ const ChatInterface = ({ chat, currentUser }: ChatInterfaceProps) => {
 };
 
 const MessageBubble = ({ message, isOwn, chat }: { 
-  message: MessageType, 
+  message: any, 
   isOwn: boolean,
-  chat: ChatType
+  chat: any
 }) => {
   return (
     <div className={`mb-4 ${isOwn ? 'text-right' : 'text-left'}`}>
@@ -173,21 +216,20 @@ const MessageBubble = ({ message, isOwn, chat }: {
         {/* Show sender name in group chats */}
         {chat.type === 'group' && !isOwn && (
           <div className="text-xs font-semibold mb-1">
-            {/* {message.user} */}
-            "some sender"
+            {message.user.name || message.userName}
           </div>
         )}
         <div>{message.message}</div>
         <div className="text-xs mt-1 opacity-70">
           {new Date(message.timestamp).toLocaleTimeString()}
           {/* Message status indicators */}
-          {isOwn && (
+          {/* {isOwn && (
             <span className="ml-2">
               {message.status === 'sent' && '✓'}
               {message.status === 'delivered' && '✓✓'}
               {message.status === 'read' && '✓✓'}
             </span>
-          )}
+          )} */}
         </div>
       </div>
     </div>

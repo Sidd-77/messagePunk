@@ -15,8 +15,9 @@ import { ChatType, UserType } from "@/types";
 import { useUser } from "@clerk/nextjs";
 import SearchModal from "@/components/search-modal";
 import { Toaster } from "@/components/ui/toaster";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import CreateGroupModal from "@/components/create-group-model";
 import axios from "axios";
-
 
 export default function Home() {
   const [activeChat, setActiveChat] = useState<ChatType | null>(null);
@@ -36,7 +37,7 @@ export default function Home() {
   const fetchChats = async () => {
     // Don't proceed if there's no user ID
     if (!currentUser.id) {
-      console.log('Waiting for user ID to be available...');
+      console.log("Waiting for user ID to be available...");
       return;
     }
 
@@ -47,6 +48,7 @@ export default function Home() {
         { userId: currentUser.id }
       );
       setChats(response.data);
+      console.log(response.data);
     } catch (error) {
       console.error("Failed to fetch chats", error);
     } finally {
@@ -65,76 +67,25 @@ export default function Home() {
   useEffect(() => {
     if (socket && isConnected && currentUser.id) {
       // Listen for new chat events
-      socket.on('newChat', (chat: ChatType) => {
-        setChats(prevChats => [...prevChats, chat]);
+      socket.on("newChat", (chat: ChatType) => {
+        setChats((prevChats) => [...prevChats, chat]);
       });
 
       // Listen for chat updates
-      socket.on('chatUpdated', (updatedChat: ChatType) => {
-        setChats(prevChats =>
-          prevChats.map(chat => 
+      socket.on("chatUpdated", (updatedChat: ChatType) => {
+        setChats((prevChats) =>
+          prevChats.map((chat) =>
             chat.id === updatedChat.id ? updatedChat : chat
           )
         );
       });
 
       return () => {
-        socket.off('newChat');
-        socket.off('chatUpdated');
+        socket.off("newChat");
+        socket.off("chatUpdated");
       };
     }
   }, [socket, isConnected, currentUser.id]);
-
-  // const chats:ChatType[] = [
-  //   {
-  //     id: "1",
-  //     type: "personal",
-  //     name: "John Doe",
-  //     members: ["1", "2"],
-  //     createdAt: "2021-08-01T12:00:00Z",
-  //     lastMessage: {
-  //       id: "1",
-  //       message: "Hey there",
-  //       user: "1",
-  //       chatId: "1",
-  //       timestamp: "2021-08-01T12:01:00Z",
-  //       type: "text",
-  //       status: "sent",
-  //     },
-  //   },
-  //   {
-  //     id: "2",
-  //     type: "personal",
-  //     name: "Jane Doe",
-  //     members: ["1", "3"],
-  //     createdAt: "2021-08-01T12:00:00Z",
-  //     lastMessage: {
-  //       id: "2",
-  //       message: "Hello",
-  //       user: "3",
-  //       chatId: "2",
-  //       timestamp: "2021-08-01T12:01:00Z",
-  //       type: "text",
-  //       status: "sent",
-  //     },
-  //   },
-  //   {
-  //     id: "3",
-  //     type: "group",
-  //     name: "Group Chat",
-  //     members: ["1", "2", "3"],
-  //     createdAt: "2021-08-01T12:00:00Z",
-  //     lastMessage: {
-  //       id: "3",
-  //       message: "Welcome to the group",
-  //       user: "1",
-  //       chatId: "3",
-  //       timestamp: "2021-08-01T12:01:00Z",
-  //       type: "text",
-  //       status: "sent",
-  //     },
-  //   },
-  // ];
 
   const toggleSidebar = () => setIsSidebarOpen(!isSidebarOpen);
 
@@ -157,63 +108,80 @@ export default function Home() {
 
       {/* Sidebar */}
       <div
-        className={`${
-          isSidebarOpen ? "translate-x-0" : "-translate-x-full"
-        } transform transition-transform duration-300 ease-in-out md:translate-x-0 fixed md:relative top-0 left-0 w-full md:w-80 h-full bg-background border-r z-40`}
-      >
-        <div className="flex items-center justify-between p-4">
-          <UserButton />
-          <SearchModal />
-          <ModeToggle />
-        </div>
-        <Tabs
-          defaultValue="chats"
-          className="flex flex-col h-[calc(100%-64px)]"
-        >
-          <TabsList className="w-full">
-            <TabsTrigger value="chats" className="w-full">
-              Chats
-            </TabsTrigger>
-            <TabsTrigger value="groups" className="w-full">
-              Groups
-            </TabsTrigger>
-          </TabsList>
-          <TabsContent
-            value="chats"
-            className="flex-1 flex flex-col m-0 overflow-hidden"
-          >
-            <div className="p-4">
-              <div className="relative">
-                <Search className="absolute left-2 top-2.5 h-4 w-4 text-muted-foreground" />
-                <Input placeholder="Search chats" className="pl-8" />
-              </div>
-            </div>
-            <ScrollArea className="flex-1">
-              {chats.map((chat) => (
+      className={`${
+        isSidebarOpen ? "translate-x-0" : "-translate-x-full"
+      } transform transition-transform duration-300 ease-in-out md:translate-x-0 fixed md:relative top-0 left-0 w-full md:w-80 h-full bg-background border-r z-40`}
+    >
+      {/* Header */}
+      <div className="flex items-center justify-between p-4 border-b">
+        <UserButton />
+        <ModeToggle />
+      </div>
+
+      {/* Search */}
+      <div className="p-2 border-b flex flex-col space-y-2">
+  <div className="w-full">
+    <SearchModal />
+  </div>
+  <div className="w-full">
+    <CreateGroupModal />
+  </div>
+</div>
+
+
+      {/* Tabs */}
+      
+          <ScrollArea className="flex-1 px-2">
+            {chats.map((chat) => {
+              const otherMember = chat.type === "personal" ? chat.other_members[0] : null;
+              const lastMessageTime = chat.last_message?.timestamp ? 
+                format(new Date(chat.last_message.timestamp), 'HH:mm') : '';
+              
+              return (
                 <div
                   key={chat.id}
-                  className="p-4 cursor-pointer hover:bg-accent"
+                  className="group flex items-center gap-3 p-3 cursor-pointer rounded-lg hover:bg-accent transition-colors"
                   onClick={() => {
                     setActiveChat(chat);
                     setIsSidebarOpen(false);
                   }}
                 >
-                  <div className="font-semibold">{chat.name}</div>
-                  <div className="text-sm text-muted-foreground">
-                    {/* {chat?.lastMessage} */}
+                  <Avatar className="h-8 w-8">
+                    <AvatarImage
+                      src={chat.type === "personal" ? otherMember?.avatar : chat.avatar}
+                      alt={chat.type === "personal" ? otherMember?.name : chat.name}
+                    />
+                    <AvatarFallback className="text-base">
+                      {chat.type === "personal"
+                        ? otherMember?.name?.charAt(0).toUpperCase()
+                        : chat.name?.charAt(0).toUpperCase()}
+                    </AvatarFallback>
+                  </Avatar>
+
+                  <div className="flex-1 overflow-hidden">
+                    <div className="flex justify-between items-center mb-1">
+                      <span className="font-medium truncate">
+                        {chat.type === "personal" ? otherMember?.name : chat.name}
+                      </span>
+                      {lastMessageTime && (
+                        <span className="text-xs text-muted-foreground">
+                          {lastMessageTime}
+                        </span>
+                      )}
+                    </div>
+                    
+                    {chat.last_message && (
+                      <p className="text-sm text-muted-foreground truncate">
+                        {chat.last_message.message}
+                      </p>
+                    )}
                   </div>
-                  <Separator className="mt-2" />
                 </div>
-              ))}
-            </ScrollArea>
-          </TabsContent>
-          <TabsContent value="groups" className="flex-1 m-0">
-            <div className="p-4 text-center text-muted-foreground">
-              Group chats will be displayed here
-            </div>
-          </TabsContent>
-        </Tabs>
-      </div>
+              );
+            })}
+          </ScrollArea>
+        
+    </div>
 
       {/* Main Chat Area */}
       <div className="flex-1 md:ml-0">

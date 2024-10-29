@@ -88,8 +88,8 @@ const SearchModal = () => {
   return (
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>
-        <Button variant="outline" className="w-full sm:w-[300px]">
-          <Search className="h-4 w-4 mr-2" />
+        <Button variant="outline" className="w-full  ">
+          <Search className="h-4 w-4 " />
           Search Users
         </Button>
       </DialogTrigger>

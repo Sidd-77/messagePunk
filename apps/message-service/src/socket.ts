@@ -20,6 +20,7 @@ const CHANNELS = {
 interface TypingEvent {
   chatId: string;
   userId: string;
+  userName: string;
   isTyping: boolean;
 }
 
@@ -59,6 +60,11 @@ class SocketService {
     logger.info("Socket service initialized");
   }
 
+  // private handleTypingEvent(event: TypingEvent) {
+  //   this.io.to(`chat:${event.chatId}`).emit("typing", event);
+  // }
+  
+
   private async publishPresence(userId: string, status: "online" | "offline") {
     const presence: UserPresence = {
       userId,
@@ -80,9 +86,14 @@ class SocketService {
         logger.info(`User ${userId} authenticated`);
       });
 
-      socket.on("join_chat", (chatId: string) => {
-        socket.join(`chat:${chatId}`);
-        logger.info(`User ${userId} joined chat ${chatId}`);
+      socket.on("typing", async (event: TypingEvent) => {
+        await this.publisher.publish(CHANNELS.TYPING, JSON.stringify(event));
+      });
+  
+
+      socket.on("join_chat", (joined: any) => {
+        socket.join(`chat:${joined.chatId}`);
+        logger.info(`User ${joined.userId} joined chat ${joined.chatId}`);
       });
 
       socket.on("message", async (msg: MessageType) => {
@@ -103,9 +114,7 @@ class SocketService {
         }
       });
 
-      socket.on("typing", (data: TypingEvent) => {
-        this.publisher.publish(CHANNELS.TYPING, JSON.stringify(data));
-      });
+      
 
       socket.on("message_status", (status: MessageStatus) => {
         this.publisher.publish(CHANNELS.MESSAGE_STATUS, JSON.stringify(status));
@@ -124,11 +133,13 @@ class SocketService {
         const data = JSON.parse(message);
         switch (channel) {
           case CHANNELS.MESSAGE:
-            this.io.to(`chat:${data.chatId}`).emit("message", data);
+            this.io.to(`chat:${data.chatId}`).emit("receive_message", data);
             break;
+
           case CHANNELS.TYPING:
-            this.io.to(`chat:${data.chatId}`).emit("typing", data);
+            this.io.to(`chat:${data.chatId}`).emit("typing", data)
             break;
+
           case CHANNELS.PRESENCE:
             this.io.emit("presence", data);
             break;

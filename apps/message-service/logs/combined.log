@@ -780,3 +780,830 @@
 2024-10-28T15:18:51.996Z [[32minfo[39m]: User connected:
 2024-10-28T15:18:52.814Z [[32minfo[39m]: User undefined joined chat [object Object]
 2024-10-28T15:18:52.816Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T20:18:29.764Z [[32minfo[39m]: Socket service initialized
+2024-10-28T20:18:58.967Z [[32minfo[39m]: User connected:
+2024-10-28T20:19:00.235Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T20:19:00.237Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T20:19:10.992Z [[32minfo[39m]: User disconnected:
+2024-10-28T20:19:15.766Z [[32minfo[39m]: User connected:
+2024-10-28T20:19:16.622Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T20:19:16.623Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T20:20:18.773Z [[32minfo[39m]: User disconnected:
+2024-10-28T20:20:19.362Z [[32minfo[39m]: User connected:
+2024-10-28T20:20:35.244Z [[32minfo[39m]: User disconnected:
+2024-10-28T20:21:15.233Z [[32minfo[39m]: User connected:
+2024-10-28T20:21:15.453Z [[32minfo[39m]: User disconnected:
+2024-10-28T20:21:16.082Z [[32minfo[39m]: User connected:
+2024-10-28T20:23:11.386Z [[32minfo[39m]: User disconnected:
+2024-10-28T20:23:12.261Z [[32minfo[39m]: User connected:
+2024-10-28T20:24:02.165Z [[32minfo[39m]: User disconnected:
+2024-10-28T20:24:15.219Z [[32minfo[39m]: User connected:
+2024-10-28T20:27:48.436Z [[32minfo[39m]: User disconnected:
+2024-10-28T20:27:49.077Z [[32minfo[39m]: User connected:
+2024-10-28T20:27:53.064Z [[32minfo[39m]: User disconnected:
+2024-10-28T20:27:53.596Z [[32minfo[39m]: User connected:
+2024-10-28T20:30:54.509Z [[32minfo[39m]: Socket service initialized
+2024-10-28T20:31:03.618Z [[32minfo[39m]: User connected:
+2024-10-28T20:32:00.215Z [[32minfo[39m]: User disconnected:
+2024-10-28T20:32:00.738Z [[32minfo[39m]: User connected:
+2024-10-28T20:33:18.446Z [[32minfo[39m]: User disconnected:
+2024-10-28T20:33:21.489Z [[32minfo[39m]: User connected:
+2024-10-28T20:33:21.776Z [[32minfo[39m]: User disconnected:
+2024-10-28T20:33:22.684Z [[32minfo[39m]: User connected:
+2024-10-28T20:33:26.484Z [[32minfo[39m]: User disconnected:
+2024-10-28T20:33:27.344Z [[32minfo[39m]: User connected:
+2024-10-28T20:33:31.986Z [[32minfo[39m]: User disconnected:
+2024-10-28T20:33:44.904Z [[32minfo[39m]: User connected:
+2024-10-28T20:33:46.113Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T20:33:46.115Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T20:35:22.565Z [[32minfo[39m]: User disconnected:
+2024-10-28T20:35:22.949Z [[32minfo[39m]: User connected:
+2024-10-28T20:35:47.487Z [[32minfo[39m]: User disconnected:
+2024-10-28T20:35:47.956Z [[32minfo[39m]: User connected:
+2024-10-28T20:35:54.466Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T20:35:54.468Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T20:35:56.268Z [[32minfo[39m]: User disconnected:
+2024-10-28T20:35:56.692Z [[32minfo[39m]: User connected:
+2024-10-28T20:35:57.647Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T20:35:57.650Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T20:36:23.513Z [[32minfo[39m]: User disconnected:
+2024-10-28T20:36:24.004Z [[32minfo[39m]: User connected:
+2024-10-28T20:36:24.997Z [[32minfo[39m]: User disconnected:
+2024-10-28T20:36:25.320Z [[32minfo[39m]: User connected:
+2024-10-28T20:36:29.301Z [[32minfo[39m]: User disconnected:
+2024-10-28T20:36:29.605Z [[32minfo[39m]: User connected:
+2024-10-28T20:36:32.066Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T20:36:32.069Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T20:36:59.598Z [[32minfo[39m]: User disconnected:
+2024-10-28T20:36:59.940Z [[32minfo[39m]: User connected:
+2024-10-28T20:37:09.585Z [[32minfo[39m]: User disconnected:
+2024-10-28T20:37:10.134Z [[32minfo[39m]: User connected:
+2024-10-28T20:37:22.444Z [[32minfo[39m]: User disconnected:
+2024-10-28T20:37:22.901Z [[32minfo[39m]: User connected:
+2024-10-28T20:38:03.064Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T20:38:03.067Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T20:38:51.969Z [[32minfo[39m]: User disconnected:
+2024-10-28T20:38:52.432Z [[32minfo[39m]: User connected:
+2024-10-28T20:39:44.341Z [[32minfo[39m]: User disconnected:
+2024-10-28T20:39:44.604Z [[32minfo[39m]: User connected:
+2024-10-28T20:39:57.258Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T20:39:57.261Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T20:39:58.322Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T20:39:59.173Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T20:39:59.675Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T20:40:00.635Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T20:40:01.122Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T20:40:01.986Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T20:40:02.369Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T20:43:29.818Z [[32minfo[39m]: User disconnected:
+2024-10-28T20:43:30.248Z [[32minfo[39m]: User connected:
+2024-10-28T20:43:36.954Z [[32minfo[39m]: User disconnected:
+2024-10-28T20:43:37.229Z [[32minfo[39m]: User connected:
+2024-10-28T20:43:37.610Z [[32minfo[39m]: User connected:
+2024-10-28T20:43:37.712Z [[32minfo[39m]: User disconnected:
+2024-10-28T20:43:37.948Z [[32minfo[39m]: User connected:
+2024-10-28T20:44:22.209Z [[32minfo[39m]: User disconnected:
+2024-10-28T20:44:23.328Z [[32minfo[39m]: User disconnected:
+2024-10-28T20:44:23.574Z [[32minfo[39m]: User connected:
+2024-10-28T20:44:36.344Z [[32minfo[39m]: User disconnected:
+2024-10-28T20:45:09.497Z [[32minfo[39m]: User connected:
+2024-10-28T20:45:11.187Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T20:45:11.191Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T20:45:11.979Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T20:45:13.195Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T20:45:13.928Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T20:45:14.858Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T20:45:15.288Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T20:45:18.062Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T20:45:18.580Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T20:45:19.011Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T20:47:14.238Z [[32minfo[39m]: User disconnected:
+2024-10-28T20:47:14.776Z [[32minfo[39m]: User connected:
+2024-10-28T20:47:15.452Z [[32minfo[39m]: User disconnected:
+2024-10-28T20:48:31.844Z [[32minfo[39m]: User connected:
+2024-10-28T20:48:39.256Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T20:48:39.260Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T20:48:40.302Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T20:48:40.867Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T20:48:41.478Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T20:48:42.251Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T20:48:45.760Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T20:48:46.298Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T20:49:25.365Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T20:49:26.220Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T20:49:43.440Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T20:49:44.222Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T20:50:19.831Z [[32minfo[39m]: User disconnected:
+2024-10-28T20:50:20.211Z [[32minfo[39m]: User connected:
+2024-10-28T20:51:52.024Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T20:51:52.027Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T20:51:52.505Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T20:51:52.964Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T20:51:53.336Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T20:52:23.376Z [[32minfo[39m]: User disconnected:
+2024-10-28T20:52:23.654Z [[32minfo[39m]: User connected:
+2024-10-28T20:55:19.539Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T20:55:19.542Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T20:55:19.949Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T20:55:20.482Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T20:55:21.062Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T20:55:29.409Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T20:55:30.893Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T20:55:31.564Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T20:55:47.836Z [[32minfo[39m]: User disconnected:
+2024-10-28T20:56:20.612Z [[32minfo[39m]: User connected:
+2024-10-28T20:56:33.138Z [[32minfo[39m]: User disconnected:
+2024-10-28T20:56:33.566Z [[32minfo[39m]: User connected:
+2024-10-28T20:56:35.982Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T20:56:35.985Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T20:56:59.498Z [[32minfo[39m]: User disconnected:
+2024-10-28T20:56:59.782Z [[32minfo[39m]: User connected:
+2024-10-28T20:57:01.026Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T20:57:01.028Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T20:57:05.064Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T20:57:05.685Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T20:57:10.379Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T20:57:10.798Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T20:57:11.708Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T20:57:12.309Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T20:57:22.503Z [[32minfo[39m]: User disconnected:
+2024-10-28T20:57:27.585Z [[32minfo[39m]: User connected:
+2024-10-28T20:57:29.082Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T20:57:29.085Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T20:57:29.882Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T20:57:30.712Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T20:57:31.224Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T21:01:48.843Z [[32minfo[39m]: User disconnected:
+2024-10-28T21:01:49.205Z [[32minfo[39m]: User connected:
+2024-10-28T21:02:23.981Z [[32minfo[39m]: User disconnected:
+2024-10-28T21:02:24.233Z [[32minfo[39m]: User connected:
+2024-10-28T21:02:26.475Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T21:02:26.477Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T21:02:37.879Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T21:02:38.249Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T21:02:38.593Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T21:02:42.789Z [[32minfo[39m]: User disconnected:
+2024-10-28T21:02:52.868Z [[32minfo[39m]: User connected:
+2024-10-28T21:02:54.816Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T21:02:54.819Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T21:06:04.012Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T21:06:04.690Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T21:06:05.281Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T21:06:35.158Z [[32minfo[39m]: User disconnected:
+2024-10-28T21:06:35.769Z [[32minfo[39m]: User connected:
+2024-10-28T21:06:52.118Z [[32minfo[39m]: User disconnected:
+2024-10-28T21:06:52.628Z [[32minfo[39m]: User connected:
+2024-10-28T21:08:06.657Z [[32minfo[39m]: User disconnected:
+2024-10-28T21:08:07.125Z [[32minfo[39m]: User connected:
+2024-10-28T21:08:16.237Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T21:08:16.240Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T21:09:41.812Z [[32minfo[39m]: User disconnected:
+2024-10-28T21:09:42.544Z [[32minfo[39m]: User connected:
+2024-10-28T21:09:54.579Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T21:09:54.582Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T21:09:55.171Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T21:09:56.374Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T21:10:59.325Z [[32minfo[39m]: User disconnected:
+2024-10-28T21:10:59.681Z [[32minfo[39m]: User connected:
+2024-10-28T21:11:36.825Z [[32minfo[39m]: User disconnected:
+2024-10-28T21:11:37.252Z [[32minfo[39m]: User connected:
+2024-10-28T21:11:38.217Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T21:11:38.219Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T21:14:13.831Z [[32minfo[39m]: User disconnected:
+2024-10-28T21:14:14.434Z [[32minfo[39m]: User connected:
+2024-10-28T21:14:23.789Z [[32minfo[39m]: User disconnected:
+2024-10-28T21:14:24.333Z [[32minfo[39m]: User connected:
+2024-10-28T21:14:27.047Z [[32minfo[39m]: User disconnected:
+2024-10-28T21:14:27.577Z [[32minfo[39m]: User connected:
+2024-10-28T21:14:48.956Z [[32minfo[39m]: User disconnected:
+2024-10-28T21:14:49.545Z [[32minfo[39m]: User connected:
+2024-10-28T21:14:56.589Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T21:14:56.592Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T21:14:59.500Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T21:15:21.443Z [[32minfo[39m]: User disconnected:
+2024-10-28T21:15:21.984Z [[32minfo[39m]: User connected:
+2024-10-28T21:15:26.869Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T21:15:26.872Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T21:15:28.895Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T21:15:30.146Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T21:15:30.883Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T21:16:30.515Z [[32minfo[39m]: User disconnected:
+2024-10-28T21:16:47.945Z [[32minfo[39m]: User connected:
+2024-10-28T21:16:50.063Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T21:16:50.065Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T21:17:05.153Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T21:17:05.972Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T21:17:12.678Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T21:17:42.307Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T21:17:42.704Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T21:17:48.766Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T21:17:49.357Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T21:21:56.945Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T21:21:57.353Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T21:21:57.789Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T21:21:58.807Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T21:21:59.155Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T21:23:53.318Z [[32minfo[39m]: User disconnected:
+2024-10-28T21:23:53.752Z [[32minfo[39m]: User connected:
+2024-10-28T21:24:00.862Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T21:24:00.865Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T21:24:02.924Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T21:24:03.779Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T21:24:04.682Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T21:24:22.450Z [[32minfo[39m]: User disconnected:
+2024-10-28T21:24:22.751Z [[32minfo[39m]: User connected:
+2024-10-28T21:24:25.559Z [[32minfo[39m]: User disconnected:
+2024-10-28T21:24:25.870Z [[32minfo[39m]: User connected:
+2024-10-28T21:24:27.206Z [[32minfo[39m]: User disconnected:
+2024-10-28T21:24:27.473Z [[32minfo[39m]: User connected:
+2024-10-28T21:24:29.426Z [[32minfo[39m]: User disconnected:
+2024-10-28T21:24:29.708Z [[32minfo[39m]: User connected:
+2024-10-28T21:24:32.200Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T21:24:32.202Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T21:26:02.877Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T21:26:03.275Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T21:26:03.795Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T21:26:07.351Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T21:26:07.720Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T21:26:30.397Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T21:26:31.041Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T21:26:31.653Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T21:26:32.207Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T21:26:32.612Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T21:26:33.591Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T21:26:33.958Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T21:26:34.285Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T21:34:03.474Z [[32minfo[39m]: User disconnected:
+2024-10-28T21:34:03.915Z [[32minfo[39m]: User connected:
+2024-10-28T21:34:41.658Z [[32minfo[39m]: User disconnected:
+2024-10-28T21:34:42.130Z [[32minfo[39m]: User connected:
+2024-10-28T21:34:55.286Z [[32minfo[39m]: User disconnected:
+2024-10-28T21:34:55.660Z [[32minfo[39m]: User connected:
+2024-10-28T21:35:09.179Z [[32minfo[39m]: User disconnected:
+2024-10-28T21:35:09.711Z [[32minfo[39m]: User connected:
+2024-10-28T21:36:29.184Z [[32minfo[39m]: User disconnected:
+2024-10-28T21:36:29.788Z [[32minfo[39m]: User connected:
+2024-10-28T21:36:34.775Z [[32minfo[39m]: User disconnected:
+2024-10-28T21:36:35.090Z [[32minfo[39m]: User connected:
+2024-10-28T21:36:39.703Z [[32minfo[39m]: User disconnected:
+2024-10-28T21:36:40.019Z [[32minfo[39m]: User connected:
+2024-10-28T21:36:46.919Z [[32minfo[39m]: User disconnected:
+2024-10-28T21:36:47.256Z [[32minfo[39m]: User connected:
+2024-10-28T21:36:57.245Z [[32minfo[39m]: User disconnected:
+2024-10-28T21:36:57.566Z [[32minfo[39m]: User connected:
+2024-10-28T21:37:10.694Z [[32minfo[39m]: User disconnected:
+2024-10-28T21:37:11.276Z [[32minfo[39m]: User connected:
+2024-10-28T21:37:35.650Z [[32minfo[39m]: User disconnected:
+2024-10-28T21:37:36.150Z [[32minfo[39m]: User connected:
+2024-10-28T21:38:31.564Z [[32minfo[39m]: User disconnected:
+2024-10-28T21:39:08.594Z [[32minfo[39m]: User connected:
+2024-10-28T21:39:08.850Z [[32minfo[39m]: User disconnected:
+2024-10-28T21:39:09.760Z [[32minfo[39m]: User connected:
+2024-10-28T21:39:09.969Z [[32minfo[39m]: User disconnected:
+2024-10-28T21:39:10.593Z [[32minfo[39m]: User connected:
+2024-10-28T21:40:14.396Z [[32minfo[39m]: User disconnected:
+2024-10-28T21:40:14.965Z [[32minfo[39m]: User connected:
+2024-10-28T21:40:24.543Z [[32minfo[39m]: User disconnected:
+2024-10-28T21:40:25.090Z [[32minfo[39m]: User connected:
+2024-10-28T21:40:52.629Z [[32minfo[39m]: User disconnected:
+2024-10-28T21:40:53.601Z [[32minfo[39m]: User connected:
+2024-10-28T21:40:56.195Z [[32minfo[39m]: User disconnected:
+2024-10-28T21:40:56.870Z [[32minfo[39m]: User connected:
+2024-10-28T21:41:14.284Z [[32minfo[39m]: User disconnected:
+2024-10-28T21:41:14.978Z [[32minfo[39m]: User connected:
+2024-10-28T21:41:26.325Z [[32minfo[39m]: User disconnected:
+2024-10-28T21:41:27.140Z [[32minfo[39m]: User connected:
+2024-10-28T21:41:28.808Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T21:41:28.812Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T21:42:47.745Z [[32minfo[39m]: User disconnected:
+2024-10-28T21:42:48.158Z [[32minfo[39m]: User connected:
+2024-10-28T21:42:50.921Z [[32minfo[39m]: User disconnected:
+2024-10-28T21:42:51.277Z [[32minfo[39m]: User connected:
+2024-10-28T21:42:53.741Z [[32minfo[39m]: User disconnected:
+2024-10-28T21:42:54.085Z [[32minfo[39m]: User connected:
+2024-10-28T21:42:56.346Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T21:42:56.348Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T21:43:10.678Z [[32minfo[39m]: User disconnected:
+2024-10-28T21:43:11.004Z [[32minfo[39m]: User connected:
+2024-10-28T21:43:15.520Z [[32minfo[39m]: User disconnected:
+2024-10-28T21:43:15.828Z [[32minfo[39m]: User connected:
+2024-10-28T21:43:18.840Z [[32minfo[39m]: User disconnected:
+2024-10-28T21:43:19.136Z [[32minfo[39m]: User connected:
+2024-10-28T21:44:30.238Z [[32minfo[39m]: User disconnected:
+2024-10-28T21:44:30.629Z [[32minfo[39m]: User connected:
+2024-10-28T21:44:32.284Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T21:44:32.286Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T21:44:44.256Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T21:44:44.710Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T21:44:45.169Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T21:44:50.063Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T21:44:50.430Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T21:44:51.145Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T21:46:48.690Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T21:46:49.259Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T21:46:49.737Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T21:46:50.156Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T21:46:50.562Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T21:46:50.956Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T21:46:51.644Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T21:46:52.372Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T21:46:52.755Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T21:46:53.270Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T21:46:58.631Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T21:46:59.761Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T21:47:00.383Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T21:47:01.585Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T21:47:02.079Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T21:47:02.537Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T21:47:02.966Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T21:47:03.336Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T21:47:04.065Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T21:47:04.454Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T21:47:04.881Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T21:47:05.224Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T21:47:06.318Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T21:47:06.734Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T21:47:07.123Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T21:47:07.426Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T21:50:02.253Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T21:50:02.621Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T21:50:03.245Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T21:50:04.280Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T21:50:04.741Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T21:50:05.132Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T21:50:05.870Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T21:50:06.265Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T21:50:06.592Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T21:50:07.028Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T21:50:07.407Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T21:50:08.219Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T21:50:08.752Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T21:50:09.071Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T22:03:03.960Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T22:03:04.358Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T22:03:04.772Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T22:03:05.111Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T22:03:06.201Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T22:03:06.609Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T22:03:07.035Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T22:03:07.402Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T22:03:17.446Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T22:03:17.873Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T22:03:18.207Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T22:03:18.584Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T22:03:19.060Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T22:03:19.451Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T22:03:20.150Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T22:03:20.588Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T22:03:20.915Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-28T22:03:28.650Z [[32minfo[39m]: User disconnected:
+2024-10-29T04:02:18.927Z [[32minfo[39m]: Socket service initialized
+2024-10-29T04:02:51.833Z [[32minfo[39m]: Socket service initialized
+2024-10-29T04:03:52.008Z [[32minfo[39m]: User connected:
+2024-10-29T04:04:19.253Z [[32minfo[39m]: User connected:
+2024-10-29T04:04:25.158Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-29T04:04:25.160Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-29T04:04:33.097Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-29T04:04:33.105Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-29T04:04:43.983Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-29T04:04:47.162Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-29T04:06:11.523Z [[32minfo[39m]: User disconnected:
+2024-10-29T04:06:12.327Z [[32minfo[39m]: User disconnected:
+2024-10-29T04:06:13.336Z [[32minfo[39m]: User connected:
+2024-10-29T04:06:13.681Z [[32minfo[39m]: User connected:
+2024-10-29T04:06:34.607Z [[32minfo[39m]: User disconnected:
+2024-10-29T04:06:35.366Z [[32minfo[39m]: User disconnected:
+2024-10-29T04:06:36.154Z [[32minfo[39m]: User connected:
+2024-10-29T04:06:36.901Z [[32minfo[39m]: User connected:
+2024-10-29T04:07:16.171Z [[32minfo[39m]: Socket service initialized
+2024-10-29T04:07:21.325Z [[32minfo[39m]: Socket service initialized
+2024-10-29T04:07:22.182Z [[32minfo[39m]: User connected:
+2024-10-29T04:07:25.646Z [[32minfo[39m]: Socket service initialized
+2024-10-29T04:07:28.843Z [[32minfo[39m]: Socket service initialized
+2024-10-29T04:07:31.175Z [[32minfo[39m]: User connected:
+2024-10-29T04:07:34.769Z [[32minfo[39m]: User disconnected:
+2024-10-29T04:07:35.847Z [[32minfo[39m]: User connected:
+2024-10-29T04:07:36.806Z [[32minfo[39m]: User connected:
+2024-10-29T04:07:38.637Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-29T04:07:38.642Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-29T04:08:30.968Z [[32minfo[39m]: User disconnected:
+2024-10-29T04:08:31.757Z [[32minfo[39m]: User disconnected:
+2024-10-29T04:08:32.619Z [[32minfo[39m]: User connected:
+2024-10-29T04:08:33.398Z [[32minfo[39m]: User connected:
+2024-10-29T04:08:37.190Z [[32minfo[39m]: User disconnected:
+2024-10-29T04:08:37.823Z [[32minfo[39m]: User disconnected:
+2024-10-29T04:08:38.403Z [[32minfo[39m]: User connected:
+2024-10-29T04:08:38.957Z [[32minfo[39m]: User connected:
+2024-10-29T04:08:52.969Z [[32minfo[39m]: Socket service initialized
+2024-10-29T04:08:53.859Z [[32minfo[39m]: User connected:
+2024-10-29T04:08:54.670Z [[32minfo[39m]: User connected:
+2024-10-29T04:08:56.711Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-29T04:08:56.716Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-29T04:10:53.767Z [[32minfo[39m]: Socket service initialized
+2024-10-29T04:11:12.425Z [[32minfo[39m]: Socket service initialized
+2024-10-29T04:11:15.877Z [[32minfo[39m]: Socket service initialized
+2024-10-29T04:11:25.901Z [[32minfo[39m]: Socket service initialized
+2024-10-29T04:12:08.750Z [[32minfo[39m]: Socket service initialized
+2024-10-29T04:12:25.696Z [[32minfo[39m]: Socket service initialized
+2024-10-29T04:12:28.588Z [[32minfo[39m]: Socket service initialized
+2024-10-29T04:13:17.215Z [[32minfo[39m]: User connected:
+2024-10-29T04:13:17.856Z [[32minfo[39m]: User connected:
+2024-10-29T04:13:18.584Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-29T04:13:18.587Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-29T04:13:19.735Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-29T04:13:19.744Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-29T04:13:32.104Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-29T04:13:34.344Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-29T04:13:53.929Z [[32minfo[39m]: Socket service initialized
+2024-10-29T04:13:54.168Z [[32minfo[39m]: User connected:
+2024-10-29T04:13:57.252Z [[32minfo[39m]: Socket service initialized
+2024-10-29T04:13:58.188Z [[32minfo[39m]: User connected:
+2024-10-29T04:14:02.226Z [[32minfo[39m]: User connected:
+2024-10-29T04:14:36.923Z [[32minfo[39m]: User disconnected:
+2024-10-29T04:14:37.833Z [[32minfo[39m]: User connected:
+2024-10-29T04:14:39.071Z [[32minfo[39m]: User disconnected:
+2024-10-29T04:14:39.112Z [[32minfo[39m]: User disconnected:
+2024-10-29T04:14:39.932Z [[32minfo[39m]: User connected:
+2024-10-29T04:14:40.345Z [[32minfo[39m]: User disconnected:
+2024-10-29T04:14:40.658Z [[32minfo[39m]: User connected:
+2024-10-29T04:14:41.521Z [[32minfo[39m]: User connected:
+2024-10-29T04:14:42.080Z [[32minfo[39m]: User disconnected:
+2024-10-29T04:14:42.995Z [[32minfo[39m]: User connected:
+2024-10-29T04:14:45.321Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-29T04:14:45.328Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-29T04:14:46.205Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-29T04:14:46.208Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-29T04:14:53.566Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-29T04:14:54.487Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-29T04:15:30.487Z [[32minfo[39m]: User disconnected:
+2024-10-29T04:15:31.231Z [[32minfo[39m]: User disconnected:
+2024-10-29T04:15:31.917Z [[32minfo[39m]: User connected:
+2024-10-29T04:15:32.362Z [[32minfo[39m]: User connected:
+2024-10-29T04:15:44.728Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-29T04:15:44.734Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-29T04:15:45.688Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-29T04:15:45.692Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-29T04:16:00.348Z [[32minfo[39m]: User disconnected:
+2024-10-29T04:16:00.906Z [[32minfo[39m]: User connected:
+2024-10-29T04:16:03.400Z [[32minfo[39m]: User disconnected:
+2024-10-29T04:16:04.196Z [[32minfo[39m]: User connected:
+2024-10-29T04:16:06.565Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-29T04:16:06.569Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-29T04:16:07.630Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-29T04:16:07.633Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-29T04:16:23.156Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-29T04:16:27.403Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-29T04:16:28.298Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-29T04:16:28.826Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-29T04:17:13.521Z [[32minfo[39m]: User disconnected:
+2024-10-29T04:17:14.254Z [[32minfo[39m]: User disconnected:
+2024-10-29T04:17:14.990Z [[32minfo[39m]: User connected:
+2024-10-29T04:17:15.444Z [[32minfo[39m]: User connected:
+2024-10-29T04:20:51.715Z [[32minfo[39m]: User disconnected:
+2024-10-29T04:20:52.735Z [[32minfo[39m]: User connected:
+2024-10-29T04:20:53.828Z [[32minfo[39m]: User disconnected:
+2024-10-29T04:20:54.003Z [[32minfo[39m]: User disconnected:
+2024-10-29T04:20:54.960Z [[32minfo[39m]: User connected:
+2024-10-29T04:20:55.729Z [[32minfo[39m]: User connected:
+2024-10-29T04:21:01.422Z [[32minfo[39m]: User disconnected:
+2024-10-29T04:21:02.125Z [[32minfo[39m]: User disconnected:
+2024-10-29T04:21:02.792Z [[32minfo[39m]: User connected:
+2024-10-29T04:21:03.490Z [[32minfo[39m]: User connected:
+2024-10-29T04:21:13.331Z [[32minfo[39m]: User disconnected:
+2024-10-29T04:21:14.028Z [[32minfo[39m]: User disconnected:
+2024-10-29T04:21:14.790Z [[32minfo[39m]: User connected:
+2024-10-29T04:21:15.643Z [[32minfo[39m]: User connected:
+2024-10-29T04:21:28.244Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-29T04:21:28.251Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-29T04:21:31.602Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-29T04:21:31.605Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-29T04:21:32.239Z [[32minfo[39m]: User disconnected:
+2024-10-29T04:21:32.807Z [[32minfo[39m]: User connected:
+2024-10-29T04:21:34.297Z [[32minfo[39m]: User disconnected:
+2024-10-29T04:21:35.195Z [[32minfo[39m]: User connected:
+2024-10-29T04:21:36.426Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-29T04:21:36.433Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-29T04:21:37.529Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-29T04:21:37.532Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-29T04:22:46.559Z [[32minfo[39m]: Socket service initialized
+2024-10-29T04:22:47.138Z [[32minfo[39m]: User connected:
+2024-10-29T04:22:47.254Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-29T04:22:47.256Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-29T04:22:51.173Z [[32minfo[39m]: User connected:
+2024-10-29T04:22:51.195Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-29T04:22:51.255Z [[32minfo[39m]: User undefined joined chat [object Object]
+2024-10-29T04:24:45.317Z [[32minfo[39m]: Socket service initialized
+2024-10-29T04:24:49.630Z [[32minfo[39m]: Socket service initialized
+2024-10-29T04:25:03.871Z [[32minfo[39m]: User connected:
+2024-10-29T04:25:04.719Z [[32minfo[39m]: User connected:
+2024-10-29T04:25:06.105Z [[32minfo[39m]: User user_2o4R44CIuXfIlYyyCjtcR2U1TVA joined chat chat_ 2qL1uJdUAkFEYTz
+2024-10-29T04:25:06.112Z [[32minfo[39m]: User user_2o4R44CIuXfIlYyyCjtcR2U1TVA joined chat chat_ 2qL1uJdUAkFEYTz
+2024-10-29T04:25:07.119Z [[32minfo[39m]: User user_2o4RDuChCLeyjB7aLNpYF4cR2Im joined chat chat_ 2qL1uJdUAkFEYTz
+2024-10-29T04:25:07.128Z [[32minfo[39m]: User user_2o4RDuChCLeyjB7aLNpYF4cR2Im joined chat chat_ 2qL1uJdUAkFEYTz
+2024-10-29T04:26:20.022Z [[32minfo[39m]: User disconnected:
+2024-10-29T04:26:20.715Z [[32minfo[39m]: User connected:
+2024-10-29T04:26:20.769Z [[32minfo[39m]: User user_2o4RDuChCLeyjB7aLNpYF4cR2Im joined chat chat_ 2qL1uJdUAkFEYTz
+2024-10-29T04:26:20.770Z [[32minfo[39m]: User user_2o4RDuChCLeyjB7aLNpYF4cR2Im joined chat chat_ 2qL1uJdUAkFEYTz
+2024-10-29T04:26:21.920Z [[32minfo[39m]: User disconnected:
+2024-10-29T04:26:22.046Z [[32minfo[39m]: User disconnected:
+2024-10-29T04:26:22.585Z [[32minfo[39m]: User connected:
+2024-10-29T04:26:23.379Z [[32minfo[39m]: User connected:
+2024-10-29T04:26:25.109Z [[32minfo[39m]: User disconnected:
+2024-10-29T04:26:25.748Z [[32minfo[39m]: User disconnected:
+2024-10-29T04:26:26.357Z [[32minfo[39m]: User connected:
+2024-10-29T04:26:26.967Z [[32minfo[39m]: User connected:
+2024-10-29T04:26:29.681Z [[32minfo[39m]: User user_2o4R44CIuXfIlYyyCjtcR2U1TVA joined chat chat_ 2qL1uJdUAkFEYTz
+2024-10-29T04:26:29.700Z [[32minfo[39m]: User user_2o4R44CIuXfIlYyyCjtcR2U1TVA joined chat chat_ 2qL1uJdUAkFEYTz
+2024-10-29T04:26:31.138Z [[32minfo[39m]: User user_2o4RDuChCLeyjB7aLNpYF4cR2Im joined chat chat_ 2qL1uJdUAkFEYTz
+2024-10-29T04:26:31.141Z [[32minfo[39m]: User user_2o4RDuChCLeyjB7aLNpYF4cR2Im joined chat chat_ 2qL1uJdUAkFEYTz
+2024-10-29T04:27:09.947Z [[32minfo[39m]: User disconnected:
+2024-10-29T04:27:10.715Z [[32minfo[39m]: User disconnected:
+2024-10-29T04:27:11.406Z [[32minfo[39m]: User connected:
+2024-10-29T04:27:11.916Z [[32minfo[39m]: User connected:
+2024-10-29T04:27:12.768Z [[32minfo[39m]: User user_2o4R44CIuXfIlYyyCjtcR2U1TVA joined chat chat_ 2qL1uJdUAkFEYTz
+2024-10-29T04:27:12.777Z [[32minfo[39m]: User user_2o4R44CIuXfIlYyyCjtcR2U1TVA joined chat chat_ 2qL1uJdUAkFEYTz
+2024-10-29T04:27:14.011Z [[32minfo[39m]: User user_2o4RDuChCLeyjB7aLNpYF4cR2Im joined chat chat_ 2qL1uJdUAkFEYTz
+2024-10-29T04:27:14.015Z [[32minfo[39m]: User user_2o4RDuChCLeyjB7aLNpYF4cR2Im joined chat chat_ 2qL1uJdUAkFEYTz
+2024-10-29T04:28:05.504Z [[32minfo[39m]: User disconnected:
+2024-10-29T04:28:05.973Z [[32minfo[39m]: User user_2o4R44CIuXfIlYyyCjtcR2U1TVA joined chat chat_ 2qL1uJdUAkFEYTz
+2024-10-29T04:28:05.996Z [[32minfo[39m]: User disconnected:
+2024-10-29T04:28:06.572Z [[32minfo[39m]: User connected:
+2024-10-29T04:28:07.084Z [[32minfo[39m]: User connected:
+2024-10-29T04:28:15.250Z [[32minfo[39m]: User disconnected:
+2024-10-29T04:28:15.963Z [[32minfo[39m]: User disconnected:
+2024-10-29T04:28:16.563Z [[32minfo[39m]: User connected:
+2024-10-29T04:28:17.329Z [[32minfo[39m]: User connected:
+2024-10-29T04:28:17.806Z [[32minfo[39m]: User disconnected:
+2024-10-29T04:28:18.503Z [[32minfo[39m]: User disconnected:
+2024-10-29T04:28:19.017Z [[32minfo[39m]: User connected:
+2024-10-29T04:28:19.564Z [[32minfo[39m]: User connected:
+2024-10-29T04:28:22.860Z [[32minfo[39m]: User disconnected:
+2024-10-29T04:28:23.449Z [[32minfo[39m]: User connected:
+2024-10-29T04:28:23.530Z [[32minfo[39m]: User disconnected:
+2024-10-29T04:28:23.575Z [[32minfo[39m]: User disconnected:
+2024-10-29T04:28:24.190Z [[32minfo[39m]: User connected:
+2024-10-29T04:28:24.621Z [[32minfo[39m]: User connected:
+2024-10-29T04:28:24.691Z [[32minfo[39m]: User disconnected:
+2024-10-29T04:28:25.295Z [[32minfo[39m]: User connected:
+2024-10-29T04:28:25.553Z [[32minfo[39m]: User disconnected:
+2024-10-29T04:28:25.669Z [[32minfo[39m]: User disconnected:
+2024-10-29T04:28:26.223Z [[32minfo[39m]: User connected:
+2024-10-29T04:28:26.736Z [[32minfo[39m]: User connected:
+2024-10-29T04:28:44.081Z [[32minfo[39m]: User disconnected:
+2024-10-29T04:28:45.002Z [[32minfo[39m]: User connected:
+2024-10-29T04:28:45.136Z [[32minfo[39m]: User disconnected:
+2024-10-29T04:28:45.844Z [[32minfo[39m]: User connected:
+2024-10-29T04:28:46.046Z [[32minfo[39m]: User user_2o4R44CIuXfIlYyyCjtcR2U1TVA joined chat chat_ 2qL1uJdUAkFEYTz
+2024-10-29T04:28:46.054Z [[32minfo[39m]: User user_2o4R44CIuXfIlYyyCjtcR2U1TVA joined chat chat_ 2qL1uJdUAkFEYTz
+2024-10-29T04:28:47.146Z [[32minfo[39m]: User user_2o4RDuChCLeyjB7aLNpYF4cR2Im joined chat chat_ 2qL1uJdUAkFEYTz
+2024-10-29T04:28:47.150Z [[32minfo[39m]: User user_2o4RDuChCLeyjB7aLNpYF4cR2Im joined chat chat_ 2qL1uJdUAkFEYTz
+2024-10-29T04:30:24.950Z [[32minfo[39m]: User disconnected:
+2024-10-29T04:30:25.822Z [[32minfo[39m]: User disconnected:
+2024-10-29T04:30:25.930Z [[32minfo[39m]: User connected:
+2024-10-29T04:30:26.615Z [[32minfo[39m]: User connected:
+2024-10-29T04:30:27.861Z [[32minfo[39m]: User user_2o4R44CIuXfIlYyyCjtcR2U1TVA joined chat chat_ 2qL1uJdUAkFEYTz
+2024-10-29T04:30:27.868Z [[32minfo[39m]: User user_2o4R44CIuXfIlYyyCjtcR2U1TVA joined chat chat_ 2qL1uJdUAkFEYTz
+2024-10-29T04:30:28.657Z [[32minfo[39m]: User user_2o4RDuChCLeyjB7aLNpYF4cR2Im joined chat chat_ 2qL1uJdUAkFEYTz
+2024-10-29T04:30:28.660Z [[32minfo[39m]: User user_2o4RDuChCLeyjB7aLNpYF4cR2Im joined chat chat_ 2qL1uJdUAkFEYTz
+2024-10-29T04:30:34.271Z [[32minfo[39m]: User disconnected:
+2024-10-29T04:30:34.805Z [[32minfo[39m]: User disconnected:
+2024-10-29T04:30:35.278Z [[32minfo[39m]: User connected:
+2024-10-29T04:30:35.763Z [[32minfo[39m]: User connected:
+2024-10-29T04:30:38.413Z [[32minfo[39m]: User user_2o4R44CIuXfIlYyyCjtcR2U1TVA joined chat chat_ 2qL1uJdUAkFEYTz
+2024-10-29T04:30:38.420Z [[32minfo[39m]: User user_2o4R44CIuXfIlYyyCjtcR2U1TVA joined chat chat_ 2qL1uJdUAkFEYTz
+2024-10-29T04:30:39.556Z [[32minfo[39m]: User user_2o4RDuChCLeyjB7aLNpYF4cR2Im joined chat chat_ 2qL1uJdUAkFEYTz
+2024-10-29T04:30:39.564Z [[32minfo[39m]: User user_2o4RDuChCLeyjB7aLNpYF4cR2Im joined chat chat_ 2qL1uJdUAkFEYTz
+2024-10-29T04:31:21.225Z [[32minfo[39m]: User user_2o4RDuChCLeyjB7aLNpYF4cR2Im joined chat chat_ 9UWTtrgzL5dII65
+2024-10-29T04:31:39.432Z [[32minfo[39m]: User disconnected:
+2024-10-29T04:31:40.718Z [[32minfo[39m]: User connected:
+2024-10-29T04:31:40.837Z [[32minfo[39m]: User user_2o4RDuChCLeyjB7aLNpYF4cR2Im joined chat chat_ 9UWTtrgzL5dII65
+2024-10-29T04:31:40.837Z [[32minfo[39m]: User user_2o4RDuChCLeyjB7aLNpYF4cR2Im joined chat chat_ 9UWTtrgzL5dII65
+2024-10-29T04:31:42.346Z [[32minfo[39m]: User disconnected:
+2024-10-29T04:31:42.388Z [[32minfo[39m]: User disconnected:
+2024-10-29T04:31:43.536Z [[32minfo[39m]: User connected:
+2024-10-29T04:31:43.976Z [[32minfo[39m]: User connected:
+2024-10-29T04:31:45.267Z [[32minfo[39m]: User user_2o4RDuChCLeyjB7aLNpYF4cR2Im joined chat chat_ 2qL1uJdUAkFEYTz
+2024-10-29T04:31:45.274Z [[32minfo[39m]: User user_2o4RDuChCLeyjB7aLNpYF4cR2Im joined chat chat_ 2qL1uJdUAkFEYTz
+2024-10-29T04:32:36.801Z [[32minfo[39m]: User user_2o4R44CIuXfIlYyyCjtcR2U1TVA joined chat chat_ 2qL1uJdUAkFEYTz
+2024-10-29T04:32:36.808Z [[32minfo[39m]: User user_2o4R44CIuXfIlYyyCjtcR2U1TVA joined chat chat_ 2qL1uJdUAkFEYTz
+2024-10-29T04:33:19.948Z [[32minfo[39m]: User disconnected:
+2024-10-29T04:33:20.585Z [[32minfo[39m]: User connected:
+2024-10-29T04:33:20.701Z [[32minfo[39m]: User user_2o4RDuChCLeyjB7aLNpYF4cR2Im joined chat chat_ 2qL1uJdUAkFEYTz
+2024-10-29T04:33:20.702Z [[32minfo[39m]: User user_2o4RDuChCLeyjB7aLNpYF4cR2Im joined chat chat_ 2qL1uJdUAkFEYTz
+2024-10-29T04:33:20.758Z [[32minfo[39m]: User disconnected:
+2024-10-29T04:33:20.905Z [[32minfo[39m]: User disconnected:
+2024-10-29T04:33:22.239Z [[32minfo[39m]: User connected:
+2024-10-29T04:33:22.243Z [[32minfo[39m]: User connected:
+2024-10-29T04:33:26.106Z [[32minfo[39m]: User user_2o4R44CIuXfIlYyyCjtcR2U1TVA joined chat chat_ 2qL1uJdUAkFEYTz
+2024-10-29T04:33:26.112Z [[32minfo[39m]: User user_2o4R44CIuXfIlYyyCjtcR2U1TVA joined chat chat_ 2qL1uJdUAkFEYTz
+2024-10-29T04:33:27.232Z [[32minfo[39m]: User user_2o4RDuChCLeyjB7aLNpYF4cR2Im joined chat chat_ 2qL1uJdUAkFEYTz
+2024-10-29T04:33:27.235Z [[32minfo[39m]: User user_2o4RDuChCLeyjB7aLNpYF4cR2Im joined chat chat_ 2qL1uJdUAkFEYTz
+2024-10-29T04:34:12.811Z [[32minfo[39m]: Socket service initialized
+2024-10-29T04:34:17.239Z [[32minfo[39m]: User connected:
+2024-10-29T04:34:17.292Z [[32minfo[39m]: User connected:
+2024-10-29T04:34:17.501Z [[32minfo[39m]: User user_2o4R44CIuXfIlYyyCjtcR2U1TVA joined chat chat_ 2qL1uJdUAkFEYTz
+2024-10-29T04:34:17.502Z [[32minfo[39m]: User user_2o4R44CIuXfIlYyyCjtcR2U1TVA joined chat chat_ 2qL1uJdUAkFEYTz
+2024-10-29T04:34:17.517Z [[32minfo[39m]: User user_2o4RDuChCLeyjB7aLNpYF4cR2Im joined chat chat_ 2qL1uJdUAkFEYTz
+2024-10-29T04:34:17.518Z [[32minfo[39m]: User user_2o4RDuChCLeyjB7aLNpYF4cR2Im joined chat chat_ 2qL1uJdUAkFEYTz
+2024-10-29T04:34:18.299Z [[32minfo[39m]: User disconnected:
+2024-10-29T04:34:19.212Z [[32minfo[39m]: User connected:
+2024-10-29T04:34:19.225Z [[32minfo[39m]: User disconnected:
+2024-10-29T04:34:20.218Z [[32minfo[39m]: User connected:
+2024-10-29T04:34:20.710Z [[32minfo[39m]: User user_2o4R44CIuXfIlYyyCjtcR2U1TVA joined chat chat_ 2qL1uJdUAkFEYTz
+2024-10-29T04:34:20.732Z [[32minfo[39m]: User user_2o4R44CIuXfIlYyyCjtcR2U1TVA joined chat chat_ 2qL1uJdUAkFEYTz
+2024-10-29T04:34:21.827Z [[32minfo[39m]: User user_2o4RDuChCLeyjB7aLNpYF4cR2Im joined chat chat_ 2qL1uJdUAkFEYTz
+2024-10-29T04:34:21.844Z [[32minfo[39m]: User user_2o4RDuChCLeyjB7aLNpYF4cR2Im joined chat chat_ 2qL1uJdUAkFEYTz
+2024-10-29T04:36:43.383Z [[32minfo[39m]: Socket service initialized
+2024-10-29T04:36:44.033Z [[32minfo[39m]: User connected:
+2024-10-29T04:36:44.205Z [[32minfo[39m]: User user_2o4RDuChCLeyjB7aLNpYF4cR2Im joined chat chat_ 2qL1uJdUAkFEYTz
+2024-10-29T04:36:44.206Z [[32minfo[39m]: User user_2o4RDuChCLeyjB7aLNpYF4cR2Im joined chat chat_ 2qL1uJdUAkFEYTz
+2024-10-29T04:36:48.157Z [[32minfo[39m]: User connected:
+2024-10-29T04:36:48.163Z [[32minfo[39m]: User user_2o4R44CIuXfIlYyyCjtcR2U1TVA joined chat chat_ 2qL1uJdUAkFEYTz
+2024-10-29T04:36:48.231Z [[32minfo[39m]: User user_2o4R44CIuXfIlYyyCjtcR2U1TVA joined chat chat_ 2qL1uJdUAkFEYTz
+2024-10-29T04:36:54.252Z [[32minfo[39m]: User disconnected:
+2024-10-29T04:36:54.560Z [[32minfo[39m]: User disconnected:
+2024-10-29T04:36:55.837Z [[32minfo[39m]: User connected:
+2024-10-29T04:36:56.038Z [[32minfo[39m]: User connected:
+2024-10-29T04:36:58.896Z [[32minfo[39m]: User user_2o4RDuChCLeyjB7aLNpYF4cR2Im joined chat chat_ 2qL1uJdUAkFEYTz
+2024-10-29T04:36:58.905Z [[32minfo[39m]: User user_2o4RDuChCLeyjB7aLNpYF4cR2Im joined chat chat_ 2qL1uJdUAkFEYTz
+2024-10-29T04:37:04.381Z [[32minfo[39m]: User user_2o4R44CIuXfIlYyyCjtcR2U1TVA joined chat chat_ 2qL1uJdUAkFEYTz
+2024-10-29T04:37:04.388Z [[32minfo[39m]: User user_2o4R44CIuXfIlYyyCjtcR2U1TVA joined chat chat_ 2qL1uJdUAkFEYTz
+2024-10-29T04:40:00.631Z [[32minfo[39m]: User disconnected:
+2024-10-29T04:40:01.362Z [[32minfo[39m]: User disconnected:
+2024-10-29T04:40:02.676Z [[32minfo[39m]: User connected:
+2024-10-29T04:40:03.375Z [[32minfo[39m]: User connected:
+2024-10-29T04:40:06.534Z [[32minfo[39m]: User disconnected:
+2024-10-29T04:40:07.116Z [[32minfo[39m]: User connected:
+2024-10-29T04:40:07.419Z [[32minfo[39m]: User disconnected:
+2024-10-29T04:40:07.594Z [[32minfo[39m]: User disconnected:
+2024-10-29T04:40:08.716Z [[32minfo[39m]: User connected:
+2024-10-29T04:40:08.989Z [[32minfo[39m]: User connected:
+2024-10-29T04:41:06.396Z [[32minfo[39m]: User disconnected:
+2024-10-29T04:41:07.126Z [[32minfo[39m]: User connected:
+2024-10-29T04:41:07.276Z [[32minfo[39m]: User disconnected:
+2024-10-29T04:41:07.506Z [[32minfo[39m]: User disconnected:
+2024-10-29T04:41:08.762Z [[32minfo[39m]: User connected:
+2024-10-29T04:41:08.801Z [[32minfo[39m]: User connected:
+2024-10-29T04:41:09.763Z [[32minfo[39m]: User user_2o4R44CIuXfIlYyyCjtcR2U1TVA joined chat chat_ 2qL1uJdUAkFEYTz
+2024-10-29T04:41:09.771Z [[32minfo[39m]: User user_2o4R44CIuXfIlYyyCjtcR2U1TVA joined chat chat_ 2qL1uJdUAkFEYTz
+2024-10-29T04:41:10.657Z [[32minfo[39m]: User user_2o4RDuChCLeyjB7aLNpYF4cR2Im joined chat chat_ 2qL1uJdUAkFEYTz
+2024-10-29T04:41:10.663Z [[32minfo[39m]: User user_2o4RDuChCLeyjB7aLNpYF4cR2Im joined chat chat_ 2qL1uJdUAkFEYTz
+2024-10-29T04:42:40.575Z [[32minfo[39m]: User disconnected:
+2024-10-29T04:42:41.359Z [[32minfo[39m]: User disconnected:
+2024-10-29T04:42:41.596Z [[32minfo[39m]: User connected:
+2024-10-29T04:42:42.770Z [[32minfo[39m]: User connected:
+2024-10-29T04:42:42.794Z [[32minfo[39m]: User connected:
+2024-10-29T04:42:43.683Z [[32minfo[39m]: User user_2o4R44CIuXfIlYyyCjtcR2U1TVA joined chat chat_ 2qL1uJdUAkFEYTz
+2024-10-29T04:42:43.690Z [[32minfo[39m]: User user_2o4R44CIuXfIlYyyCjtcR2U1TVA joined chat chat_ 2qL1uJdUAkFEYTz
+2024-10-29T04:42:44.681Z [[32minfo[39m]: User user_2o4RDuChCLeyjB7aLNpYF4cR2Im joined chat chat_ 2qL1uJdUAkFEYTz
+2024-10-29T04:42:44.699Z [[32minfo[39m]: User user_2o4RDuChCLeyjB7aLNpYF4cR2Im joined chat chat_ 2qL1uJdUAkFEYTz
+2024-10-29T04:43:20.055Z [[32minfo[39m]: User disconnected:
+2024-10-29T04:43:21.041Z [[32minfo[39m]: User connected:
+2024-10-29T04:43:21.078Z [[32minfo[39m]: User disconnected:
+2024-10-29T04:43:22.046Z [[32minfo[39m]: User connected:
+2024-10-29T04:43:23.710Z [[32minfo[39m]: User user_2o4R44CIuXfIlYyyCjtcR2U1TVA joined chat chat_ 2qL1uJdUAkFEYTz
+2024-10-29T04:43:23.718Z [[32minfo[39m]: User user_2o4R44CIuXfIlYyyCjtcR2U1TVA joined chat chat_ 2qL1uJdUAkFEYTz
+2024-10-29T04:43:24.608Z [[32minfo[39m]: User user_2o4RDuChCLeyjB7aLNpYF4cR2Im joined chat chat_ 2qL1uJdUAkFEYTz
+2024-10-29T04:43:24.624Z [[32minfo[39m]: User user_2o4RDuChCLeyjB7aLNpYF4cR2Im joined chat chat_ 2qL1uJdUAkFEYTz
+2024-10-29T04:43:26.582Z [[32minfo[39m]: User disconnected:
+2024-10-29T04:49:21.145Z [[32minfo[39m]: User disconnected:
+2024-10-29T04:49:22.189Z [[32minfo[39m]: User connected:
+2024-10-29T04:49:22.313Z [[32minfo[39m]: User user_2o4RDuChCLeyjB7aLNpYF4cR2Im joined chat chat_ 2qL1uJdUAkFEYTz
+2024-10-29T04:49:22.313Z [[32minfo[39m]: User user_2o4RDuChCLeyjB7aLNpYF4cR2Im joined chat chat_ 2qL1uJdUAkFEYTz
+2024-10-29T04:49:22.919Z [[32minfo[39m]: User disconnected:
+2024-10-29T04:49:22.942Z [[32minfo[39m]: User disconnected:
+2024-10-29T04:49:24.032Z [[32minfo[39m]: User connected:
+2024-10-29T04:49:24.461Z [[32minfo[39m]: User connected:
+2024-10-29T04:49:24.684Z [[32minfo[39m]: User disconnected:
+2024-10-29T04:49:25.318Z [[32minfo[39m]: User connected:
+2024-10-29T04:49:25.647Z [[32minfo[39m]: User disconnected:
+2024-10-29T04:49:25.794Z [[32minfo[39m]: User disconnected:
+2024-10-29T04:49:26.671Z [[32minfo[39m]: User connected:
+2024-10-29T04:49:27.024Z [[32minfo[39m]: User connected:
+2024-10-29T04:49:38.999Z [[32minfo[39m]: User disconnected:
+2024-10-29T04:49:39.694Z [[32minfo[39m]: User disconnected:
+2024-10-29T04:49:40.854Z [[32minfo[39m]: User connected:
+2024-10-29T04:49:41.074Z [[32minfo[39m]: User connected:
+2024-10-29T04:49:54.421Z [[32minfo[39m]: User disconnected:
+2024-10-29T04:49:54.978Z [[32minfo[39m]: User disconnected:
+2024-10-29T04:49:56.208Z [[32minfo[39m]: User connected:
+2024-10-29T04:49:56.417Z [[32minfo[39m]: User connected:
+2024-10-29T04:50:27.691Z [[32minfo[39m]: User disconnected:
+2024-10-29T04:50:28.633Z [[32minfo[39m]: User disconnected:
+2024-10-29T04:50:28.741Z [[32minfo[39m]: User connected:
+2024-10-29T04:50:28.860Z [[32minfo[39m]: User disconnected:
+2024-10-29T04:50:29.950Z [[32minfo[39m]: User connected:
+2024-10-29T04:50:30.124Z [[32minfo[39m]: User connected:
+2024-10-29T04:50:32.546Z [[32minfo[39m]: User user_2o4R44CIuXfIlYyyCjtcR2U1TVA joined chat chat_ 2qL1uJdUAkFEYTz
+2024-10-29T04:50:32.554Z [[32minfo[39m]: User user_2o4R44CIuXfIlYyyCjtcR2U1TVA joined chat chat_ 2qL1uJdUAkFEYTz
+2024-10-29T04:50:33.399Z [[32minfo[39m]: User user_2o4RDuChCLeyjB7aLNpYF4cR2Im joined chat chat_ 2qL1uJdUAkFEYTz
+2024-10-29T04:50:33.406Z [[32minfo[39m]: User user_2o4RDuChCLeyjB7aLNpYF4cR2Im joined chat chat_ 2qL1uJdUAkFEYTz
+2024-10-29T04:52:30.647Z [[32minfo[39m]: User disconnected:
+2024-10-29T04:52:31.579Z [[32minfo[39m]: User disconnected:
+2024-10-29T04:52:32.836Z [[32minfo[39m]: User connected:
+2024-10-29T04:52:33.282Z [[32minfo[39m]: User connected:
+2024-10-29T04:52:34.407Z [[32minfo[39m]: User disconnected:
+2024-10-29T04:52:35.038Z [[32minfo[39m]: User disconnected:
+2024-10-29T04:52:36.063Z [[32minfo[39m]: User connected:
+2024-10-29T04:52:36.296Z [[32minfo[39m]: User connected:
+2024-10-29T04:52:37.693Z [[32minfo[39m]: User user_2o4R44CIuXfIlYyyCjtcR2U1TVA joined chat chat_ 2qL1uJdUAkFEYTz
+2024-10-29T04:52:37.702Z [[32minfo[39m]: User user_2o4R44CIuXfIlYyyCjtcR2U1TVA joined chat chat_ 2qL1uJdUAkFEYTz
+2024-10-29T04:52:38.557Z [[32minfo[39m]: User user_2o4RDuChCLeyjB7aLNpYF4cR2Im joined chat chat_ 2qL1uJdUAkFEYTz
+2024-10-29T04:52:38.577Z [[32minfo[39m]: User user_2o4RDuChCLeyjB7aLNpYF4cR2Im joined chat chat_ 2qL1uJdUAkFEYTz
+2024-10-29T04:53:07.256Z [[32minfo[39m]: User disconnected:
+2024-10-29T04:53:08.113Z [[32minfo[39m]: User disconnected:
+2024-10-29T04:53:09.078Z [[32minfo[39m]: User connected:
+2024-10-29T04:53:09.534Z [[32minfo[39m]: User connected:
+2024-10-29T04:53:23.864Z [[32minfo[39m]: User disconnected:
+2024-10-29T04:53:24.555Z [[32minfo[39m]: User disconnected:
+2024-10-29T04:53:24.699Z [[32minfo[39m]: User connected:
+2024-10-29T04:53:24.938Z [[32minfo[39m]: User disconnected:
+2024-10-29T04:53:26.352Z [[32minfo[39m]: User connected:
+2024-10-29T04:53:26.598Z [[32minfo[39m]: User connected:
+2024-10-29T04:53:33.360Z [[32minfo[39m]: User disconnected:
+2024-10-29T04:53:33.941Z [[32minfo[39m]: User connected:
+2024-10-29T04:53:33.994Z [[32minfo[39m]: User disconnected:
+2024-10-29T04:53:34.307Z [[32minfo[39m]: User disconnected:
+2024-10-29T04:53:35.323Z [[32minfo[39m]: User connected:
+2024-10-29T04:53:35.513Z [[32minfo[39m]: User connected:
+2024-10-29T04:53:48.047Z [[32minfo[39m]: User disconnected:
+2024-10-29T04:53:48.712Z [[32minfo[39m]: User disconnected:
+2024-10-29T04:53:48.772Z [[32minfo[39m]: User connected:
+2024-10-29T04:53:48.933Z [[32minfo[39m]: User disconnected:
+2024-10-29T04:53:49.983Z [[32minfo[39m]: User connected:
+2024-10-29T04:53:50.204Z [[32minfo[39m]: User connected:
+2024-10-29T04:54:35.076Z [[32minfo[39m]: User user_2o4R44CIuXfIlYyyCjtcR2U1TVA joined chat chat_ 2qL1uJdUAkFEYTz
+2024-10-29T04:54:35.085Z [[32minfo[39m]: User user_2o4R44CIuXfIlYyyCjtcR2U1TVA joined chat chat_ 2qL1uJdUAkFEYTz
+2024-10-29T04:54:36.170Z [[32minfo[39m]: User user_2o4RDuChCLeyjB7aLNpYF4cR2Im joined chat chat_ 2qL1uJdUAkFEYTz
+2024-10-29T04:54:36.195Z [[32minfo[39m]: User user_2o4RDuChCLeyjB7aLNpYF4cR2Im joined chat chat_ 2qL1uJdUAkFEYTz
+2024-10-29T04:56:23.230Z [[32minfo[39m]: User user_2o4R44CIuXfIlYyyCjtcR2U1TVA joined chat chat_ 9UWTtrgzL5dII65
+2024-10-29T04:56:23.566Z [[32minfo[39m]: User user_2o4R44CIuXfIlYyyCjtcR2U1TVA joined chat chat_ DaVXgaBfKP741ns
+2024-10-29T04:56:24.137Z [[32minfo[39m]: User user_2o4R44CIuXfIlYyyCjtcR2U1TVA joined chat chat_ oVjUOhspe1EZ5OM
+2024-10-29T04:56:24.698Z [[32minfo[39m]: User user_2o4R44CIuXfIlYyyCjtcR2U1TVA joined chat chat_ 9UWTtrgzL5dII65
+2024-10-29T04:56:25.074Z [[32minfo[39m]: User user_2o4R44CIuXfIlYyyCjtcR2U1TVA joined chat chat_ 2qL1uJdUAkFEYTz
+2024-10-29T04:56:28.274Z [[32minfo[39m]: User user_2o4RDuChCLeyjB7aLNpYF4cR2Im joined chat chat_ 9UWTtrgzL5dII65
+2024-10-29T04:56:28.691Z [[32minfo[39m]: User user_2o4RDuChCLeyjB7aLNpYF4cR2Im joined chat chat_ 2qL1uJdUAkFEYTz
+2024-10-29T05:12:44.629Z [[32minfo[39m]: User disconnected:
+2024-10-29T05:12:45.630Z [[32minfo[39m]: User connected:
+2024-10-29T05:12:45.760Z [[32minfo[39m]: User user_2o4RDuChCLeyjB7aLNpYF4cR2Im joined chat chat_ 2qL1uJdUAkFEYTz
+2024-10-29T05:12:45.762Z [[32minfo[39m]: User user_2o4RDuChCLeyjB7aLNpYF4cR2Im joined chat chat_ 2qL1uJdUAkFEYTz
+2024-10-29T05:12:49.764Z [[32minfo[39m]: User disconnected:
+2024-10-29T05:12:49.776Z [[32minfo[39m]: User disconnected:
+2024-10-29T05:12:50.327Z [[32minfo[39m]: User connected:
+2024-10-29T05:12:50.724Z [[32minfo[39m]: User connected:
+2024-10-29T05:12:55.802Z [[32minfo[39m]: User user_2o4R44CIuXfIlYyyCjtcR2U1TVA joined chat chat_ 2qL1uJdUAkFEYTz
+2024-10-29T05:12:56.626Z [[32minfo[39m]: User user_2o4RDuChCLeyjB7aLNpYF4cR2Im joined chat chat_ 2qL1uJdUAkFEYTz
+2024-10-29T05:14:06.995Z [[32minfo[39m]: User disconnected:
+2024-10-29T05:14:07.732Z [[32minfo[39m]: User disconnected:
+2024-10-29T05:14:08.343Z [[32minfo[39m]: User connected:
+2024-10-29T05:14:08.478Z [[32minfo[39m]: User connected:
+2024-10-29T05:14:15.059Z [[32minfo[39m]: User user_2o4R44CIuXfIlYyyCjtcR2U1TVA joined chat chat_ 2qL1uJdUAkFEYTz
+2024-10-29T05:14:18.549Z [[32minfo[39m]: User user_2o4RDuChCLeyjB7aLNpYF4cR2Im joined chat chat_ 2qL1uJdUAkFEYTz
+2024-10-29T05:14:43.680Z [[32minfo[39m]: User disconnected:
+2024-10-29T05:14:44.585Z [[32minfo[39m]: User user_2o4R44CIuXfIlYyyCjtcR2U1TVA joined chat chat_ 2qL1uJdUAkFEYTz
+2024-10-29T05:14:45.250Z [[32minfo[39m]: User disconnected:
+2024-10-29T05:14:45.531Z [[32minfo[39m]: User connected:
+2024-10-29T05:14:46.230Z [[32minfo[39m]: User connected:
+2024-10-29T05:14:55.460Z [[32minfo[39m]: User disconnected:
+2024-10-29T05:14:56.141Z [[32minfo[39m]: User connected:
+2024-10-29T05:14:56.250Z [[32minfo[39m]: User disconnected:
+2024-10-29T05:14:56.356Z [[32minfo[39m]: User disconnected:
+2024-10-29T05:14:56.975Z [[32minfo[39m]: User connected:
+2024-10-29T05:14:57.362Z [[32minfo[39m]: User connected:
+2024-10-29T05:15:07.499Z [[32minfo[39m]: User user_2o4R44CIuXfIlYyyCjtcR2U1TVA joined chat chat_ 2qL1uJdUAkFEYTz
+2024-10-29T05:15:08.584Z [[32minfo[39m]: User user_2o4RDuChCLeyjB7aLNpYF4cR2Im joined chat chat_ 2qL1uJdUAkFEYTz
+2024-10-29T05:15:38.599Z [[32minfo[39m]: User user_2o4RDuChCLeyjB7aLNpYF4cR2Im joined chat chat_ 9UWTtrgzL5dII65
+2024-10-29T05:15:40.667Z [[32minfo[39m]: User user_2o4R44CIuXfIlYyyCjtcR2U1TVA joined chat chat_ 9UWTtrgzL5dII65
+2024-10-29T05:15:41.200Z [[32minfo[39m]: User user_2o4R44CIuXfIlYyyCjtcR2U1TVA joined chat chat_ oVjUOhspe1EZ5OM
+2024-10-29T05:15:42.212Z [[32minfo[39m]: User user_2o4RDuChCLeyjB7aLNpYF4cR2Im joined chat chat_ oVjUOhspe1EZ5OM
+2024-10-29T05:16:11.758Z [[32minfo[39m]: User user_2o4R44CIuXfIlYyyCjtcR2U1TVA joined chat chat_ 2qL1uJdUAkFEYTz
+2024-10-29T05:16:12.362Z [[32minfo[39m]: User user_2o4R44CIuXfIlYyyCjtcR2U1TVA joined chat chat_ 9UWTtrgzL5dII65
+2024-10-29T05:16:13.042Z [[32minfo[39m]: User user_2o4R44CIuXfIlYyyCjtcR2U1TVA joined chat chat_ DaVXgaBfKP741ns
+2024-10-29T05:16:13.744Z [[32minfo[39m]: User user_2o4R44CIuXfIlYyyCjtcR2U1TVA joined chat chat_ oVjUOhspe1EZ5OM
+2024-10-29T05:16:14.198Z [[32minfo[39m]: User user_2o4R44CIuXfIlYyyCjtcR2U1TVA joined chat chat_ DaVXgaBfKP741ns
+2024-10-29T05:16:14.834Z [[32minfo[39m]: User user_2o4R44CIuXfIlYyyCjtcR2U1TVA joined chat chat_ 9UWTtrgzL5dII65
+2024-10-29T05:16:15.463Z [[32minfo[39m]: User user_2o4R44CIuXfIlYyyCjtcR2U1TVA joined chat chat_ 2qL1uJdUAkFEYTz
+2024-10-29T05:16:23.317Z [[32minfo[39m]: User user_2o4RDuChCLeyjB7aLNpYF4cR2Im joined chat chat_ 9UWTtrgzL5dII65
+2024-10-29T05:16:23.684Z [[32minfo[39m]: User user_2o4RDuChCLeyjB7aLNpYF4cR2Im joined chat chat_ 2qL1uJdUAkFEYTz
+2024-10-29T05:16:24.369Z [[32minfo[39m]: User user_2o4RDuChCLeyjB7aLNpYF4cR2Im joined chat chat_ PnHQ8PECn5OsOEL
+2024-10-29T05:16:25.044Z [[32minfo[39m]: User user_2o4RDuChCLeyjB7aLNpYF4cR2Im joined chat chat_ 2qL1uJdUAkFEYTz
+2024-10-29T05:16:44.248Z [[32minfo[39m]: User disconnected:
+2024-10-29T05:16:47.662Z [[32minfo[39m]: User disconnected:
+2024-10-29T05:37:49.609Z [[32minfo[39m]: User connected:
+2024-10-29T05:37:51.279Z [[32minfo[39m]: User user_2o4R44CIuXfIlYyyCjtcR2U1TVA joined chat chat_ DaVXgaBfKP741ns
+2024-10-29T05:37:51.282Z [[32minfo[39m]: User user_2o4R44CIuXfIlYyyCjtcR2U1TVA joined chat chat_ DaVXgaBfKP741ns
+2024-10-29T05:37:51.981Z [[32minfo[39m]: User user_2o4R44CIuXfIlYyyCjtcR2U1TVA joined chat chat_ 9UWTtrgzL5dII65
+2024-10-29T05:37:55.111Z [[32minfo[39m]: User user_2o4R44CIuXfIlYyyCjtcR2U1TVA joined chat chat_ oVjUOhspe1EZ5OM
+2024-10-29T05:38:50.563Z [[32minfo[39m]: Socket service initialized
+2024-10-29T05:38:52.608Z [[32minfo[39m]: Socket service initialized
+2024-10-29T05:38:57.166Z [[32minfo[39m]: User connected:
+2024-10-29T05:38:57.277Z [[32minfo[39m]: User user_2o4R44CIuXfIlYyyCjtcR2U1TVA joined chat chat_ oVjUOhspe1EZ5OM
+2024-10-29T05:38:57.277Z [[32minfo[39m]: User user_2o4R44CIuXfIlYyyCjtcR2U1TVA joined chat chat_ oVjUOhspe1EZ5OM
+2024-10-29T05:39:00.692Z [[32minfo[39m]: Socket service initialized
+2024-10-29T05:39:02.162Z [[32minfo[39m]: User connected:
+2024-10-29T05:39:02.270Z [[32minfo[39m]: User user_2o4R44CIuXfIlYyyCjtcR2U1TVA joined chat chat_ oVjUOhspe1EZ5OM
+2024-10-29T05:39:02.270Z [[32minfo[39m]: User user_2o4R44CIuXfIlYyyCjtcR2U1TVA joined chat chat_ oVjUOhspe1EZ5OM
+2024-10-29T05:39:04.517Z [[32minfo[39m]: Socket service initialized
+2024-10-29T05:39:05.828Z [[32minfo[39m]: User connected:
+2024-10-29T05:39:05.936Z [[32minfo[39m]: User user_2o4R44CIuXfIlYyyCjtcR2U1TVA joined chat chat_ oVjUOhspe1EZ5OM
+2024-10-29T05:39:05.936Z [[32minfo[39m]: User user_2o4R44CIuXfIlYyyCjtcR2U1TVA joined chat chat_ oVjUOhspe1EZ5OM

@@ -10,7 +10,6 @@ interface SocketContextType {
   sendMessage: (message: any) => void;
   joinChat: (chatId: string, userId: string) => void;
   leaveChat: (chatId: string, userId: string) => void;
-  sendTypingIndicator: (chatId: string, user: UserType) => void;
   markMessagesAsRead: (chatId: string, userId: string, messageIds: string[]) => void;
   addUsersToGroup: (chatId: string, userIds: string[]) => void;
   leaveGroup: (chatId: string, userId: string) => void;
@@ -22,7 +21,6 @@ const SocketContext = createContext<SocketContextType>({
     sendMessage: () => {},
     joinChat: () => {},
     leaveChat: () => {},
-    sendTypingIndicator: () => {},
     markMessagesAsRead: () => {},
     addUsersToGroup: () => {},
     leaveGroup: () => {}
@@ -54,7 +52,7 @@ export const SocketProvider = ({ children }: { children: React.ReactNode }) => {
     };
   }, []);
 
-  const sendMessage = (message: MessageType) => {
+  const sendMessage = (message: any) => {
     if (socket) {
       socket.emit('message', message);
     }
@@ -72,11 +70,6 @@ export const SocketProvider = ({ children }: { children: React.ReactNode }) => {
         }
     };
 
-    const sendTypingIndicator = (chatId: string, user: UserType) => {
-        if (socket) {
-        socket.emit('typing', { chatId, user });
-        }
-    };
 
     const markMessagesAsRead = (chatId: string, userId: string, messageIds: string[]) => {
         if (socket) {
@@ -107,7 +100,6 @@ export const SocketProvider = ({ children }: { children: React.ReactNode }) => {
       sendMessage,
       joinChat,
       leaveChat,
-      sendTypingIndicator,
       markMessagesAsRead,
       addUsersToGroup,
       leaveGroup

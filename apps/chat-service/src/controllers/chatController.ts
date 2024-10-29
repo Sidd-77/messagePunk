@@ -65,28 +65,69 @@ export const getChats = async (
     const { userId } = req.body;
 
     const chats = await sql`
+      WITH user_chats AS (
+        SELECT DISTINCT c.*
+        FROM chats c
+        JOIN chat_members cm ON c.id = cm.chat_id
+        WHERE cm.user_id = ${userId}
+      )
       SELECT 
-        c.*,
+        uc.id,
+        uc.type,
+        uc.name,
+        uc.created_at,
+        uc.avatar,
+        uc.last_message_id,
         array_agg(DISTINCT cm.user_id) as members,
         array_agg(DISTINCT ca.user_id) as admins,
+        CASE 
+          WHEN m.id IS NOT NULL THEN
+            json_build_object(
+              'id', m.id,
+              'message', m.message,
+              'timestamp', m.timestamp,
+              'user_id', m.user_id
+            )
+          ELSE NULL
+        END as last_message,
+        COALESCE(
+          json_agg(
+            json_build_object(
+              'id', other_users.id,
+              'name', other_users.name,
+              'email', other_users.email,
+              'avatar', other_users.avatar
+            )
+          ) FILTER (WHERE other_users.id IS NOT NULL AND other_users.id != ${userId}),
+          '[]'::json
+        ) as other_members,
         json_build_object(
-          'id', m.id,
-          'message', m.message,
-          'timestamp', m.timestamp
-        ) as last_message,
-        json_agg(DISTINCT jsonb_build_object(
-          'id', u.id,
-          'name', u.name,
-          'email', u.email,
-          'avatar', u.avatar
-        )) as member_details
-      FROM chats c
-      JOIN chat_members cm ON c.id = cm.chat_id
-      LEFT JOIN chat_admins ca ON c.id = ca.chat_id
-      LEFT JOIN messages m ON c.last_message_id = m.id
-      LEFT JOIN users u ON cm.user_id = u.id
-      WHERE cm.user_id = ${userId}
-      GROUP BY c.id, m.id
+          'id', curr.id,
+          'name', curr.name,
+          'email', curr.email,
+          'avatar', curr.avatar
+        ) as current_user
+      FROM user_chats uc
+      JOIN chat_members cm ON uc.id = cm.chat_id
+      LEFT JOIN chat_admins ca ON uc.id = ca.chat_id
+      LEFT JOIN messages m ON uc.last_message_id = m.id
+      LEFT JOIN users other_users ON cm.user_id = other_users.id
+      LEFT JOIN users curr ON curr.id = ${userId}
+      GROUP BY 
+        uc.id,
+        uc.type,
+        uc.name,
+        uc.created_at,
+        uc.avatar,
+        uc.last_message_id,
+        m.id,
+        m.message,
+        m.timestamp,
+        m.user_id,
+        curr.id,
+        curr.name,
+        curr.email,
+        curr.avatar
       ORDER BY m.timestamp DESC NULLS LAST
     `;
 
@@ -96,7 +137,6 @@ export const getChats = async (
     res.status(500).json({ message: "Error fetching chats" });
   }
 };
-
 
 // export const getChatInfo = async (req: Request, res: Response):Promise<any> => {
 //   try {
