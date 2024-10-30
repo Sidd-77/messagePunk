@@ -2,9 +2,9 @@
 import { Server } from "socket.io";
 import logger from "./utils/logger";
 import Redis from "ioredis";
+import * as dotenv from "dotenv";
 import { MessageType, Subscription } from "./types";
 import MessageQueue from "./messageQueue";
-import * as dotenv from "dotenv";
 
 dotenv.config();
 
@@ -108,7 +108,7 @@ class SocketService {
 
           // get members of chat by making api call to chat service
           const chatInfoResponse = await fetch(
-            "http://localhost:5000/chats/getChatInfo",
+            `${process.env.CHAT_SERVICE_URL}/chats/getChatInfo`,
             {
               method: "POST",
               headers: {

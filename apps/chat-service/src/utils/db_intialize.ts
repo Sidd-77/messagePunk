@@ -174,13 +174,13 @@ export interface Message {
     status: 'sent' | 'delivered' | 'read';
 }
 
-// Usage example
+
 async function main() {
     try {
         // Initialize tables
         await initializeTables();
         console.log('Database setup completed');
-        
+
         // Optionally, to reset the database:
         // await dropAllTables();
         // await initializeTables();
@@ -188,4 +188,8 @@ async function main() {
         console.error('Database setup failed:', error);
         process.exit(1);
     }
+}
+
+if (require.main === module) {
+    main();
 }

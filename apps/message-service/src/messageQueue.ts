@@ -1,8 +1,13 @@
 import amqp from "amqplib/callback_api";
 import { MessageType, Subscription } from "./types";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 const messageQueue = "message_queue";
 const notificationQueue = "notification_queue";
+
+const rabbitmq_url = process.env.RABBITMQ_URL || "amqp://user:password@localhost";
 
 class MessageQueue {
   private connection: any;
@@ -10,7 +15,7 @@ class MessageQueue {
   private notificationchannel: any;
 
   constructor() {
-    amqp.connect("amqp://user:password@localhost", (error0, connection) => {
+    amqp.connect(rabbitmq_url, (error0, connection) => {
       if (error0) {
         throw error0;
       }

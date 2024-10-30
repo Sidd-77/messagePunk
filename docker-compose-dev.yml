@@ -5,9 +5,9 @@ services:
     image: redis:latest
     container_name: messagepunk-redis
     ports:
-      - "6379:6379"  # Expose Redis on the default port
+      - "6379:6379"  
     volumes:
-      - redis_data:/data  # Persist Redis data
+      - redis_data:/data  
     networks:
       - app-network
 
@@ -15,14 +15,14 @@ services:
     image: rabbitmq:management
     container_name: messagepunk-rabbitmq
     ports:
-      - "5672:5672"   # RabbitMQ default port for clients
-      - "15672:15672" # Management UI port
+      - "5672:5672"   
+      - "15672:15672" 
     environment:
-      RABBITMQ_DEFAULT_USER: user  # Set default username
-      RABBITMQ_DEFAULT_PASS: password # Set default password
-      RABBIMQ_HOSTNAME: rabbitmq  # Set hostname
+      RABBITMQ_DEFAULT_USER: user  
+      RABBITMQ_DEFAULT_PASS: password
+      RABBIMQ_HOSTNAME: rabbitmq  
     volumes:
-      - rabbitmq_data:/var/lib/rabbitmq  # Persist RabbitMQ data
+      - rabbitmq_data:/var/lib/rabbitmq  
     networks:
       - app-network
 
@@ -30,11 +30,11 @@ services:
     image: postgres:latest
     container_name: messagepunk-postgres
     ports:
-      - "5432:5432"  # Expose MongoDB on the default port
+      - "5432:5432"  
     environment:
       - POSTGRES_PASSWORD=password
     volumes:
-      - pg_data:/var/lib/postgresql/data  # Persist MongoDB data
+      - pg_data:/var/lib/postgresql/data  
     networks:
       - app-network
 
@@ -45,4 +45,4 @@ volumes:
 
 networks:
   app-network:
-    driver: bridge  # Use a bridge network for inter-service communication
+    driver: bridge  
