@@ -1,11 +1,13 @@
 import amqp from "amqplib/callback_api";
-import { MessageType } from "./types";
+import { MessageType, Subscription } from "./types";
 
 const messageQueue = "message_queue";
+const notificationQueue = "notification_queue";
 
 class MessageQueue {
   private connection: any;
   private channel: any;
+  private notificationchannel: any;
 
   constructor() {
     amqp.connect("amqp://user:password@localhost", (error0, connection) => {
@@ -26,11 +28,27 @@ class MessageQueue {
         this.connection = connection;
         this.channel = channel;
       });
+      connection.createChannel((error1, ch)=>{
+        if(error1){
+          throw error1;
+        }
+        ch.assertQueue(notificationQueue, {
+          durable: true,
+        });
+        console.log(
+          `Waitting for notification in ${notificationQueue}.`
+        )
+        this.notificationchannel = ch;
+      })
     });
   }
 
     public pushMessage(message: MessageType) {
         this.channel.sendToQueue(messageQueue, Buffer.from(JSON.stringify(message)));
+    }
+
+    public pushNotification(message: any) {
+        this.notificationchannel.sendToQueue(notificationQueue, Buffer.from(JSON.stringify(message)));
     }
 }
 

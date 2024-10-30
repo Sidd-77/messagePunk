@@ -55,7 +55,37 @@ export const createChat = async (
   }
 };
 
+export const getChatInfo = async (
+  req: Request,
+  res: Response
+): Promise<void> => {
+  const { chatId } = req.body;
+  try {
+    // Query to get chat info from chatId
+    const [chat] = await sql`
+      SELECT 
+        c.*,
+        array_agg(DISTINCT m.user_id) as members,
+        array_agg(DISTINCT a.user_id) as admins
+      FROM chats c
+      LEFT JOIN chat_members m ON c.id = m.chat_id
+      LEFT JOIN chat_admins a ON c.id = a.chat_id
+      WHERE c.id = ${chatId}
+      GROUP BY c.id
+    `;
 
+    if (!chat) {
+      res.status(404).json({ message: "Chat not found" });
+      return;
+    }
+
+    res.status(200).json(chat);
+  } catch (error) {
+    console.error("Get chat info error:", error);
+    res.status(500).json({ message: "Error fetching chat info" });
+  }
+
+}
 
 export const getChats = async (
   req: Request,

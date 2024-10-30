@@ -2,7 +2,7 @@
 import { Server } from "socket.io";
 import logger from "./utils/logger";
 import Redis from "ioredis";
-import { MessageType } from "./types";
+import { MessageType, Subscription } from "./types";
 import MessageQueue from "./messageQueue";
 import * as dotenv from "dotenv";
 
@@ -46,7 +46,7 @@ class SocketService {
 
   constructor() {
     this.io = new Server({
-      cors: { origin: "*" }
+      cors: { origin: "*" },
     });
 
     this.subscriber = new Redis(redisUrl);
@@ -55,7 +55,6 @@ class SocketService {
 
     this.subscriber.subscribe(...Object.values(CHANNELS));
 
-    
     this.listen();
     logger.info("Socket service initialized");
   }
@@ -63,13 +62,12 @@ class SocketService {
   // private handleTypingEvent(event: TypingEvent) {
   //   this.io.to(`chat:${event.chatId}`).emit("typing", event);
   // }
-  
 
   private async publishPresence(userId: string, status: "online" | "offline") {
     const presence: UserPresence = {
       userId,
       status,
-      lastSeen: new Date().toISOString()
+      lastSeen: new Date().toISOString(),
     };
     await this.publisher.publish(CHANNELS.PRESENCE, JSON.stringify(presence));
   }
@@ -89,7 +87,6 @@ class SocketService {
       socket.on("typing", async (event: TypingEvent) => {
         await this.publisher.publish(CHANNELS.TYPING, JSON.stringify(event));
       });
-  
 
       socket.on("join_chat", (joined: any) => {
         socket.join(`chat:${joined.chatId}`);
@@ -104,17 +101,57 @@ class SocketService {
           const status: MessageStatus = {
             messageId: msg.id,
             chatId: msg.chatId,
-            userId: typeof msg.user === 'string' ? msg.user : msg.user.id,
+            userId: typeof msg.user === "string" ? msg.user : msg.user.id,
             status: "delivered",
-            timestamp: new Date().toISOString()
+            timestamp: new Date().toISOString(),
           };
-          await this.publisher.publish(CHANNELS.MESSAGE_STATUS, JSON.stringify(status));
+
+          // get members of chat by making api call to chat service
+          const chatInfoResponse = await fetch(
+            "http://localhost:5000/chats/getChatInfo",
+            {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify({ chatId: msg.chatId }),
+            }
+          );
+
+          if (!chatInfoResponse.ok) {
+            throw new Error("Failed to fetch chat info");
+          }
+
+          const chatInfo = await chatInfoResponse.json();
+
+          console.log(chatInfo);
+
+          chatInfo.members.forEach((uid:any) => {
+            if (uid == status.userId) return;
+            
+            console.log("Comparing :: ",uid, status.userId)
+            const notification = {
+              title: "New message recevied",
+              body: msg.message,
+              data: {
+                chatId: msg.chatId,
+                messageId: msg.id,
+              },
+              userId: uid,
+              image: "",
+            };
+
+            this.messageQueue.pushNotification(JSON.stringify(notification));
+          });
+
+          await this.publisher.publish(
+            CHANNELS.MESSAGE_STATUS,
+            JSON.stringify(status)
+          );
         } catch (error) {
           logger.error("Error handling message:", error);
         }
       });
-
-      
 
       socket.on("message_status", (status: MessageStatus) => {
         this.publisher.publish(CHANNELS.MESSAGE_STATUS, JSON.stringify(status));
@@ -137,7 +174,7 @@ class SocketService {
             break;
 
           case CHANNELS.TYPING:
-            this.io.to(`chat:${data.chatId}`).emit("typing", data)
+            this.io.to(`chat:${data.chatId}`).emit("typing", data);
             break;
 
           case CHANNELS.PRESENCE:

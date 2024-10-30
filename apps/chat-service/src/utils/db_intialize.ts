@@ -71,6 +71,14 @@ export async function initializeTables() {
             `;
             console.log('Added last_message foreign key to chats table.');
 
+            await sql`
+                CREATE TABLE IF NOT EXISTS files (
+                    id VARCHAR(255) PRIMARY KEY,
+                    url VARCHAR(255) NOT NULL,
+                    FOREIGN KEY (id) REFERENCES messages(id)
+                )
+            `
+
             // Chat members junction table
             await sql`
                 CREATE TABLE IF NOT EXISTS chat_members (
