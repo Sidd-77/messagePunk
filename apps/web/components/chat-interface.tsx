@@ -5,7 +5,7 @@ import { Button } from './ui/button';
 import { Input } from './ui/input';
 import EditGroupModal from './edit-group-modal';
 import axios from 'axios';
-
+import FileUpload from './file-upload';
 interface ChatInterfaceProps {
   chat: any;
   currentUser: UserType;
@@ -115,6 +115,12 @@ const ChatInterface = ({ chat, currentUser }: ChatInterfaceProps) => {
     }
   }, [socket, chat, currentUser.id, markMessagesAsRead]);
 
+  const publishMessage = async (event: string, message: MessageType) => {
+    if (socket) {
+      socket.emit(event, message);
+    }
+  }
+
   const handleSendMessage = useCallback(() => {
     if (newMessage.trim()) {
       const messageData: any = {
@@ -184,6 +190,7 @@ const ChatInterface = ({ chat, currentUser }: ChatInterfaceProps) => {
       {/* Message Input */}
       <div className="p-4 border-t">
         <div className="flex gap-2">
+        <FileUpload chatId={chat.id} userId={currentUser.id} publishMessage={publishMessage} />
           <Input
             value={newMessage}
             onChange={(e) => {
@@ -196,6 +203,7 @@ const ChatInterface = ({ chat, currentUser }: ChatInterfaceProps) => {
             }}
             placeholder="Type a message..."
           />
+          
           <Button onClick={handleSendMessage}>Send</Button>
         </div>
       </div>

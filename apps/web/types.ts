@@ -6,6 +6,15 @@ export interface UserType {
     avatar?: string;
 }
 
+export interface ServiceWorkerRegistration {
+    pushManager: PushManager;
+  }
+  
+  export interface PushSubscriptionOptions {
+    userVisibleOnly: boolean;
+    applicationServerKey: Uint8Array;
+  }
+
 export interface MessageType {
     id: string;
     message: string;

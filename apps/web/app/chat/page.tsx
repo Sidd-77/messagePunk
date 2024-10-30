@@ -17,6 +17,7 @@ import SearchModal from "@/components/search-modal";
 import { Toaster } from "@/components/ui/toaster";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import CreateGroupModal from "@/components/create-group-model";
+import NotificationSubscribe from "@/components/notificationSubscribe";
 import axios from "axios";
 
 export default function Home() {
@@ -115,6 +116,7 @@ export default function Home() {
       {/* Header */}
       <div className="flex items-center justify-between p-4 border-b">
         <UserButton />
+        <NotificationSubscribe userId={user?.id || "too early"} />
         <ModeToggle />
       </div>
 
@@ -133,9 +135,10 @@ export default function Home() {
       
           <ScrollArea className="flex-1 px-2">
             {chats.map((chat) => {
+              // @ts-ignore
               const otherMember = chat.type === "personal" ? chat.other_members[0] : null;
-              const lastMessageTime = chat.last_message?.timestamp ? 
-                format(new Date(chat.last_message.timestamp), 'HH:mm') : '';
+              // @ts-ignore
+              const lastMessageTime = chat.last_message?.timestamp ? format(new Date(chat.last_message.timestamp), 'HH:mm') : '';
               
               return (
                 <div
@@ -169,10 +172,8 @@ export default function Home() {
                         </span>
                       )}
                     </div>
-                    
-                    {chat.last_message && (
-                      <p className="text-sm text-muted-foreground truncate">
-                        {chat.last_message.message}
+{                    // @ts-ignore
+}                    {chat.last_message && (<p className="text-sm text-muted-foreground truncate">{chat.last_message.message}
                       </p>
                     )}
                   </div>

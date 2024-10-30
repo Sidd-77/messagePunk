@@ -11,7 +11,7 @@ export default function Home() {
       {/* Navbar */}
       <nav className="bg-white shadow-md">
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-          <h1 className="text-2xl font-bold">ChatSecure</h1>
+          <h1 className="text-2xl font-bold">MessagePunk</h1>
           <div className="space-x-4">
             <Button variant="outline" onClick={()=>router.push("/sign-in")}>Login</Button>
             <Button variant={"default"} onClick={()=>router.push("/sign-in")}>Get Started</Button>
@@ -35,13 +35,13 @@ export default function Home() {
       {/* Features Section */}
       <section className="py-16">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-4xl font-bold mb-12">Why Choose ChatSecure?</h2>
+          <h2 className="text-4xl font-bold mb-12">Why Choose MessagePunk?</h2>
           <div className="grid md:grid-cols-3 gap-12">
-            {/* Feature 1: End-to-End Encryption */}
+            {/* Feature 1: Multiple Device Support */}
             <div className="flex flex-col items-center">
               <FiShield className="text-blue-500 text-5xl mb-4" />
-              <h3 className="text-xl font-semibold">End-to-End Encryption</h3>
-              <p className="mt-2 text-gray-600">Your conversations are protected with state-of-the-art encryption technology.</p>
+              <h3 className="text-xl font-semibold">Multiple Device Support</h3>
+              <p className="mt-2 text-gray-600">Access your messages on any device, securely and seamlessly.</p>
             </div>
 
             {/* Feature 2: Real-time Messaging */}
@@ -65,7 +65,7 @@ export default function Home() {
       <section className="bg-blue-600 text-white py-16">
         <div className="container mx-auto text-center">
           <h2 className="text-4xl font-bold">Ready to Get Started?</h2>
-          <p className="mt-4">Experience secure, real-time communication with ChatSecure.</p>
+          <p className="mt-4">Experience secure, real-time communication with MessagePunk.</p>
           <div className="mt-8">
             <Button className="px-6 py-3 text-lg font-semibold bg-white text-blue-600" variant={"default"}>
               Join Now
@@ -77,7 +77,7 @@ export default function Home() {
       {/* Footer */}
       <footer className="bg-gray-900 text-white py-8">
         <div className="container mx-auto text-center">
-          <p className="text-sm">&copy; {new Date().getFullYear()} ChatSecure. All Rights Reserved.</p>
+          <p className="text-sm">&copy; {new Date().getFullYear()} MessagePunk. All Rights Reserved.</p>
         </div>
       </footer>
     </div>
