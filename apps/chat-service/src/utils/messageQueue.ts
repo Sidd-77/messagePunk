@@ -1,44 +1,47 @@
-import amqp, { Connection, Channel, ConsumeMessage } from 'amqplib';
-import { MessageType } from '../types';
+import amqp, { Connection, Channel, ConsumeMessage } from "amqplib";
+import { MessageType } from "../types";
 
 export class MessageQueue {
   private connection: Connection | null = null;
   private channel: Channel | null = null;
-  private readonly QUEUE_NAME = 'message_queue';
-  private readonly RABBITMQ_URL = process.env.RABBITMQ_URL || 'amqp://user:password@localhost';
+  private readonly QUEUE_NAME = "message_queue";
+  private readonly RABBITMQ_URL =
+    process.env.RABBITMQ_URL || "amqp://user:password@localhost";
   private isInitialized = false;
 
   async initialize(): Promise<void> {
     try {
       // Create connection
       this.connection = await amqp.connect(this.RABBITMQ_URL);
-      
+
       // Handle connection errors and closure
-      this.connection.on('error', (err) => {
-        console.error('RabbitMQ connection error:', err);
+      this.connection.on("error", (err) => {
+        console.error("RabbitMQ connection error:", err);
         this.handleConnectionError();
       });
-      
-      this.connection.on('close', () => {
-        console.error('RabbitMQ connection closed');
+
+      this.connection.on("close", () => {
+        console.error("RabbitMQ connection closed");
         this.handleConnectionError();
       });
 
       // Create channel
       this.channel = await this.connection.createChannel();
-      
+
       // Assert queue with durable: false to match existing queue
       await this.channel.assertQueue(this.QUEUE_NAME, {
-        durable: false
+        durable: false,
       });
 
       // Set prefetch to 1 to ensure fair distribution of messages
       await this.channel.prefetch(1);
 
       this.isInitialized = true;
-      console.log(`Connected to RabbitMQ and waiting for messages in ${this.QUEUE_NAME}`);
+      console.log(
+        `Connected to RabbitMQ and waiting for messages in ${this.QUEUE_NAME}`,
+      );
     } catch (error) {
-      console.error('Failed to initialize RabbitMQ connection:', error);
+      console.error("Failed to initialize RabbitMQ connection:", error);
       // Attempt to reconnect after a delay
       setTimeout(() => this.initialize(), 5000);
       throw error;
@@ -53,7 +56,9 @@ export class MessageQueue {
     setTimeout(() => this.initialize(), 5000);
   }
 
-  async consumeMessage(callback: (message: MessageType) => Promise<void> | void): Promise<void> {
+  async consumeMessage(
+    callback: (message: MessageType) => Promise<void> | void,
+  ): Promise<void> {
     try {
       if (!this.isInitialized || !this.channel) {
         await this.initialize();
@@ -65,16 +70,16 @@ export class MessageQueue {
           if (msg) {
             try {
               const messageContent = msg.content.toString();
-              console.log('Received raw message:', messageContent);
-              
+              console.log("Received raw message:", messageContent);
+
               const message: MessageType = JSON.parse(messageContent);
-              console.log('Parsed message:', message);
-              
+              console.log("Parsed message:", message);
+
               await callback(message);
               this.channel!.ack(msg);
-              console.log('Message processed and acknowledged');
+              console.log("Message processed and acknowledged");
             } catch (error) {
-              console.error('Error processing message:', error);
+              console.error("Error processing message:", error);
               // Reject the message without requeue if it's a parsing error
               const isParsingError = error instanceof SyntaxError;
               this.channel!.nack(msg, false, !isParsingError);
@@ -82,11 +87,11 @@ export class MessageQueue {
           }
         },
         {
-          noAck: false // Enable manual acknowledgment
-        }
+          noAck: false, // Enable manual acknowledgment
+        },
       );
     } catch (error) {
-      console.error('Error setting up message consumer:', error);
+      console.error("Error setting up message consumer:", error);
       // Attempt to reconnect
       this.handleConnectionError();
     }
@@ -97,9 +102,9 @@ export class MessageQueue {
       await this.channel?.close();
       await this.connection?.close();
       this.isInitialized = false;
-      console.log('RabbitMQ connections closed');
+      console.log("RabbitMQ connections closed");
     } catch (error) {
-      console.error('Error closing RabbitMQ connections:', error);
+      console.error("Error closing RabbitMQ connections:", error);
     }
   }
 }

@@ -1,11 +1,11 @@
-import { useState, useEffect, useCallback } from 'react';
-import { useSocket } from '@/context/SocketProvider';
-import { MessageType, ChatType, UserType } from '@/types';
-import { Button } from './ui/button';
-import { Input } from './ui/input';
-import EditGroupModal from './edit-group-modal';
-import axios from 'axios';
-import FileUpload from './file-upload';
+import { useState, useEffect, useCallback } from "react";
+import { useSocket } from "@/context/SocketProvider";
+import { MessageType, ChatType, UserType } from "@/types";
+import { Button } from "./ui/button";
+import { Input } from "./ui/input";
+import EditGroupModal from "./edit-group-modal";
+import axios from "axios";
+import FileUpload from "./file-upload";
 interface ChatInterfaceProps {
   chat: any;
   currentUser: UserType;
@@ -20,7 +20,7 @@ interface TypingEvent {
 
 const ChatInterface = ({ chat, currentUser }: ChatInterfaceProps) => {
   const [messages, setMessages] = useState<any[]>([]);
-  const [newMessage, setNewMessage] = useState('');
+  const [newMessage, setNewMessage] = useState("");
   const [typingUsers, setTypingUsers] = useState<Set<string>>(new Set());
   const { socket, sendMessage, markMessagesAsRead } = useSocket();
   useEffect(() => {
@@ -29,22 +29,28 @@ const ChatInterface = ({ chat, currentUser }: ChatInterfaceProps) => {
 
   const fetchMessages = useCallback(async () => {
     try {
-      const response = await axios.post(`${process.env.NEXT_PUBLIC_CHAT_SERVICE_URL}/messages/getMessages`, { chatId: chat.id });
+      const response = await axios.post(
+        `${process.env.NEXT_PUBLIC_CHAT_SERVICE_URL}/messages/getMessages`,
+        { chatId: chat.id },
+      );
       setMessages(response.data);
     } catch (error) {
-      console.error('Error fetching messages:', error);
+      console.error("Error fetching messages:", error);
     }
   }, [chat.id]);
 
-  const handleTyping = useCallback((status: boolean) => {
-    console.log('Typing:', currentUser);
-    socket?.emit("typing", {
-      chatId: chat.id,
-      userId: currentUser.id,
-      userName: currentUser.name,
-      isTyping: status,
-    });
-  }, [socket, chat.id, currentUser.id, currentUser.name, newMessage]);
+  const handleTyping = useCallback(
+    (status: boolean) => {
+      console.log("Typing:", currentUser);
+      socket?.emit("typing", {
+        chatId: chat.id,
+        userId: currentUser.id,
+        userName: currentUser.name,
+        isTyping: status,
+      });
+    },
+    [socket, chat.id, currentUser.id, currentUser.name, newMessage],
+  );
 
   useEffect(() => {
     fetchMessages();
@@ -53,22 +59,27 @@ const ChatInterface = ({ chat, currentUser }: ChatInterfaceProps) => {
   useEffect(() => {
     if (socket && chat) {
       // Join chat room
-      socket.emit('join_chat', { chatId: chat.id, userId: currentUser.id });
+      socket.emit("join_chat", { chatId: chat.id, userId: currentUser.id });
 
       // Listen for new messages
       const handleReceiveMessage = (message: any) => {
-        if(message.user_id === currentUser.id || message.user === currentUser.id) { return; }
-        console.log('Received message:', message);
-        setMessages(prev => [...prev, message]);
+        if (
+          message.user_id === currentUser.id ||
+          message.user === currentUser.id
+        ) {
+          return;
+        }
+        console.log("Received message:", message);
+        setMessages((prev) => [...prev, message]);
         // Mark message as read if chat is active
         markMessagesAsRead(chat.id, currentUser.id, [message.id]);
       };
 
       // Handle typing indicators
       const handleTyping = (event: TypingEvent) => {
-        console.log('Typing event:', event);
+        console.log("Typing event:", event);
         if (event.chatId === chat.id) {
-          setTypingUsers(prev => {
+          setTypingUsers((prev) => {
             const newSet = new Set(prev);
             if (event.isTyping) {
               newSet.add(event.userName);
@@ -80,11 +91,11 @@ const ChatInterface = ({ chat, currentUser }: ChatInterfaceProps) => {
         }
       };
 
-      socket.on('receive_message', handleReceiveMessage);
-      socket.on('typing', handleTyping);
+      socket.on("receive_message", handleReceiveMessage);
+      socket.on("typing", handleTyping);
 
       // Group chat specific listeners
-      if (chat.type === 'group') {
+      if (chat.type === "group") {
         const handleUserJoined = ({ userId }: { userId: string }) => {
           // Update UI to show new user joined
           console.log(`User ${userId} joined the chat`);
@@ -95,22 +106,25 @@ const ChatInterface = ({ chat, currentUser }: ChatInterfaceProps) => {
           console.log(`User ${userId} left the chat`);
         };
 
-        socket.on('user_joined_chat', handleUserJoined);
-        socket.on('user_left_group', handleUserLeft);
+        socket.on("user_joined_chat", handleUserJoined);
+        socket.on("user_left_group", handleUserLeft);
 
         return () => {
-          socket.emit('leave_chat', { chatId: chat.id, userId: currentUser.id });
-          socket.off('receive_message', handleReceiveMessage);
-          socket.off('typing', handleTyping);
-          socket.off('user_joined_chat', handleUserJoined);
-          socket.off('user_left_group', handleUserLeft);
+          socket.emit("leave_chat", {
+            chatId: chat.id,
+            userId: currentUser.id,
+          });
+          socket.off("receive_message", handleReceiveMessage);
+          socket.off("typing", handleTyping);
+          socket.off("user_joined_chat", handleUserJoined);
+          socket.off("user_left_group", handleUserLeft);
         };
       }
 
       return () => {
-        socket.emit('leave_chat', { chatId: chat.id, userId: currentUser.id });
-        socket.off('receive_message', handleReceiveMessage);
-        socket.off('typing', handleTyping);
+        socket.emit("leave_chat", { chatId: chat.id, userId: currentUser.id });
+        socket.off("receive_message", handleReceiveMessage);
+        socket.off("typing", handleTyping);
       };
     }
   }, [socket, chat, currentUser.id, markMessagesAsRead]);
@@ -119,7 +133,7 @@ const ChatInterface = ({ chat, currentUser }: ChatInterfaceProps) => {
     if (socket) {
       socket.emit(event, message);
     }
-  }
+  };
 
   const handleSendMessage = useCallback(() => {
     if (newMessage.trim()) {
@@ -130,15 +144,15 @@ const ChatInterface = ({ chat, currentUser }: ChatInterfaceProps) => {
         chatId: chat.id,
         userName: currentUser.name,
         timestamp: new Date().toISOString(),
-        type: 'text',
-        status: 'sent',
-        readBy: []
+        type: "text",
+        status: "sent",
+        readBy: [],
       };
 
       handleTyping(false);
       sendMessage(messageData);
-      setNewMessage('');
-      setMessages(prev => [...prev, messageData]);
+      setNewMessage("");
+      setMessages((prev) => [...prev, messageData]);
     }
   }, [newMessage, currentUser.id, chat.id, sendMessage]);
 
@@ -147,7 +161,7 @@ const ChatInterface = ({ chat, currentUser }: ChatInterfaceProps) => {
       {/* Chat Header */}
       <div className="p-4 border-b flex justify-between">
         <div className="flex items-center gap-3">
-          {chat.type === 'group' ? (
+          {chat.type === "group" ? (
             <div className="flex items-center">
               {/* Group avatar and name */}
               <div className="font-semibold pr-2">{chat.name}</div>
@@ -162,9 +176,15 @@ const ChatInterface = ({ chat, currentUser }: ChatInterfaceProps) => {
             </div>
           )}
         </div>
-        {chat.type === 'group' && (<div className=' '>
-          <EditGroupModal groupId={chat.id} groupName={chat.name} currentMembers={chat.other_members} />
-        </div>)}
+        {chat.type === "group" && (
+          <div className=" ">
+            <EditGroupModal
+              groupId={chat.id}
+              groupName={chat.name}
+              currentMembers={chat.other_members}
+            />
+          </div>
+        )}
       </div>
 
       {/* Messages Area */}
@@ -173,16 +193,21 @@ const ChatInterface = ({ chat, currentUser }: ChatInterfaceProps) => {
           <MessageBubble
             key={msg.id}
             message={msg}
-            isOwn={msg.user_id === currentUser.id  || msg.user === currentUser.id}
+            isOwn={
+              msg.user_id === currentUser.id || msg.user === currentUser.id
+            }
             chat={chat}
           />
         ))}
-        
+
         {typingUsers.size > 0 && (
           <div className="text-sm text-muted-foreground italic">
-            {Array.from(typingUsers).map(user => {
-              return user;
-            }).join(', ')} is typing...
+            {Array.from(typingUsers)
+              .map((user) => {
+                return user;
+              })
+              .join(", ")}{" "}
+            is typing...
           </div>
         )}
       </div>
@@ -190,20 +215,23 @@ const ChatInterface = ({ chat, currentUser }: ChatInterfaceProps) => {
       {/* Message Input */}
       <div className="p-4 border-t">
         <div className="flex gap-2">
-        <FileUpload chatId={chat.id} userId={currentUser.id} publishMessage={publishMessage} />
+          <FileUpload
+            chatId={chat.id}
+            userId={currentUser.id}
+            publishMessage={publishMessage}
+          />
           <Input
             value={newMessage}
             onChange={(e) => {
               setNewMessage(e.target.value);
               handleTyping(true);
             }}
-          
             onKeyPress={(e) => {
-              if (e.key === 'Enter') handleSendMessage();
+              if (e.key === "Enter") handleSendMessage();
             }}
             placeholder="Type a message..."
           />
-          
+
           <Button onClick={handleSendMessage}>Send</Button>
         </div>
       </div>
@@ -211,18 +239,24 @@ const ChatInterface = ({ chat, currentUser }: ChatInterfaceProps) => {
   );
 };
 
-const MessageBubble = ({ message, isOwn, chat }: { 
-  message: any, 
-  isOwn: boolean,
-  chat: any
+const MessageBubble = ({
+  message,
+  isOwn,
+  chat,
+}: {
+  message: any;
+  isOwn: boolean;
+  chat: any;
 }) => {
   return (
-    <div className={`mb-4 ${isOwn ? 'text-right' : 'text-left'}`}>
-      <div className={`inline-block max-w-[70%] p-2 rounded-lg ${
-        isOwn ? 'bg-primary text-primary-foreground' : 'bg-muted'
-      }`}>
+    <div className={`mb-4 ${isOwn ? "text-right" : "text-left"}`}>
+      <div
+        className={`inline-block max-w-[70%] p-2 rounded-lg ${
+          isOwn ? "bg-primary text-primary-foreground" : "bg-muted"
+        }`}
+      >
         {/* Show sender name in group chats */}
-        {chat.type === 'group' && !isOwn && (
+        {chat.type === "group" && !isOwn && (
           <div className="text-xs font-semibold mb-1">
             {message.user.name || message.userName}
           </div>
@@ -245,4 +279,3 @@ const MessageBubble = ({ message, isOwn, chat }: {
 };
 
 export default ChatInterface;
-

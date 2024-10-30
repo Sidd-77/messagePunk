@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import axios from 'axios';
-import { Search, X, Loader2, Users, Plus, Check } from 'lucide-react';
+import React, { useState } from "react";
+import axios from "axios";
+import { Search, X, Loader2, Users, Plus, Check } from "lucide-react";
 import {
   Dialog,
   DialogContent,
@@ -20,15 +20,15 @@ import {
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { useToast } from '@/hooks/use-toast';
-import { UserType } from '@/types';
-import { useUser } from '@clerk/nextjs';
-import { generateString } from '@/lib/utils';
+import { useToast } from "@/hooks/use-toast";
+import { UserType } from "@/types";
+import { useUser } from "@clerk/nextjs";
+import { generateString } from "@/lib/utils";
 
 const CreateGroupModal = () => {
   const [open, setOpen] = useState(false);
-  const [groupName, setGroupName] = useState('');
-  const [searchQuery, setSearchQuery] = useState('');
+  const [groupName, setGroupName] = useState("");
+  const [searchQuery, setSearchQuery] = useState("");
   const [searchResults, setSearchResults] = useState<UserType[]>([]);
   const [selectedUsers, setSelectedUsers] = useState<UserType[]>([]);
   const [isLoading, setIsLoading] = useState(false);
@@ -39,16 +39,17 @@ const CreateGroupModal = () => {
   const handleSearch = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!searchQuery.trim()) return;
-    
+
     try {
       setIsLoading(true);
       const response = await axios.post(
-        `${process.env.NEXT_PUBLIC_CHAT_SERVICE_URL}/users/searchUsers`, 
-        { query: searchQuery }
+        `${process.env.NEXT_PUBLIC_CHAT_SERVICE_URL}/users/searchUsers`,
+        { query: searchQuery },
       );
       // Filter out already selected users from search results
       const filteredResults = response.data.filter(
-        (user: UserType) => !selectedUsers.some(selected => selected.id === user.id)
+        (user: UserType) =>
+          !selectedUsers.some((selected) => selected.id === user.id),
       );
       setSearchResults(filteredResults);
     } catch (error) {
@@ -64,11 +65,11 @@ const CreateGroupModal = () => {
 
   const handleSelectUser = (user: UserType) => {
     setSelectedUsers([...selectedUsers, user]);
-    setSearchResults(searchResults.filter(u => u.id !== user.id));
+    setSearchResults(searchResults.filter((u) => u.id !== user.id));
   };
 
   const handleRemoveUser = (user: UserType) => {
-    setSelectedUsers(selectedUsers.filter(u => u.id !== user.id));
+    setSelectedUsers(selectedUsers.filter((u) => u.id !== user.id));
   };
 
   const handleCreateGroup = async () => {
@@ -96,13 +97,13 @@ const CreateGroupModal = () => {
         id: "chat_" + generateString(15),
         name: groupName,
         type: "group",
-        members: [user?.id, ...selectedUsers.map(u => u.id)],
+        members: [user?.id, ...selectedUsers.map((u) => u.id)],
         createdAt: new Date().toISOString(),
       };
 
       await axios.post(
         `${process.env.NEXT_PUBLIC_CHAT_SERVICE_URL}/chats/createChat`,
-        groupObj
+        groupObj,
       );
 
       toast({
@@ -111,10 +112,10 @@ const CreateGroupModal = () => {
       });
 
       setOpen(false);
-      setGroupName('');
+      setGroupName("");
       setSelectedUsers([]);
       setSearchResults([]);
-      setSearchQuery('');
+      setSearchQuery("");
     } catch (error) {
       toast({
         title: "Error",
@@ -134,7 +135,7 @@ const CreateGroupModal = () => {
           Create Group
         </Button>
       </DialogTrigger>
-      
+
       <DialogContent className="sm:max-w-[500px]">
         <DialogHeader>
           <DialogTitle>Create New Group</DialogTitle>
@@ -154,7 +155,9 @@ const CreateGroupModal = () => {
           {/* Selected Users */}
           {selectedUsers.length > 0 && (
             <div className="mb-4">
-              <p className="text-sm text-muted-foreground mb-2">Selected Users:</p>
+              <p className="text-sm text-muted-foreground mb-2">
+                Selected Users:
+              </p>
               <ScrollArea className="max-h-[100px]">
                 <div className="flex flex-wrap gap-2">
                   {selectedUsers.map((user) => (

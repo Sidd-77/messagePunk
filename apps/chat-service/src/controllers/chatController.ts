@@ -4,7 +4,7 @@ import sql from "../utils/db";
 
 export const createChat = async (
   req: Request,
-  res: Response
+  res: Response,
 ): Promise<void> => {
   try {
     const { id, type, name, members, admin, createdAt } = req.body;
@@ -57,7 +57,7 @@ export const createChat = async (
 
 export const getChatInfo = async (
   req: Request,
-  res: Response
+  res: Response,
 ): Promise<void> => {
   const { chatId } = req.body;
   try {
@@ -84,13 +84,9 @@ export const getChatInfo = async (
     console.error("Get chat info error:", error);
     res.status(500).json({ message: "Error fetching chat info" });
   }
+};
 
-}
-
-export const getChats = async (
-  req: Request,
-  res: Response
-): Promise<void> => {
+export const getChats = async (req: Request, res: Response): Promise<void> => {
   try {
     const { userId } = req.body;
 
@@ -183,10 +179,7 @@ export const getChats = async (
 //   }
 // };
 
-export const addMember = async (
-  req: Request,
-  res: Response
-): Promise<void> => {
+export const addMember = async (req: Request, res: Response): Promise<void> => {
   try {
     const { chatId, member } = req.body;
 
@@ -218,11 +211,9 @@ export const addMember = async (
   }
 };
 
-
-
 export const removeMember = async (
   req: Request,
-  res: Response
+  res: Response,
 ): Promise<void> => {
   try {
     const { chatId, member } = req.body;
@@ -254,11 +245,9 @@ export const removeMember = async (
   }
 };
 
-
-
 export const deleteChat = async (
   req: Request,
-  res: Response
+  res: Response,
 ): Promise<void> => {
   try {
     const { chatId } = req.body;
@@ -281,10 +270,9 @@ export const deleteChat = async (
   }
 };
 
-
 export const renameChat = async (
   req: Request,
-  res: Response
+  res: Response,
 ): Promise<void> => {
   try {
     const { chatId, name } = req.body;
@@ -307,4 +295,3 @@ export const renameChat = async (
     res.status(500).json({ message: "Error renaming chat" });
   }
 };
-

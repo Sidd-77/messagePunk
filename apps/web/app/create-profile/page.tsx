@@ -1,10 +1,10 @@
 "use client";
 
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from "react";
 import { useUser } from "@clerk/nextjs";
-import axios from 'axios';
-import { UserType } from '@/types';
-import { useRouter } from 'next/navigation';
+import axios from "axios";
+import { UserType } from "@/types";
+import { useRouter } from "next/navigation";
 
 const CreatingProfile = () => {
   const { user, isLoaded, isSignedIn } = useUser();
@@ -15,7 +15,10 @@ const CreatingProfile = () => {
   const sendUser = async (userData: UserType) => {
     try {
       console.log("Sending user to chat service", userData);
-      const response = await axios.post(`${process.env.NEXT_PUBLIC_CHAT_SERVICE_URL}/users/createUser`, userData);
+      const response = await axios.post(
+        `${process.env.NEXT_PUBLIC_CHAT_SERVICE_URL}/users/createUser`,
+        userData,
+      );
       console.log("User stored in DB", response.data);
       router.push("/chat");
     } catch (err) {
@@ -58,16 +61,18 @@ const CreatingProfile = () => {
   }, [isLoaded, isSignedIn, user, router]);
 
   if (!isLoaded) {
-    return <div className="flex justify-center items-center min-h-screen">
-      <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-gray-900"></div>
-    </div>;
+    return (
+      <div className="flex justify-center items-center min-h-screen">
+        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-gray-900"></div>
+      </div>
+    );
   }
 
   if (error) {
     return (
       <div className="flex flex-col items-center justify-center min-h-screen">
         <div className="text-red-500 mb-4">{error}</div>
-        <button 
+        <button
           onClick={() => {
             setError("");
             setIsLoading(true);

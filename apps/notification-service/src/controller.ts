@@ -1,25 +1,25 @@
 // controller.ts
 import { Request, Response } from "express";
-import { 
-  saveSubscription, 
+import {
+  saveSubscription,
   sendNotificationToSubscription,
   sendNotificationToUser,
-  getSubscription
+  getSubscription,
 } from "./subscritpionService";
 
-export const subscribe = async (req: Request, res: Response):Promise<any> =>  {
+export const subscribe = async (req: Request, res: Response): Promise<any> => {
   try {
     const subscription = await saveSubscription({
       ...req.body,
-      userId: req.body.userId,        // Optional user identifier
-      deviceName: req.body.deviceName // Optional device name
+      userId: req.body.userId, // Optional user identifier
+      deviceName: req.body.deviceName, // Optional device name
     });
 
     console.log("Subscription saved:", subscription);
-    
+
     res.status(201).json({
       message: "Subscription saved",
-      subscriptionId: subscription.id
+      subscriptionId: subscription.id,
     });
   } catch (error) {
     console.error("Error saving subscription:", error);
@@ -27,16 +27,25 @@ export const subscribe = async (req: Request, res: Response):Promise<any> =>  {
   }
 };
 
-export const pushNotificationToClient = async (req: Request, res: Response):Promise<any> => {
+export const pushNotificationToClient = async (
+  req: Request,
+  res: Response,
+): Promise<any> => {
   try {
     const { subscriptionId, title, body, image, data } = req.body;
-    
+
     const subscription = getSubscription(subscriptionId);
     if (!subscription) {
       return res.status(404).json({ message: "Subscription not found" });
     }
 
-    await sendNotificationToSubscription(subscription, title, body, image, data);
+    await sendNotificationToSubscription(
+      subscription,
+      title,
+      body,
+      image,
+      data,
+    );
     res.status(200).json({ message: "Notification sent successfully" });
   } catch (error) {
     console.error("Error sending notification:", error);
@@ -44,10 +53,13 @@ export const pushNotificationToClient = async (req: Request, res: Response):Prom
   }
 };
 
-export const pushNotificationToUser = async (req: Request, res: Response):Promise<any> => {
+export const pushNotificationToUser = async (
+  req: Request,
+  res: Response,
+): Promise<any> => {
   try {
     const { userId, title, body, image, data } = req.body;
-    
+
     await sendNotificationToUser(userId, title, body, image, data);
     res.status(200).json({ message: "Notifications sent to user's devices" });
   } catch (error) {

@@ -3,7 +3,7 @@ import sql from "../utils/db";
 
 export const searchUsers = async (
   req: Request,
-  res: Response
+  res: Response,
 ): Promise<void> => {
   try {
     const { query } = req.body;
@@ -33,7 +33,7 @@ export const searchUsers = async (
 
 export const createUser = async (
   req: Request,
-  res: Response
+  res: Response,
 ): Promise<void> => {
   try {
     const { id, name, email, avatar } = req.body;
@@ -79,7 +79,7 @@ export const getUser = async (req: Request, res: Response): Promise<void> => {
 
 export const updateUser = async (
   req: Request,
-  res: Response
+  res: Response,
 ): Promise<void> => {
   try {
     const { id, name, email, avatar } = req.body;
@@ -109,7 +109,7 @@ export const updateUser = async (
 
 export const deleteUser = async (
   req: Request,
-  res: Response
+  res: Response,
 ): Promise<void> => {
   try {
     const { userId } = req.body;

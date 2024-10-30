@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-import { Search, X, Loader2, Users, Plus, Check, Edit2 } from 'lucide-react';
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import { Search, X, Loader2, Users, Plus, Check, Edit2 } from "lucide-react";
 import {
   Dialog,
   DialogContent,
@@ -20,9 +20,9 @@ import {
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { useToast } from '@/hooks/use-toast';
-import { UserType } from '@/types';
-import { useUser } from '@clerk/nextjs';
+import { useToast } from "@/hooks/use-toast";
+import { UserType } from "@/types";
+import { useUser } from "@clerk/nextjs";
 
 interface EditGroupModalProps {
   groupId: string;
@@ -31,12 +31,18 @@ interface EditGroupModalProps {
   trigger?: React.ReactNode;
 }
 
-const EditGroupModal = ({ groupId, groupName: initialGroupName, currentMembers, trigger }: EditGroupModalProps) => {
+const EditGroupModal = ({
+  groupId,
+  groupName: initialGroupName,
+  currentMembers,
+  trigger,
+}: EditGroupModalProps) => {
   const [open, setOpen] = useState(false);
   const [groupName, setGroupName] = useState(initialGroupName);
-  const [searchQuery, setSearchQuery] = useState('');
+  const [searchQuery, setSearchQuery] = useState("");
   const [searchResults, setSearchResults] = useState<UserType[]>([]);
-  const [selectedUsers, setSelectedUsers] = useState<UserType[]>(currentMembers);
+  const [selectedUsers, setSelectedUsers] =
+    useState<UserType[]>(currentMembers);
   const [isLoading, setIsLoading] = useState(false);
   const [isUpdatingGroup, setIsUpdatingGroup] = useState(false);
   const { toast } = useToast();
@@ -47,7 +53,7 @@ const EditGroupModal = ({ groupId, groupName: initialGroupName, currentMembers, 
     if (open) {
       setGroupName(initialGroupName);
       setSelectedUsers(currentMembers);
-      setSearchQuery('');
+      setSearchQuery("");
       setSearchResults([]);
     }
   }, [open, initialGroupName, currentMembers]);
@@ -55,17 +61,18 @@ const EditGroupModal = ({ groupId, groupName: initialGroupName, currentMembers, 
   const handleSearch = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!searchQuery.trim()) return;
-    
+
     try {
       setIsLoading(true);
       const response = await axios.post(
-        `${process.env.NEXT_PUBLIC_CHAT_SERVICE_URL}/users/searchUsers`, 
-        { query: searchQuery }
+        `${process.env.NEXT_PUBLIC_CHAT_SERVICE_URL}/users/searchUsers`,
+        { query: searchQuery },
       );
       // Filter out already selected users and current user from search results
       const filteredResults = response.data.filter(
-        (user: UserType) => !selectedUsers.some(selected => selected.id === user.id)
-          && user.id !== user?.id
+        (user: UserType) =>
+          !selectedUsers.some((selected) => selected.id === user.id) &&
+          user.id !== user?.id,
       );
       setSearchResults(filteredResults);
     } catch (error) {
@@ -81,11 +88,11 @@ const EditGroupModal = ({ groupId, groupName: initialGroupName, currentMembers, 
 
   const handleSelectUser = (user: UserType) => {
     setSelectedUsers([...selectedUsers, user]);
-    setSearchResults(searchResults.filter(u => u.id !== user.id));
+    setSearchResults(searchResults.filter((u) => u.id !== user.id));
   };
 
   const handleRemoveUser = (user: UserType) => {
-    setSelectedUsers(selectedUsers.filter(u => u.id !== user.id));
+    setSelectedUsers(selectedUsers.filter((u) => u.id !== user.id));
   };
 
   const handleUpdateGroup = async () => {
@@ -112,13 +119,13 @@ const EditGroupModal = ({ groupId, groupName: initialGroupName, currentMembers, 
       const groupUpdate = {
         id: groupId,
         name: groupName,
-        members: [user?.id, ...selectedUsers.map(u => u.id)],
+        members: [user?.id, ...selectedUsers.map((u) => u.id)],
         updatedAt: new Date().toISOString(),
       };
 
       await axios.put(
         `${process.env.NEXT_PUBLIC_CHAT_SERVICE_URL}/chats/updateChat`,
-        groupUpdate
+        groupUpdate,
       );
 
       toast({
@@ -147,7 +154,7 @@ const EditGroupModal = ({ groupId, groupName: initialGroupName, currentMembers, 
           </Button>
         )}
       </DialogTrigger>
-      
+
       <DialogContent className="sm:max-w-[500px]">
         <DialogHeader>
           <DialogTitle>Edit Group</DialogTitle>

@@ -46,7 +46,7 @@ export default function Home() {
       setIsLoading(true);
       const response = await axios.post(
         `${process.env.NEXT_PUBLIC_CHAT_SERVICE_URL}/chats/getChats`,
-        { userId: currentUser.id }
+        { userId: currentUser.id },
       );
       setChats(response.data);
       console.log(response.data);
@@ -76,8 +76,8 @@ export default function Home() {
       socket.on("chatUpdated", (updatedChat: ChatType) => {
         setChats((prevChats) =>
           prevChats.map((chat) =>
-            chat.id === updatedChat.id ? updatedChat : chat
-          )
+            chat.id === updatedChat.id ? updatedChat : chat,
+          ),
         );
       });
 
@@ -109,80 +109,91 @@ export default function Home() {
 
       {/* Sidebar */}
       <div
-      className={`${
-        isSidebarOpen ? "translate-x-0" : "-translate-x-full"
-      } transform transition-transform duration-300 ease-in-out md:translate-x-0 fixed md:relative top-0 left-0 w-full md:w-80 h-full bg-background border-r z-40`}
-    >
-      {/* Header */}
-      <div className="flex items-center justify-between p-4 border-b">
-        <UserButton />
-        <NotificationSubscribe userId={user?.id || "too early"} />
-        <ModeToggle />
-      </div>
+        className={`${
+          isSidebarOpen ? "translate-x-0" : "-translate-x-full"
+        } transform transition-transform duration-300 ease-in-out md:translate-x-0 fixed md:relative top-0 left-0 w-full md:w-80 h-full bg-background border-r z-40`}
+      >
+        {/* Header */}
+        <div className="flex items-center justify-between p-4 border-b">
+          <UserButton />
+          <NotificationSubscribe userId={user?.id || "too early"} />
+          <ModeToggle />
+        </div>
 
-      {/* Search */}
-      <div className="p-2 border-b flex flex-col space-y-2">
-  <div className="w-full">
-    <SearchModal />
-  </div>
-  <div className="w-full">
-    <CreateGroupModal />
-  </div>
-</div>
+        {/* Search */}
+        <div className="p-2 border-b flex flex-col space-y-2">
+          <div className="w-full">
+            <SearchModal />
+          </div>
+          <div className="w-full">
+            <CreateGroupModal />
+          </div>
+        </div>
 
+        {/* Tabs */}
 
-      {/* Tabs */}
-      
-          <ScrollArea className="flex-1 px-2">
-            {chats.map((chat) => {
-              // @ts-ignore
-              const otherMember = chat.type === "personal" ? chat.other_members[0] : null;
-              // @ts-ignore
-              const lastMessageTime = chat.last_message?.timestamp ? format(new Date(chat.last_message.timestamp), 'HH:mm') : '';
-              
-              return (
-                <div
-                  key={chat.id}
-                  className="group flex items-center gap-3 p-3 cursor-pointer rounded-lg hover:bg-accent transition-colors"
-                  onClick={() => {
-                    setActiveChat(chat);
-                    setIsSidebarOpen(false);
-                  }}
-                >
-                  <Avatar className="h-8 w-8">
-                    <AvatarImage
-                      src={chat.type === "personal" ? otherMember?.avatar : chat.avatar}
-                      alt={chat.type === "personal" ? otherMember?.name : chat.name}
-                    />
-                    <AvatarFallback className="text-base">
-                      {chat.type === "personal"
-                        ? otherMember?.name?.charAt(0).toUpperCase()
-                        : chat.name?.charAt(0).toUpperCase()}
-                    </AvatarFallback>
-                  </Avatar>
+        <ScrollArea className="flex-1 px-2">
+          {chats.map((chat) => {
+            // @ts-ignore
+            const otherMember =
+              chat.type === "personal" ? chat.other_members[0] : null;
+            // @ts-ignore
+            const lastMessageTime = chat.last_message?.timestamp
+              ? format(new Date(chat.last_message.timestamp), "HH:mm")
+              : "";
 
-                  <div className="flex-1 overflow-hidden">
-                    <div className="flex justify-between items-center mb-1">
-                      <span className="font-medium truncate">
-                        {chat.type === "personal" ? otherMember?.name : chat.name}
+            return (
+              <div
+                key={chat.id}
+                className="group flex items-center gap-3 p-3 cursor-pointer rounded-lg hover:bg-accent transition-colors"
+                onClick={() => {
+                  setActiveChat(chat);
+                  setIsSidebarOpen(false);
+                }}
+              >
+                <Avatar className="h-8 w-8">
+                  <AvatarImage
+                    src={
+                      chat.type === "personal"
+                        ? otherMember?.avatar
+                        : chat.avatar
+                    }
+                    alt={
+                      chat.type === "personal" ? otherMember?.name : chat.name
+                    }
+                  />
+                  <AvatarFallback className="text-base">
+                    {chat.type === "personal"
+                      ? otherMember?.name?.charAt(0).toUpperCase()
+                      : chat.name?.charAt(0).toUpperCase()}
+                  </AvatarFallback>
+                </Avatar>
+
+                <div className="flex-1 overflow-hidden">
+                  <div className="flex justify-between items-center mb-1">
+                    <span className="font-medium truncate">
+                      {chat.type === "personal" ? otherMember?.name : chat.name}
+                    </span>
+                    {lastMessageTime && (
+                      <span className="text-xs text-muted-foreground">
+                        {lastMessageTime}
                       </span>
-                      {lastMessageTime && (
-                        <span className="text-xs text-muted-foreground">
-                          {lastMessageTime}
-                        </span>
-                      )}
-                    </div>
-{                    // @ts-ignore
-}                    {chat.last_message && (<p className="text-sm text-muted-foreground truncate">{chat.last_message.message}
-                      </p>
                     )}
                   </div>
+                  {
+                    // @ts-ignore
+                  }{" "}
+                  {chat.last_message && (
+                    <p className="text-sm text-muted-foreground truncate">
+                      {chat.last_message.message}
+                    </p>
+                  )}
                 </div>
-              );
-            })}
-          </ScrollArea>
-        
-    </div>
+              </div>
+            );
+          })}
+        </ScrollArea>
+      </div>
 
       {/* Main Chat Area */}
       <div className="flex-1 md:ml-0">

@@ -4,7 +4,7 @@ import { MessageType } from "../types";
 const messageSchema = new mongoose.Schema({
   id: { type: String, required: true, unique: true },
   message: { type: String, required: true },
-  user: { type: String, required: true, ref: 'User', refPath: 'id' },
+  user: { type: String, required: true, ref: "User", refPath: "id" },
   chatId: { type: String, required: true },
   timestamp: { type: String, required: true },
   type: {
@@ -17,7 +17,7 @@ const messageSchema = new mongoose.Schema({
     enum: ["sent", "delivered", "read"],
     required: true,
   },
-  readBy: [{ type: String, ref: 'User', refPath: 'id' }]
+  readBy: [{ type: String, ref: "User", refPath: "id" }],
 });
 
 messageSchema.index({ id: 1 });

@@ -2,13 +2,13 @@ import { Request, Response } from "express";
 import sql from "../utils/db";
 
 export const getMessages = async (
-    req: Request,
-    res: Response
-  ): Promise<void> => {
-    try {
-      const { chatId } = req.body;
-  
-      const messages = await sql`
+  req: Request,
+  res: Response,
+): Promise<void> => {
+  try {
+    const { chatId } = req.body;
+
+    const messages = await sql`
         SELECT 
           m.*,
           json_build_object(
@@ -30,22 +30,22 @@ export const getMessages = async (
         GROUP BY m.id, u.id, u.name, u.email, u.avatar
         ORDER BY m.timestamp 
       `;
-  
-      res.status(200).json(messages);
-    } catch (error) {
-      console.error("Get messages error:", error);
-      res.status(500).json({ message: "Error fetching messages" });
-    }
-  };
-  
-  export const getMessage = async (
-    req: Request,
-    res: Response
-  ): Promise<void> => {
-    try {
-      const { messageId } = req.body;
-  
-      const [message] = await sql`
+
+    res.status(200).json(messages);
+  } catch (error) {
+    console.error("Get messages error:", error);
+    res.status(500).json({ message: "Error fetching messages" });
+  }
+};
+
+export const getMessage = async (
+  req: Request,
+  res: Response,
+): Promise<void> => {
+  try {
+    const { messageId } = req.body;
+
+    const [message] = await sql`
         SELECT 
           m.*,
           json_build_object(
@@ -66,16 +66,15 @@ export const getMessages = async (
         WHERE m.id = ${messageId}
         GROUP BY m.id, u.id, u.name, u.email, u.avatar
       `;
-  
-      if (!message) {
-        res.status(404).json({ message: "Message not found" });
-        return;
-      }
-  
-      res.status(200).json(message);
-    } catch (error) {
-      console.error("Get message error:", error);
-      res.status(500).json({ message: "Error fetching message" });
+
+    if (!message) {
+      res.status(404).json({ message: "Message not found" });
+      return;
     }
-  };
-  
+
+    res.status(200).json(message);
+  } catch (error) {
+    console.error("Get message error:", error);
+    res.status(500).json({ message: "Error fetching message" });
+  }
+};

@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import axios from 'axios';
-import { Search, X, Loader2 } from 'lucide-react';
+import React, { useState } from "react";
+import axios from "axios";
+import { Search, X, Loader2 } from "lucide-react";
 import {
   Dialog,
   DialogContent,
@@ -17,26 +17,29 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { useToast } from '@/hooks/use-toast';
-import { UserType, ChatType } from '@/types';
-import { useUser } from '@clerk/nextjs';
-import { generateString } from '@/lib/utils';
+import { useToast } from "@/hooks/use-toast";
+import { UserType, ChatType } from "@/types";
+import { useUser } from "@clerk/nextjs";
+import { generateString } from "@/lib/utils";
 
 const SearchModal = () => {
-  const [searchQuery, setSearchQuery] = useState('');
+  const [searchQuery, setSearchQuery] = useState("");
   const [searchResults, setSearchResults] = useState<UserType[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const [isCreatingChat, setIsCreatingChat] = useState(false);
   const { toast } = useToast();
   const [open, setOpen] = useState(false);
-  const {user} = useUser();
-  const handleSearch = async (e:any) => {
+  const { user } = useUser();
+  const handleSearch = async (e: any) => {
     e.preventDefault();
     if (!searchQuery.trim()) return;
     const serachObj = { query: searchQuery } as any;
     try {
       setIsLoading(true);
-      const response = await axios.post(`${process.env.NEXT_PUBLIC_CHAT_SERVICE_URL}/users/searchUsers`, serachObj );
+      const response = await axios.post(
+        `${process.env.NEXT_PUBLIC_CHAT_SERVICE_URL}/users/searchUsers`,
+        serachObj,
+      );
       console.log(response.data);
       setSearchResults(response.data);
     } catch (error) {
@@ -50,18 +53,21 @@ const SearchModal = () => {
     }
   };
 
-  const handleCreateChat = async (userId : string) => {
+  const handleCreateChat = async (userId: string) => {
     try {
       setIsCreatingChat(true);
       const chatObj = {
-        id: "chat_"+generateString(15),
+        id: "chat_" + generateString(15),
         name: `replace_me`,
         type: "personal",
         members: [user?.id, userId],
         createdAt: new Date().toISOString(),
       };
       console.log(chatObj);
-      const response = await axios.post(`${process.env.NEXT_PUBLIC_CHAT_SERVICE_URL}/chats/createChat`, chatObj);
+      const response = await axios.post(
+        `${process.env.NEXT_PUBLIC_CHAT_SERVICE_URL}/chats/createChat`,
+        chatObj,
+      );
 
       toast({
         title: "Success",
@@ -73,7 +79,6 @@ const SearchModal = () => {
 
       // You might want to redirect to the chat or update the UI
       // window.location.href = `/chats/${response.data.chatId}`;
-
     } catch (error) {
       toast({
         title: "Error",
@@ -130,14 +135,14 @@ const SearchModal = () => {
                     {isCreatingChat ? (
                       <Loader2 className="h-4 w-4 animate-spin" />
                     ) : (
-                      'Add'
+                      "Add"
                     )}
                   </Button>
                 </div>
               </CardHeader>
             </Card>
           ))}
-          
+
           {searchResults?.length === 0 && searchQuery && !isLoading && (
             <div className="text-center py-8 text-gray-500">
               No users found matching "{searchQuery}"

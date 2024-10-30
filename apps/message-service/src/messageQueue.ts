@@ -7,7 +7,8 @@ dotenv.config();
 const messageQueue = "message_queue";
 const notificationQueue = "notification_queue";
 
-const rabbitmq_url = process.env.RABBITMQ_URL || "amqp://user:password@localhost";
+const rabbitmq_url =
+  process.env.RABBITMQ_URL || "amqp://user:password@localhost";
 
 class MessageQueue {
   private connection: any;
@@ -28,33 +29,37 @@ class MessageQueue {
           durable: false,
         });
         console.log(
-          `Waiting for messages in ${messageQueue}. To exit press CTRL+C`
+          `Waiting for messages in ${messageQueue}. To exit press CTRL+C`,
         );
         this.connection = connection;
         this.channel = channel;
       });
-      connection.createChannel((error1, ch)=>{
-        if(error1){
+      connection.createChannel((error1, ch) => {
+        if (error1) {
           throw error1;
         }
         ch.assertQueue(notificationQueue, {
           durable: true,
         });
-        console.log(
-          `Waitting for notification in ${notificationQueue}.`
-        )
+        console.log(`Waitting for notification in ${notificationQueue}.`);
         this.notificationchannel = ch;
-      })
+      });
     });
   }
 
-    public pushMessage(message: MessageType) {
-        this.channel.sendToQueue(messageQueue, Buffer.from(JSON.stringify(message)));
-    }
+  public pushMessage(message: MessageType) {
+    this.channel.sendToQueue(
+      messageQueue,
+      Buffer.from(JSON.stringify(message)),
+    );
+  }
 
-    public pushNotification(message: any) {
-        this.notificationchannel.sendToQueue(notificationQueue, Buffer.from(JSON.stringify(message)));
-    }
+  public pushNotification(message: any) {
+    this.notificationchannel.sendToQueue(
+      notificationQueue,
+      Buffer.from(JSON.stringify(message)),
+    );
+  }
 }
 
 export default MessageQueue;

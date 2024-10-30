@@ -15,7 +15,7 @@ app.use(
     origin: [process.env.ORIGIN || "http://localhost:3000"],
     methods: ["GET", "POST", "OPTIONS"],
     allowedHeaders: ["Content-Type"],
-  })
+  }),
 );
 
 app.use(express.json());
@@ -24,8 +24,8 @@ const notificationQueue = new NotificationQueue();
 
 async function processNotification(notification: any) {
   try {
-    notification = JSON.parse(notification)
-    const {userId, title, body, image, data } = notification;
+    notification = JSON.parse(notification);
+    const { userId, title, body, image, data } = notification;
     await sendNotificationToUser(userId, title, body, image, data);
     console.log("Notification sent to ", userId);
     return;
@@ -51,10 +51,16 @@ async function initializeServices() {
 }
 
 // heatlh check
-app.get('/health', (req: Request, res: Response) => {
-  res.status(200).json({ status: 'healthy', uptime: process.uptime(), timestamp: Date.now(), service: 'notification-service' });
+app.get("/health", (req: Request, res: Response) => {
+  res
+    .status(200)
+    .json({
+      status: "healthy",
+      uptime: process.uptime(),
+      timestamp: Date.now(),
+      service: "notification-service",
+    });
 });
-
 
 app.use("/api", subscriptionRouter);
 

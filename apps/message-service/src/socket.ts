@@ -115,7 +115,7 @@ class SocketService {
                 "Content-Type": "application/json",
               },
               body: JSON.stringify({ chatId: msg.chatId }),
-            }
+            },
           );
 
           if (!chatInfoResponse.ok) {
@@ -126,10 +126,10 @@ class SocketService {
 
           console.log(chatInfo);
 
-          chatInfo.members.forEach((uid:any) => {
+          chatInfo.members.forEach((uid: any) => {
             if (uid == status.userId) return;
-            
-            console.log("Comparing :: ",uid, status.userId)
+
+            console.log("Comparing :: ", uid, status.userId);
             const notification = {
               title: "New message recevied",
               body: msg.message,
@@ -146,7 +146,7 @@ class SocketService {
 
           await this.publisher.publish(
             CHANNELS.MESSAGE_STATUS,
-            JSON.stringify(status)
+            JSON.stringify(status),
           );
         } catch (error) {
           logger.error("Error handling message:", error);

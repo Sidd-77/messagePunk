@@ -1,9 +1,9 @@
 // routes.ts
 import { Router } from "express";
-import { 
-  subscribe, 
+import {
+  subscribe,
   pushNotificationToClient,
-  pushNotificationToUser
+  pushNotificationToUser,
 } from "./controller";
 
 const subscriptionRouter = Router();
