@@ -2,6 +2,7 @@
 import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
+import { Request, Response } from "express";
 dotenv.config();
 import NotificationQueue from "./notificationQueues";
 import subscriptionRouter from "./routes";
@@ -49,10 +50,11 @@ async function initializeServices() {
   }
 }
 
-// Add a simple health check route
-app.get("/health", (req, res) => {
-  res.status(200).json({ status: "ok" });
+// heatlh check
+app.get('/health', (req: Request, res: Response) => {
+  res.status(200).json({ status: 'healthy', uptime: process.uptime(), timestamp: Date.now(), service: 'notification-service' });
 });
+
 
 app.use("/api", subscriptionRouter);
 

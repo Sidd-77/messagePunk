@@ -7,6 +7,7 @@ import userRoutes from './routes/userRoutes';
 import messageRoutes from './routes/messageRoutes';
 import * as dotenv from 'dotenv'
 import sql from './utils/db';
+import { Request, Response } from 'express';
 dotenv.config();
 
 const app = express();
@@ -51,6 +52,11 @@ async function initializeServices() {
     process.exit(1);
   }
 }
+
+// heatlh check
+app.get('/health', (req: Request, res: Response) => {
+  res.status(200).json({ status: 'healthy', uptime: process.uptime(), timestamp: Date.now(), service: 'chat-service' });
+});
 
 app.use("/users", userRoutes)
 app.use("/chats", chatRoutes)
