@@ -31,10 +31,12 @@ app.get("/health", (req: Request, res: Response) => {
 });
 
 app.get("/", (req, res) => {
-  res.send("Message service is running");
+  res.status(200).send("Message service is running");
 });
 
 httpServer.listen(port, () => {
   console.log(`Server is running on port ${port}`);
   console.log(`Socket server is running url: http://localhost:${port}`);
 });
+
+export default app;

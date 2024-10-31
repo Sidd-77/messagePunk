@@ -71,3 +71,5 @@ app.listen(PORT, () => {
   console.log("- POST /api/push-notification");
   initializeServices().catch(console.error);
 });
+
+export default app;
