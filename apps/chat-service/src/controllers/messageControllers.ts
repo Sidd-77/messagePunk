@@ -38,6 +38,26 @@ export const getMessages = async (
   }
 };
 
+export const createMessage = async (
+  req: Request,
+  res: Response,
+): Promise<void> => {
+  try {
+    const message = req.body;
+
+    const [newMessage] = await sql`
+      INSERT INTO messages (id, chat_id, type, user_id, status, message, timestamp)
+      VALUES (${message.id}, ${message.chatId}, ${message.type}, ${message.userId}, ${message.status}, ${message.message}, ${message.timestamp})
+      RETURNING *
+      `;
+
+    res.status(201).json(newMessage);
+  } catch (error) {
+    console.error("Create message error:", error);
+    res.status(500).json({ message: "Error creating message" , error});
+  }
+}
+
 export const getMessage = async (
   req: Request,
   res: Response,

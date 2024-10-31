@@ -251,7 +251,7 @@ export const deleteChat = async (
 ): Promise<void> => {
   try {
     const { chatId } = req.body;
-
+    console.log("Delete chat:", chatId);
     await sql.begin(async (sql) => {
       // Delete all related records first
       await sql`DELETE FROM chat_members WHERE chat_id = ${chatId}`;

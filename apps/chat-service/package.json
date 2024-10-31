@@ -3,10 +3,10 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon --exec ts-node src/index.ts",
     "build": "tsc -b",
-    "start": "node dist/index.js"
+    "start": "node dist/index.js",
+    "test": "jest --forceExit"
   },
   "keywords": [],
   "author": "",
@@ -22,5 +22,12 @@
     "nodemon": "^3.1.7",
     "postgres": "^3.4.5",
     "winston": "^3.15.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.14",
+    "@types/supertest": "^6.0.2",
+    "jest": "^29.7.0",
+    "supertest": "^7.0.0",
+    "ts-jest": "^29.2.5"
   }
 }

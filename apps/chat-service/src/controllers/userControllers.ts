@@ -18,6 +18,7 @@ export const searchUsers = async (
           email ILIKE ${`%${query}%`}
       `;
     } else {
+      console.log("No query provided, returning all users");
       users = await sql`
         SELECT id, name, email, avatar
         FROM users
@@ -83,14 +84,13 @@ export const updateUser = async (
 ): Promise<void> => {
   try {
     const { id, name, email, avatar } = req.body;
-
+    console.log("Update user:", req.body);
     const [user] = await sql`
             UPDATE users
             SET 
                 name = ${name},
                 email = ${email},
-                avatar = ${avatar},
-                updated_at = CURRENT_TIMESTAMP
+                avatar = ${avatar}
             WHERE id = ${id}
             RETURNING *
         `;

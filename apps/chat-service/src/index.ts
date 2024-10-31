@@ -7,8 +7,10 @@ import userRoutes from "./routes/userRoutes";
 import messageRoutes from "./routes/messageRoutes";
 import * as dotenv from "dotenv";
 import sql from "./utils/db";
-import { Request, Response } from "express";
+import { Request, Response, Express } from "express";
 dotenv.config();
+
+
 
 const app = express();
 const port = process.env.PORT || 5000;
@@ -80,9 +82,15 @@ process.on("SIGTERM", async () => {
   process.exit(0);
 });
 
-//log every request received
-
 app.listen(port, () => {
   console.log(`Express server is running at http://localhost:${port}`);
   initializeServices().catch(console.error);
 });
+
+// method to close the server for testing
+// export function closeServer(): void {
+//   server.close();
+// }
+
+export default app
+
