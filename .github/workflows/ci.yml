@@ -26,12 +26,12 @@ jobs:
 
       - name: Debug Secrets
         env:
-            CLERK_PUBLISHABLE_KEY: ${{ secrets.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY }}
+            NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY: ${{ secrets.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY }}
             CLERK_SECRET_KEY: ${{ secrets.CLERK_SECRET_KEY }}
         run: |
-            echo "Publishable Key set: ${CLERK_PUBLISHABLE_KEY:?Not set}"
+            echo "Publishable Key set: ${NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY:?Not set}"
             echo "Secret Key set: ${CLERK_SECRET_KEY:?Not set}"
-            echo "Publishable Key length: ${#CLERK_PUBLISHABLE_KEY}"
+            echo "Publishable Key length: ${#NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY}"
             echo "Secret Key length: ${#CLERK_SECRET_KEY}"
 
       - name: Install dependencies
@@ -43,12 +43,11 @@ jobs:
       - name: Verbose Clerk Debug
         run: |
           echo "Checking Clerk keys"
-          echo "Publishable Key length: ${#CLERK_PUBLISHABLE_KEY}"
+          echo "Publishable Key length: ${#NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY}"
           echo "Secret Key length: ${#CLERK_SECRET_KEY}"
 
       - name: Build
         env:
-          CLERK_PUBLISHABLE_KEY: ${{ secrets.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY }}
+          NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY: ${{ secrets.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY }}
           CLERK_SECRET_KEY: ${{ secrets.CLERK_SECRET_KEY }}
-          CLERK_PUBLIC_API_URL: ${{ secrets.NEXT_PUBLIC_VAPID_PUBLIC_KEY }}
         run: npm run build
