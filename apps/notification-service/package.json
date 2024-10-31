@@ -13,8 +13,12 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "@types/amqplib": "^0.10.5",
+    "@types/cors": "^2.8.17",
     "@types/express": "^5.0.0",
     "@types/web-push": "^3.6.4",
+    "amqplib": "^0.10.4",
+    "cors": "^2.8.5",
     "dotenv": "^16.4.5",
     "nodemon": "^3.1.7",
     "web-push": "^3.6.7"

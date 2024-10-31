@@ -39,12 +39,6 @@ jobs:
 
       - name: Run setup script
         run: npm run setup
-    
-      - name: Verbose Clerk Debug
-        run: |
-          echo "Checking Clerk keys"
-          echo "Publishable Key length: ${#NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY}"
-          echo "Secret Key length: ${#CLERK_SECRET_KEY}"
 
       - name: Build
         env:

@@ -1,9 +1,4 @@
 import postgres from "postgres";
-import dotenv from "dotenv";
-import path from "path";
-
-// Load .env file from project root
-dotenv.config({ path: path.resolve(__dirname, "../../.env") });
 
 const username = process.env.DB_USERNAME;
 const password = process.env.DB_PASSWORD;

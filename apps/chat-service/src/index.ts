@@ -1,14 +1,14 @@
 import express from "express";
+import * as dotenv from "dotenv";
+dotenv.config();
 import MessageQueue from "./utils/messageQueue";
 import { MessageType } from "./types";
 import cors from "cors";
 import chatRoutes from "./routes/chatRoutes";
 import userRoutes from "./routes/userRoutes";
 import messageRoutes from "./routes/messageRoutes";
-import * as dotenv from "dotenv";
 import sql from "./utils/db";
 import { Request, Response, Express } from "express";
-dotenv.config();
 
 const app = express();
 const port = process.env.PORT || 5000;
