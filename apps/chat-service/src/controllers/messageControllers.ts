@@ -54,9 +54,9 @@ export const createMessage = async (
     res.status(201).json(newMessage);
   } catch (error) {
     console.error("Create message error:", error);
-    res.status(500).json({ message: "Error creating message" , error});
+    res.status(500).json({ message: "Error creating message", error });
   }
-}
+};
 
 export const getMessage = async (
   req: Request,

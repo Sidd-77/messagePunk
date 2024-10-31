@@ -52,14 +52,12 @@ async function initializeServices() {
 
 // heatlh check
 app.get("/health", (req: Request, res: Response) => {
-  res
-    .status(200)
-    .json({
-      status: "healthy",
-      uptime: process.uptime(),
-      timestamp: Date.now(),
-      service: "notification-service",
-    });
+  res.status(200).json({
+    status: "healthy",
+    uptime: process.uptime(),
+    timestamp: Date.now(),
+    service: "notification-service",
+  });
 });
 
 app.use("/api", subscriptionRouter);

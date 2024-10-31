@@ -1,12 +1,13 @@
-import { NextApiRequest, NextApiResponse } from "next";
+// end point to check health in nextjs 14
 
-export default function handler(req: NextApiRequest, res: NextApiResponse) {
-  res
-    .status(200)
-    .json({
+export async function GET(request: Request) {
+  return Response.json({
+    status: 200,
+    body: {
       status: "healthy",
       uptime: process.uptime(),
       timestamp: Date.now(),
       service: "web",
-    });
+    },
+  });
 }

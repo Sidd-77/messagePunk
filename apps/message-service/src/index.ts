@@ -22,14 +22,12 @@ socketService.io.attach(httpServer);
 
 // heatlh check
 app.get("/health", (req: Request, res: Response) => {
-  res
-    .status(200)
-    .json({
-      status: "healthy",
-      uptime: process.uptime(),
-      timestamp: Date.now(),
-      service: "message-service",
-    });
+  res.status(200).json({
+    status: "healthy",
+    uptime: process.uptime(),
+    timestamp: Date.now(),
+    service: "message-service",
+  });
 });
 
 app.get("/", (req, res) => {

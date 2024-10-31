@@ -10,8 +10,6 @@ import sql from "./utils/db";
 import { Request, Response, Express } from "express";
 dotenv.config();
 
-
-
 const app = express();
 const port = process.env.PORT || 5000;
 app.use(express.json());
@@ -58,14 +56,12 @@ async function initializeServices() {
 
 // heatlh check
 app.get("/health", (req: Request, res: Response) => {
-  res
-    .status(200)
-    .json({
-      status: "healthy",
-      uptime: process.uptime(),
-      timestamp: Date.now(),
-      service: "chat-service",
-    });
+  res.status(200).json({
+    status: "healthy",
+    uptime: process.uptime(),
+    timestamp: Date.now(),
+    service: "chat-service",
+  });
 });
 
 app.use("/users", userRoutes);
@@ -92,5 +88,4 @@ app.listen(port, () => {
 //   server.close();
 // }
 
-export default app
-
+export default app;

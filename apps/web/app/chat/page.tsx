@@ -136,10 +136,12 @@ export default function Home() {
           {chats.map((chat) => {
             // @ts-ignore
             const otherMember =
+              // @ts-ignore
               chat.type === "personal" ? chat.other_members[0] : null;
             // @ts-ignore
             const lastMessageTime = chat.last_message?.timestamp
-              ? format(new Date(chat.last_message.timestamp), "HH:mm")
+              ? // @ts-ignore
+                format(new Date(chat.last_message.timestamp), "HH:mm")
               : "";
 
             return (
@@ -180,14 +182,18 @@ export default function Home() {
                       </span>
                     )}
                   </div>
+                  {}{" "}
                   {
                     // @ts-ignore
-                  }{" "}
-                  {chat.last_message && (
-                    <p className="text-sm text-muted-foreground truncate">
-                      {chat.last_message.message}
-                    </p>
-                  )}
+                    chat.last_message && (
+                      <p className="text-sm text-muted-foreground truncate">
+                        {
+                          // @ts-ignore
+                          chat.last_message.message
+                        }
+                      </p>
+                    )
+                  }
                 </div>
               </div>
             );

@@ -1,8 +1,7 @@
 import request from "supertest";
-import app from "../src";
+import app from "..";
 
 describe("Chat Application Flow", () => {
-
   // Test data
   const testUsers = [
     {
@@ -79,7 +78,7 @@ describe("Chat Application Flow", () => {
 
         expect(response.body.length).toBeGreaterThanOrEqual(1);
         expect(
-          response.body.some((user: any) => user.id === testUsers[0].id)
+          response.body.some((user: any) => user.id === testUsers[0].id),
         ).toBeTruthy();
       });
     });
@@ -146,7 +145,7 @@ describe("Chat Application Flow", () => {
           .expect(200);
 
         expect(
-          response.body.some((chat: any) => chat.id === groupChat.id)
+          response.body.some((chat: any) => chat.id === groupChat.id),
         ).toBeTruthy();
       });
     });
