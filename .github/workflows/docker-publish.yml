@@ -12,6 +12,7 @@ jobs:
   web-image:
     name: Build and Publish Docker Image of Web App
     runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
 
     steps:
       - name: Check out code
@@ -24,16 +25,6 @@ jobs:
         with:
           node-version: 20
           cache: "npm"
-
-      - name: Debug Secrets
-        env:
-          DOCKER_UNAME: ${{ secrets.DOCKERHUB_USERNAME }}
-          DOCKER_PASS: ${{ secrets.DOCKERHUB_TOKEN }}
-        run: |
-          echo "Uname: ${DOCKER_UNAME:?Not set}"
-          echo "Pass: ${DOCKER_PASS:?Not set}"
-          echo "Uname length: ${#DOCKER_UNAME}"
-          echo "Pass length: ${#DOCKER_PASS}"
 
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v3
@@ -52,14 +43,16 @@ jobs:
         with:
           context: ./apps/web
           push: true
-          tags: user/app:latest
+          tags: siddpunk/messagepunk-web:latest
+          build-args: |
+            NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=${{ secrets.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY }}
           secrets: |
-            "NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=${{ secrets.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY }}"
             "CLERK_SECRET_KEY=${{ secrets.CLERK_SECRET_KEY }}"
 
   message-image:
     name: Build and Publish Docker Image of Message App
     runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
 
     steps:
       - name: Check out code
@@ -72,16 +65,6 @@ jobs:
         with:
           node-version: 20
           cache: "npm"
-
-      - name: Debug Secrets
-        env:
-          DOCKER_UNAME: ${{ secrets.DOCKERHUB_USERNAME }}
-          DOCKER_PASS: ${{ secrets.DOCKERHUB_TOKEN }}
-        run: |
-          echo "Uname: ${DOCKER_UNAME:?Not set}"
-          echo "Pass: ${DOCKER_PASS:?Not set}"
-          echo "Uname length: ${#DOCKER_UNAME}"
-          echo "Pass length: ${#DOCKER_PASS}"
 
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v3
@@ -100,4 +83,4 @@ jobs:
         with:
           context: ./apps/message-service
           push: true
-          tags: user/app:latest
+          tags: siddpunk/messagepunk-messageservice:latest
