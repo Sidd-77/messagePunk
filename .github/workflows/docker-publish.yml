@@ -1,0 +1,103 @@
+name: Docker-Publish
+
+on:
+  workflow_run:
+    workflows: ["CI"]
+    types:
+      - completed
+    branches:
+      - main
+
+jobs:
+  web-image:
+    name: Build and Publish Docker Image of Web App
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: "npm"
+
+      - name: Debug Secrets
+        env:
+          DOCKER_UNAME: ${{ secrets.DOCKERHUB_USERNAME }}
+          DOCKER_PASS: ${{ secrets.DOCKERHUB_TOKEN }}
+        run: |
+          echo "Uname: ${DOCKER_UNAME:?Not set}"
+          echo "Pass: ${DOCKER_PASS:?Not set}"
+          echo "Uname length: ${#DOCKER_UNAME}"
+          echo "Pass length: ${#DOCKER_PASS}"
+
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v3
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Login to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      - name: Build and push
+        uses: docker/build-push-action@v6
+        with:
+          context: ./apps/web
+          push: true
+          tags: user/app:latest
+          secrets: |
+            "NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=${{ secrets.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY }}"
+            "CLERK_SECRET_KEY=${{ secrets.CLERK_SECRET_KEY }}"
+
+  message-image:
+    name: Build and Publish Docker Image of Message App
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: "npm"
+
+      - name: Debug Secrets
+        env:
+          DOCKER_UNAME: ${{ secrets.DOCKERHUB_USERNAME }}
+          DOCKER_PASS: ${{ secrets.DOCKERHUB_TOKEN }}
+        run: |
+          echo "Uname: ${DOCKER_UNAME:?Not set}"
+          echo "Pass: ${DOCKER_PASS:?Not set}"
+          echo "Uname length: ${#DOCKER_UNAME}"
+          echo "Pass length: ${#DOCKER_PASS}"
+
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v3
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Login to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      - name: Build and push
+        uses: docker/build-push-action@v6
+        with:
+          context: ./apps/message-service
+          push: true
+          tags: user/app:latest
