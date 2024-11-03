@@ -8,7 +8,8 @@ import chatRoutes from "./routes/chatRoutes";
 import userRoutes from "./routes/userRoutes";
 import messageRoutes from "./routes/messageRoutes";
 import sql from "./utils/db";
-import { Request, Response, Express } from "express";
+import { Request, Response } from "express";
+import { initializeTables } from "./utils/db_intialize";
 
 const app = express();
 const port = process.env.PORT || 5000;
@@ -80,6 +81,7 @@ process.on("SIGTERM", async () => {
 
 app.listen(port, () => {
   console.log(`Express server is running at http://localhost:${port}`);
+  // initializeTables().catch(console.error);
   initializeServices().catch(console.error);
 });
 

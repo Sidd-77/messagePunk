@@ -1,12 +1,12 @@
 import express from "express";
 import {
   createChat,
-  addMember,
-  getChats,
+  addParticipant,
+  removeParticipant,
   getChatInfo,
-  removeMember,
+  getUserChats,
   deleteChat,
-  renameChat,
+  updateChat
 } from "../controllers/chatController";
 // import { protect } from "../middlewares/authMiddleware";
 
@@ -14,10 +14,10 @@ const chatRoutes = express.Router();
 
 chatRoutes.route("/createChat").post(createChat);
 chatRoutes.route("/getChatInfo").post(getChatInfo);
-chatRoutes.route("/getChats").post(getChats);
-chatRoutes.route("/addMember").post(addMember);
-chatRoutes.route("/removeMember").post(removeMember);
+chatRoutes.route("/getUserChats").post(getUserChats);
+chatRoutes.route("/addParticipant").post(addParticipant);
+chatRoutes.route("/removeParticipant").post(removeParticipant);
 chatRoutes.route("/deleteChat").delete(deleteChat);
-chatRoutes.route("/renameChat").put(renameChat);
+chatRoutes.route("/updateChat").put(updateChat);
 
 export default chatRoutes;

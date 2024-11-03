@@ -1,12 +1,36 @@
 import amqp, { Connection, Channel, ConsumeMessage } from "amqplib";
 import { MessageType } from "../types";
 
+const username = process.env.RABBITMQ_USERNAME;
+const password = process.env.RABBITMQ_PASSWORD;
+const host = process.env.RABBITMQ_HOST;
+const port = process.env.RABBITMQ_PORT;
+const url = process.env.RABBITMQ_URL;
+
+const validateEnvVariables = () => {
+  const required = [
+    "RABBITMQ_USERNAME",
+    "RABBITMQ_PASSWORD",
+    "RABBITMQ_HOST",
+    "RABBITMQ_PORT",
+    "RABBITMQ_URL",
+  ];
+  const missing = required.filter((name) => !process.env[name]);
+
+  if (missing.length > 0) {
+    throw new Error(
+      `Missing required environment variables: ${missing.join(", ")}`,
+    );
+  }
+}
+
+validateEnvVariables();
+
 export class MessageQueue {
   private connection: Connection | null = null;
   private channel: Channel | null = null;
   private readonly QUEUE_NAME = "message_queue";
-  private readonly RABBITMQ_URL =
-    process.env.RABBITMQ_URL || "amqp://user:password@localhost";
+  private readonly RABBITMQ_URL = `amqp://${username}:${password}@${host}:${port}`;
   private isInitialized = false;
 
   async initialize(): Promise<void> {

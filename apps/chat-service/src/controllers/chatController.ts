@@ -1,48 +1,45 @@
 import { Request, Response } from "express";
-
 import sql from "../utils/db";
+import type { Chat } from "../utils/db_intialize";
 
 export const createChat = async (
   req: Request,
-  res: Response,
+  res: Response
 ): Promise<void> => {
   try {
-    const { id, type, name, members, admin, createdAt } = req.body;
+    const { type, name, avatar_url, created_by, participants } = req.body;
 
-    // Start a transaction
     await sql.begin(async (sql) => {
       // Create the chat
       const [chat] = await sql`
-        INSERT INTO chats (id, type, name, created_at)
-        VALUES (${id}, ${type}, ${name}, ${createdAt})
+        INSERT INTO chats (type, name, avatar_url, created_by)
+        VALUES (${type}, ${name}, ${avatar_url}, ${created_by})
         RETURNING *
       `;
 
-      // Add members
-      if (members && members.length > 0) {
-        await sql`
-          INSERT INTO chat_members (chat_id, user_id)
-          SELECT ${chat.id}, unnest(${members}::varchar[])
-        `;
+      // Add participants
+      if (participants && participants.length > 0) {
+        participants.forEach(async (participant: any) => {
+          await sql`
+            INSERT INTO chat_participants (chat_id, user_id, role)
+            VALUES (${chat.id}, ${participant.user_id}, ${participant.role})
+          `;
+        });
       }
 
-      // Add admins
-      if (admin && admin.length > 0) {
-        await sql`
-          INSERT INTO chat_admins (chat_id, user_id)
-          SELECT ${chat.id}, unnest(${admin}::varchar[])
-        `;
-      }
-
-      // Get the complete chat data with members and admins
+      // Get complete chat data
       const [completeChat] = await sql`
         SELECT 
           c.*,
-          array_agg(DISTINCT m.user_id) as members,
-          array_agg(DISTINCT a.user_id) as admins
+          json_agg(
+            json_build_object(
+              'user_id', cp.user_id,
+              'role', cp.role,
+              'last_read_message_id', cp.last_read_message_id
+            )
+          ) as participants
         FROM chats c
-        LEFT JOIN chat_members m ON c.id = m.chat_id
-        LEFT JOIN chat_admins a ON c.id = a.chat_id
+        LEFT JOIN chat_participants cp ON c.id = cp.chat_id
         WHERE c.id = ${chat.id}
         GROUP BY c.id
       `;
@@ -57,22 +54,35 @@ export const createChat = async (
 
 export const getChatInfo = async (
   req: Request,
-  res: Response,
+  res: Response
 ): Promise<void> => {
-  const { chatId } = req.body;
   try {
-    // Query to get chat info from chatId
+    const { chatId } = req.body;
+
     const [chat] = await sql`
       SELECT 
         c.*,
-        array_agg(DISTINCT m.user_id) as members,
-        array_agg(DISTINCT a.user_id) as admins
+        json_agg(
+          json_build_object(
+            'user_id', cp.user_id,
+            'role', cp.role,
+            'last_read_message_id', cp.last_read_message_id,
+            'user', json_build_object(
+              'id', u.id,
+              'name', u.name,
+              'email', u.email,
+              'avatar_url', u.avatar_url
+            )
+          )
+        ) as participants
       FROM chats c
-      LEFT JOIN chat_members m ON c.id = m.chat_id
-      LEFT JOIN chat_admins a ON c.id = a.chat_id
+      LEFT JOIN chat_participants cp ON c.id = cp.chat_id
+      LEFT JOIN users u ON cp.user_id = u.id
       WHERE c.id = ${chatId}
       GROUP BY c.id
     `;
+
+    console.log("Chat info:", chat);
 
     if (!chat) {
       res.status(404).json({ message: "Chat not found" });
@@ -86,181 +96,194 @@ export const getChatInfo = async (
   }
 };
 
-export const getChats = async (req: Request, res: Response): Promise<void> => {
+export const getUserChats = async (
+  req: Request,
+  res: Response
+): Promise<void> => {
   try {
     const { userId } = req.body;
 
     const chats = await sql`
       WITH user_chats AS (
-        SELECT DISTINCT c.*
+        SELECT c.*, cp.role, cp.last_read_message_id
         FROM chats c
-        JOIN chat_members cm ON c.id = cm.chat_id
-        WHERE cm.user_id = ${userId}
+        JOIN chat_participants cp ON c.id = cp.chat_id
+        WHERE cp.user_id = ${userId}
       )
       SELECT 
-        uc.id,
-        uc.type,
-        uc.name,
-        uc.created_at,
-        uc.avatar,
-        uc.last_message_id,
-        array_agg(DISTINCT cm.user_id) as members,
-        array_agg(DISTINCT ca.user_id) as admins,
-        CASE 
-          WHEN m.id IS NOT NULL THEN
-            json_build_object(
-              'id', m.id,
-              'message', m.message,
-              'timestamp', m.timestamp,
-              'user_id', m.user_id
+        uc.*,
+        (
+          SELECT json_build_object(
+            'id', m.id,
+            'content', m.content,
+            'type', m.type,
+            'created_at', m.created_at,
+            'sender', json_build_object(
+              'id', u.id,
+              'name', u.name,
+              'avatar_url', u.avatar_url
             )
-          ELSE NULL
-        END as last_message,
-        COALESCE(
-          json_agg(
-            json_build_object(
-              'id', other_users.id,
-              'name', other_users.name,
-              'email', other_users.email,
-              'avatar', other_users.avatar
+          )
+          FROM messages m
+          JOIN users u ON m.sender_id = u.id
+          WHERE m.chat_id = uc.id
+          AND NOT m.is_deleted
+          ORDER BY m.created_at DESC
+          LIMIT 1
+        ) as last_message,
+        json_agg(
+          json_build_object(
+            'user_id', cp.user_id,
+            'role', cp.role,
+            'user', json_build_object(
+              'id', u.id,
+              'name', u.name,
+              'avatar_url', u.avatar_url
             )
-          ) FILTER (WHERE other_users.id IS NOT NULL AND other_users.id != ${userId}),
-          '[]'::json
-        ) as other_members,
-        json_build_object(
-          'id', curr.id,
-          'name', curr.name,
-          'email', curr.email,
-          'avatar', curr.avatar
-        ) as current_user
+          )
+        ) as participants
       FROM user_chats uc
-      JOIN chat_members cm ON uc.id = cm.chat_id
-      LEFT JOIN chat_admins ca ON uc.id = ca.chat_id
-      LEFT JOIN messages m ON uc.last_message_id = m.id
-      LEFT JOIN users other_users ON cm.user_id = other_users.id
-      LEFT JOIN users curr ON curr.id = ${userId}
-      GROUP BY 
-        uc.id,
-        uc.type,
-        uc.name,
-        uc.created_at,
-        uc.avatar,
-        uc.last_message_id,
-        m.id,
-        m.message,
-        m.timestamp,
-        m.user_id,
-        curr.id,
-        curr.name,
-        curr.email,
-        curr.avatar
-      ORDER BY m.timestamp DESC NULLS LAST
+      JOIN chat_participants cp ON uc.id = cp.chat_id
+      JOIN users u ON cp.user_id = u.id
+      GROUP BY uc.id, uc.type, uc.name, uc.created_at, uc.avatar_url, 
+               uc.created_by, uc.role, uc.last_read_message_id
+      ORDER BY (
+        SELECT MAX(created_at) 
+        FROM messages 
+        WHERE chat_id = uc.id AND NOT is_deleted
+      ) DESC NULLS LAST
     `;
 
     res.status(200).json(chats);
   } catch (error) {
-    console.error("Get chats error:", error);
-    res.status(500).json({ message: "Error fetching chats" });
+    console.error("Get user chats error:", error);
+    res.status(500).json({ message: "Error fetching user chats" });
   }
 };
 
-// export const getChatInfo = async (req: Request, res: Response):Promise<any> => {
-//   try {
-//     const chat = await Chat.findOne({ id: req.body.chatId })
-//     .populate('members')
-//     .populate('lastMessage')
-//     .populate('admin');
-//     if (!chat) {
-//       return res.status(404).send({ message: "Chat not found" });
-//     }
-//     res.status(200).send(chat);
-//   } catch (error) {
-//     res.status(500).send(error);
-//   }
-// };
-
-export const addMember = async (req: Request, res: Response): Promise<void> => {
-  try {
-    const { chatId, member } = req.body;
-
-    await sql`
-      INSERT INTO chat_members (chat_id, user_id)
-      VALUES (${chatId}, ${member})
-      ON CONFLICT DO NOTHING
-    `;
-
-    const [chat] = await sql`
-      SELECT 
-        c.*,
-        array_agg(DISTINCT cm.user_id) as members
-      FROM chats c
-      LEFT JOIN chat_members cm ON c.id = cm.chat_id
-      WHERE c.id = ${chatId}
-      GROUP BY c.id
-    `;
-
-    if (!chat) {
-      res.status(404).json({ message: "Chat not found" });
-      return;
-    }
-
-    res.status(200).json(chat);
-  } catch (error) {
-    console.error("Add member error:", error);
-    res.status(500).json({ message: "Error adding member" });
-  }
-};
-
-export const removeMember = async (
+export const updateChatParticipant = async (
   req: Request,
-  res: Response,
+  res: Response
 ): Promise<void> => {
   try {
-    const { chatId, member } = req.body;
+    const { chatId, userId, role } = req.body;
+
+    const [participant] = await sql`
+      UPDATE chat_participants
+      SET role = ${role}
+      WHERE chat_id = ${chatId} AND user_id = ${userId}
+      RETURNING *
+    `;
+
+    if (!participant) {
+      res.status(404).json({ message: "Chat participant not found" });
+      return;
+    }
+
+    res.status(200).json(participant);
+  } catch (error) {
+    console.error("Update chat participant error:", error);
+    res.status(500).json({ message: "Error updating chat participant" });
+  }
+};
+
+export const addParticipant = async (
+  req: Request,
+  res: Response
+): Promise<void> => {
+  try {
+    const { chatId, userId, role = "member" } = req.body;
 
     await sql`
-      DELETE FROM chat_members
-      WHERE chat_id = ${chatId} AND user_id = ${member}
+      INSERT INTO chat_participants (chat_id, user_id, role)
+      VALUES (${chatId}, ${userId}, ${role})
+      ON CONFLICT (chat_id, user_id) DO NOTHING
     `;
 
     const [chat] = await sql`
       SELECT 
         c.*,
-        array_agg(DISTINCT cm.user_id) as members
+        json_agg(
+          json_build_object(
+            'user_id', cp.user_id,
+            'role', cp.role,
+            'last_read_message_id', cp.last_read_message_id
+          )
+        ) as participants
       FROM chats c
-      LEFT JOIN chat_members cm ON c.id = cm.chat_id
+      LEFT JOIN chat_participants cp ON c.id = cp.chat_id
       WHERE c.id = ${chatId}
       GROUP BY c.id
     `;
 
-    if (!chat) {
-      res.status(404).json({ message: "Chat not found" });
-      return;
-    }
+    res.status(200).json(chat);
+  } catch (error) {
+    console.error("Add participant error:", error);
+    res.status(500).json({ message: "Error adding participant" });
+  }
+};
+
+export const removeParticipant = async (
+  req: Request,
+  res: Response
+): Promise<void> => {
+  try {
+    const { chatId, userId } = req.body;
+
+    await sql`
+      DELETE FROM chat_participants
+      WHERE chat_id = ${chatId} AND user_id = ${userId}
+    `;
+
+    const [chat] = await sql`
+      SELECT 
+        c.*,
+        json_agg(
+          json_build_object(
+            'user_id', cp.user_id,
+            'role', cp.role,
+            'last_read_message_id', cp.last_read_message_id
+          )
+        ) as participants
+      FROM chats c
+      LEFT JOIN chat_participants cp ON c.id = cp.chat_id
+      WHERE c.id = ${chatId}
+      GROUP BY c.id
+    `;
 
     res.status(200).json(chat);
   } catch (error) {
-    console.error("Remove member error:", error);
-    res.status(500).json({ message: "Error removing member" });
+    console.error("Remove participant error:", error);
+    res.status(500).json({ message: "Error removing participant" });
   }
 };
 
 export const deleteChat = async (
   req: Request,
-  res: Response,
+  res: Response
 ): Promise<void> => {
   try {
     const { chatId } = req.body;
-    console.log("Delete chat:", chatId);
+
     await sql.begin(async (sql) => {
-      // Delete all related records first
-      await sql`DELETE FROM chat_members WHERE chat_id = ${chatId}`;
-      await sql`DELETE FROM chat_admins WHERE chat_id = ${chatId}`;
-      await sql`DELETE FROM message_read_by WHERE message_id IN (
+      // Delete message statuses
+      await sql`DELETE FROM message_status WHERE message_id IN (
         SELECT id FROM messages WHERE chat_id = ${chatId}
       )`;
+
+      // Delete messages
       await sql`DELETE FROM messages WHERE chat_id = ${chatId}`;
-      await sql`DELETE FROM chats WHERE id = ${chatId}`;
+
+      // Delete chat participants
+      await sql`DELETE FROM chat_participants WHERE chat_id = ${chatId}`;
+
+      // Delete chat
+      const result = await sql`DELETE FROM chats WHERE id = ${chatId}`;
+
+      if (result.count === 0) {
+        res.status(404).json({ message: "Chat not found" });
+        return;
+      }
     });
 
     res.status(200).json({ message: "Chat deleted" });
@@ -270,18 +293,27 @@ export const deleteChat = async (
   }
 };
 
-export const renameChat = async (
+export const updateChat = async (
   req: Request,
-  res: Response,
+  res: Response
 ): Promise<void> => {
   try {
-    const { chatId, name } = req.body;
+    const { chatId } = req.body;
+    const { name, avatar_url } = req.body;
 
     const [chat] = await sql`
       UPDATE chats
-      SET name = ${name}
+      SET 
+        name = COALESCE(${name}, name),
+        avatar_url = COALESCE(${avatar_url}, avatar_url)
       WHERE id = ${chatId}
-      RETURNING *
+      RETURNING
+        id,
+        type,
+        name,
+        avatar_url,
+        created_at,
+        created_by
     `;
 
     if (!chat) {
@@ -289,9 +321,25 @@ export const renameChat = async (
       return;
     }
 
-    res.status(200).json(chat);
+    const [updatedChat] = await sql`
+      SELECT 
+        c.*,
+        json_agg(
+          json_build_object(
+            'user_id', cp.user_id,
+            'role', cp.role,
+            'last_read_message_id', cp.last_read_message_id
+          )
+        ) as participants
+      FROM chats c
+      LEFT JOIN chat_participants cp ON c.id = cp.chat_id
+      WHERE c.id = ${chat.id}
+      GROUP BY c.id
+    `;
+
+    res.status(200).json(updatedChat);
   } catch (error) {
-    console.error("Rename chat error:", error);
-    res.status(500).json({ message: "Error renaming chat" });
+    console.error("Update chat error:", error);
+    res.status(500).json({ message: "Error updating chat" });
   }
 };
